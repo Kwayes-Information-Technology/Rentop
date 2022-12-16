@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:rentop/infrastructure/core/assets.dart';
+import 'package:rentop/presentation/welcome/welcome_screen.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
+import 'package:rentop/presentation/widgets/rentop_logo.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -14,12 +14,9 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              Assets.fullLogo,
-              width: MediaQuery.of(context).size.width / 1.5,
-            ),
+            rentopLogo(context: context),
             const SizedBox(
-              height: 31,
+              height: 30,
             ),
             Text(
               "Welcome!",
@@ -38,7 +35,10 @@ class SplashScreen extends StatelessWidget {
             RentopButtons.rentopButton(
               text: "Start exploring",
               context: context,
-              onBtnPressed: () {},
+              onBtnPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+              ),
             )
           ],
         ),
