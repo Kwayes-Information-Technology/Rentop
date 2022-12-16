@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/presentation/splash/splash_screen.dart';
 
