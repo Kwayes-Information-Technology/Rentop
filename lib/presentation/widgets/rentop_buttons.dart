@@ -78,4 +78,23 @@ class RentopButtons {
       ),
     );
   }
+
+  static Widget rentopTextButtonWithIcon({
+    required VoidCallback onBtnPressed,
+    required String btnText,
+    required String imagePath,
+    required BuildContext context,
+  }) {
+    return TextButton.icon(
+      onPressed: onBtnPressed,
+      icon: SvgPicture.asset(imagePath),
+      label: Text(
+        btnText,
+        style: Theme.of(context).textTheme.headline1!.copyWith(
+              fontSize: 14,
+              color: mainColor,
+            ),
+      ),
+    );
+  }
 }
