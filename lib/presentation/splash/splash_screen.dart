@@ -39,6 +39,7 @@ class SplashScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const WelcomeScreen()),
               ),
+              width: 224,
             )
           ],
         ),

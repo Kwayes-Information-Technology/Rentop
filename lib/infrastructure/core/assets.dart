@@ -4,4 +4,5 @@ class Assets {
   static const String customerVector = "assets/images/icons/customer.svg";
   static const String businessVector = "assets/images/icons/business.svg";
   static const String googleVector = "assets/images/icons/google.svg";
+  static const String carEclipse = "assets/images/images/car_eclipse.png";
 }

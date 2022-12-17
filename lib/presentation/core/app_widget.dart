@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: rentopTheme(),
+      locale: const Locale('en', "US"),
       home: const SplashScreen(),
     );
   }

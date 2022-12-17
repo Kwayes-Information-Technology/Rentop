@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
+import 'package:rentop/presentation/signup/signup_screen.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
 
@@ -29,13 +30,21 @@ class WelcomeScreen extends StatelessWidget {
                   RentopButtons.rentopCardButton(
                     text: "Customer",
                     context: context,
-                    onBtnPressed: () {},
+                    onBtnPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()),
+                    ),
                     imagePath: Assets.customerVector,
                   ),
                   RentopButtons.rentopCardButton(
                     text: "Business",
                     context: context,
-                    onBtnPressed: () {},
+                    onBtnPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()),
+                    ),
                     imagePath: Assets.businessVector,
                   ),
                 ],
@@ -48,6 +57,7 @@ class WelcomeScreen extends StatelessWidget {
               text: "Sign in",
               context: context,
               onBtnPressed: () {},
+              width: 224,
             ),
             const SizedBox(
               height: 15,

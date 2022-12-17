@@ -7,10 +7,11 @@ class RentopButtons {
     required String text,
     required BuildContext context,
     required VoidCallback onBtnPressed,
+    required double width,
   }) {
     return Container(
       height: 60,
-      width: 224,
+      width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
         gradient: LinearGradient(
