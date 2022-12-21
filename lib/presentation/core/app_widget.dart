@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/presentation/error/error_screen.dart';
+import 'package:rentop/presentation/forgetPassword/forget_password_screen.dart';
 import 'package:rentop/presentation/signin/signin_screen.dart';
 import 'package:rentop/presentation/signup/signup_screen.dart';
 import 'package:rentop/presentation/splash/splash_screen.dart';
@@ -30,6 +31,11 @@ final GoRouter router = GoRouter(
       path: '/sign_in',
       builder: (context, state) => const SignInScreen(),
     ),
+    GoRoute(
+      name: "ForgetPassword",
+      path: "/forgetPassword",
+      builder: (context, state) => const ForgetPasswordScreen(),
+    )
   ],
 );
 
@@ -45,7 +51,6 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: rentopTheme(),
       locale: const Locale('en', "US"),
-      // home: const SplashScreen(),
     );
   }
 }

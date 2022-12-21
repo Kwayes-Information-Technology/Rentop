@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
-import 'package:rentop/presentation/forgetPassword/forget_password_screen.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_textfields.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -47,11 +47,7 @@ class SignInScreen extends StatelessWidget {
                       height: 24,
                     ),
                     RentopButtons.rentopTextButtonWithIcon(
-                      onBtnPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ForgetPasswordScreen()),
-                      ),
+                      onBtnPressed: () => context.goNamed("ForgetPassword"),
                       btnText: "Lost you password?",
                       imagePath: Assets.lockVector,
                       context: context,
