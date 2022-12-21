@@ -38,3 +38,21 @@ Either<ValueFailure<String>, String> validateLastName(String input) {
     return left(ValueFailure.invalidLastName(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateUsername(String input) {
+  const usernameRegex = r'^[A-Za-z][A-Za-z0-9_]{7,29}$';
+  if (RegExp(usernameRegex).hasMatch(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidUsername(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validatePassword(String input) {
+  const passwordRegex = r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$';
+  if (RegExp(passwordRegex).hasMatch(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidPassword(failedValue: input));
+  }
+}
