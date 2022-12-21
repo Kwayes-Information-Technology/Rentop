@@ -3,10 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
-import 'package:rentop/presentation/signin/signin_screen.dart';
-import 'package:rentop/presentation/signup/signup_screen.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -31,21 +30,13 @@ class WelcomeScreen extends StatelessWidget {
                   RentopButtons.rentopCardButton(
                     text: "Customer",
                     context: context,
-                    onBtnPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()),
-                    ),
+                    onBtnPressed: () => context.goNamed("SignUp"),
                     imagePath: Assets.customerVector,
                   ),
                   RentopButtons.rentopCardButton(
                     text: "Business",
                     context: context,
-                    onBtnPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpScreen()),
-                    ),
+                    onBtnPressed: () => context.goNamed("SignUp"),
                     imagePath: Assets.businessVector,
                   ),
                 ],
@@ -57,10 +48,7 @@ class WelcomeScreen extends StatelessWidget {
             RentopButtons.rentopButton(
               text: "Sign in",
               context: context,
-              onBtnPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignInScreen()),
-              ),
+              onBtnPressed: () => context.goNamed("SignIn"),
               width: 224,
             ),
             const SizedBox(

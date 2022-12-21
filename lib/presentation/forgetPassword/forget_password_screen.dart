@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_textfields.dart';

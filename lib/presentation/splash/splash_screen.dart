@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rentop/presentation/welcome/welcome_screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
 
@@ -35,10 +35,7 @@ class SplashScreen extends StatelessWidget {
             RentopButtons.rentopButton(
               text: "Start exploring",
               context: context,
-              onBtnPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const WelcomeScreen()),
-              ),
+              onBtnPressed: () => context.goNamed('welcome'),
               width: 224,
             )
           ],
