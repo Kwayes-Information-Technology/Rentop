@@ -14,9 +14,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthFacade implements IAuthFacade {
   AuthFacade();
 
-  final String basicAuth =
-      'Basic ${base64.encode(utf8.encode('${dotenv.env['EMAIL']}:${dotenv.env['PASSWORD']}'))}';
-
   @override
   Future<Either<ApiFailure, Unit>> signUpWithEmailAndPassword({
     required EmailAddress emailAddress,
@@ -27,7 +24,49 @@ class AuthFacade implements IAuthFacade {
     required Username username,
   }) async {
     try {
-      return right(unit);
+      final emailAddressStr = emailAddress.getOrCrash();
+      final passwordStr = password.getOrCrash();
+      final phoneNumberStr = phoneNumber.getOrCrash();
+      final firstNameStr = firstName.getOrCrash();
+      final lastNameStr = lastName.getOrCrash();
+      final usernameStr = username.getOrCrash();
+
+      final String basicAuth =
+          'Basic ${base64.encode(utf8.encode('${dotenv.env['WOO_USERNAME']}:${dotenv.env['WOO_PASSWORD']}'))}';
+
+      final data = json.encode(<String, dynamic>{
+        'email': emailAddressStr,
+        'username': usernameStr,
+        'password': passwordStr,
+        'first_name': firstNameStr,
+        'last_name': lastNameStr,
+        'billing': {
+          'first_name': firstNameStr,
+          'last_name': lastNameStr,
+          'email': emailAddressStr,
+          'phone': phoneNumberStr
+        },
+        'shipping': {
+          'first_name': firstNameStr,
+          'last_name': lastNameStr,
+          'phone': phoneNumberStr
+        }
+      });
+
+      final Response response = await post(
+        Uri.parse("${dotenv.env['WOO_API_URL']}customers"),
+        headers: <String, String>{
+          'authorization': basicAuth,
+          "Content-Type": "application/json"
+        },
+        body: data,
+      );
+
+      if (response.statusCode == 201) {
+        return right(unit);
+      } else {
+        return left(const ApiFailure.serverError());
+      }
     } catch (e) {
       return left(const ApiFailure.serverError());
     }

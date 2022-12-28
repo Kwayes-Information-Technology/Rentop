@@ -94,3 +94,14 @@ class Password extends ValueObject<String> {
 
   const Password._(this.value);
 }
+
+class RepeatPassword extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory RepeatPassword(String password, repeatPassword) {
+    return RepeatPassword._(validateRepeatPassword(password, repeatPassword));
+  }
+
+  const RepeatPassword._(this.value);
+}

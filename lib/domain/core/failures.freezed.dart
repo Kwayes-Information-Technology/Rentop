@@ -25,6 +25,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +36,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +47,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +59,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +71,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +82,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -191,6 +198,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidEmail(failedValue);
   }
@@ -204,6 +212,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -217,6 +226,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -234,6 +244,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidEmail(this);
   }
@@ -247,6 +259,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidEmail?.call(this);
   }
@@ -260,6 +273,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -355,6 +369,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidPhoneNumber(failedValue);
   }
@@ -368,6 +383,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidPhoneNumber?.call(failedValue);
   }
@@ -381,6 +397,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -398,6 +415,8 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidPhoneNumber(this);
   }
@@ -411,6 +430,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidPhoneNumber?.call(this);
   }
@@ -424,6 +444,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidPhoneNumber != null) {
@@ -519,6 +540,7 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidFirstName(failedValue);
   }
@@ -532,6 +554,7 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidFirstName?.call(failedValue);
   }
@@ -545,6 +568,7 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidFirstName != null) {
@@ -562,6 +586,8 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidFirstName(this);
   }
@@ -575,6 +601,7 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidFirstName?.call(this);
   }
@@ -588,6 +615,7 @@ class _$InvalidFirstName<T> implements InvalidFirstName<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidFirstName != null) {
@@ -683,6 +711,7 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidLastName(failedValue);
   }
@@ -696,6 +725,7 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidLastName?.call(failedValue);
   }
@@ -709,6 +739,7 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidLastName != null) {
@@ -726,6 +757,8 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidLastName(this);
   }
@@ -739,6 +772,7 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidLastName?.call(this);
   }
@@ -752,6 +786,7 @@ class _$InvalidLastName<T> implements InvalidLastName<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidLastName != null) {
@@ -847,6 +882,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidUsername(failedValue);
   }
@@ -860,6 +896,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidUsername?.call(failedValue);
   }
@@ -873,6 +910,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -890,6 +928,8 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidUsername(this);
   }
@@ -903,6 +943,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidUsername?.call(this);
   }
@@ -916,6 +957,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -1011,6 +1053,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(String failedValue) invalidLastName,
     required TResult Function(String failedValue) invalidUsername,
     required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
   }) {
     return invalidPassword(failedValue);
   }
@@ -1024,6 +1067,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult? Function(String failedValue)? invalidLastName,
     TResult? Function(String failedValue)? invalidUsername,
     TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
   }) {
     return invalidPassword?.call(failedValue);
   }
@@ -1037,6 +1081,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(String failedValue)? invalidLastName,
     TResult Function(String failedValue)? invalidUsername,
     TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1054,6 +1099,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(InvalidLastName<T> value) invalidLastName,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
   }) {
     return invalidPassword(this);
   }
@@ -1067,6 +1114,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult? Function(InvalidLastName<T> value)? invalidLastName,
     TResult? Function(InvalidUsername<T> value)? invalidUsername,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
   }) {
     return invalidPassword?.call(this);
   }
@@ -1080,6 +1128,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidLastName<T> value)? invalidLastName,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1099,4 +1148,176 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidRepeatPasswordCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidRepeatPasswordCopyWith(_$InvalidRepeatPassword<T> value,
+          $Res Function(_$InvalidRepeatPassword<T>) then) =
+      __$$InvalidRepeatPasswordCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({String failedValue});
+}
+
+/// @nodoc
+class __$$InvalidRepeatPasswordCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidRepeatPassword<T>>
+    implements _$$InvalidRepeatPasswordCopyWith<T, $Res> {
+  __$$InvalidRepeatPasswordCopyWithImpl(_$InvalidRepeatPassword<T> _value,
+      $Res Function(_$InvalidRepeatPassword<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = null,
+  }) {
+    return _then(_$InvalidRepeatPassword<T>(
+      failedValue: null == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidRepeatPassword<T> implements InvalidRepeatPassword<T> {
+  const _$InvalidRepeatPassword({required this.failedValue});
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidRepeatPassword(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidRepeatPassword<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidRepeatPasswordCopyWith<T, _$InvalidRepeatPassword<T>>
+      get copyWith =>
+          __$$InvalidRepeatPasswordCopyWithImpl<T, _$InvalidRepeatPassword<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String failedValue) invalidEmail,
+    required TResult Function(String failedValue) invalidPhoneNumber,
+    required TResult Function(String failedValue) invalidFirstName,
+    required TResult Function(String failedValue) invalidLastName,
+    required TResult Function(String failedValue) invalidUsername,
+    required TResult Function(String failedValue) invalidPassword,
+    required TResult Function(String failedValue) invalidRepeatPassword,
+  }) {
+    return invalidRepeatPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String failedValue)? invalidEmail,
+    TResult? Function(String failedValue)? invalidPhoneNumber,
+    TResult? Function(String failedValue)? invalidFirstName,
+    TResult? Function(String failedValue)? invalidLastName,
+    TResult? Function(String failedValue)? invalidUsername,
+    TResult? Function(String failedValue)? invalidPassword,
+    TResult? Function(String failedValue)? invalidRepeatPassword,
+  }) {
+    return invalidRepeatPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String failedValue)? invalidEmail,
+    TResult Function(String failedValue)? invalidPhoneNumber,
+    TResult Function(String failedValue)? invalidFirstName,
+    TResult Function(String failedValue)? invalidLastName,
+    TResult Function(String failedValue)? invalidUsername,
+    TResult Function(String failedValue)? invalidPassword,
+    TResult Function(String failedValue)? invalidRepeatPassword,
+    required TResult orElse(),
+  }) {
+    if (invalidRepeatPassword != null) {
+      return invalidRepeatPassword(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
+    required TResult Function(InvalidFirstName<T> value) invalidFirstName,
+    required TResult Function(InvalidLastName<T> value) invalidLastName,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidRepeatPassword<T> value)
+        invalidRepeatPassword,
+  }) {
+    return invalidRepeatPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult? Function(InvalidLastName<T> value)? invalidLastName,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
+  }) {
+    return invalidRepeatPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidRepeatPassword<T> value)? invalidRepeatPassword,
+    required TResult orElse(),
+  }) {
+    if (invalidRepeatPassword != null) {
+      return invalidRepeatPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidRepeatPassword<T> implements ValueFailure<T> {
+  const factory InvalidRepeatPassword({required final String failedValue}) =
+      _$InvalidRepeatPassword<T>;
+
+  @override
+  String get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidRepeatPasswordCopyWith<T, _$InvalidRepeatPassword<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

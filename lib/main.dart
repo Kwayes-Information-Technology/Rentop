@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/sign_in/sign_in_bloc.dart';
 import 'package:rentop/application/sign_up/sign_up_bloc.dart';
-import 'package:rentop/infrastructure/core/goRouterRefreshStream.dart';
+import 'package:rentop/infrastructure/core/refresh_stream.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/injection.dart';
 import 'package:rentop/presentation/error/error_screen.dart';

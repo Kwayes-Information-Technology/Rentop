@@ -55,3 +55,15 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return left(ValueFailure.invalidPassword(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateRepeatPassword(
+  String password,
+  String repeatPassword,
+) {
+  if (password == repeatPassword) {
+    return right(repeatPassword);
+  } else {
+    return left(
+        ValueFailure.invalidRepeatPassword(failedValue: repeatPassword));
+  }
+}

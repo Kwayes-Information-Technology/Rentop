@@ -20,10 +20,12 @@ mixin _$SignUpEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,10 +33,12 @@ mixin _$SignUpEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,10 +46,12 @@ mixin _$SignUpEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) =>
@@ -54,10 +60,14 @@ mixin _$SignUpEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,10 +75,13 @@ mixin _$SignUpEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -76,10 +89,13 @@ mixin _$SignUpEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) =>
@@ -171,10 +187,12 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return emailAddressChanged(email);
@@ -185,10 +203,12 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return emailAddressChanged?.call(email);
@@ -199,10 +219,12 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -217,10 +239,14 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return emailAddressChanged(this);
@@ -231,10 +257,13 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return emailAddressChanged?.call(this);
@@ -245,10 +274,13 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -335,10 +367,12 @@ class _$PasswordChanged implements PasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return passwordChanged(password);
@@ -349,10 +383,12 @@ class _$PasswordChanged implements PasswordChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return passwordChanged?.call(password);
@@ -363,10 +399,12 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -381,10 +419,14 @@ class _$PasswordChanged implements PasswordChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return passwordChanged(this);
@@ -395,10 +437,13 @@ class _$PasswordChanged implements PasswordChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return passwordChanged?.call(this);
@@ -409,10 +454,13 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -429,6 +477,188 @@ abstract class PasswordChanged implements SignUpEvent {
   String get password;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RepeatPasswordChangedCopyWith<$Res> {
+  factory _$$RepeatPasswordChangedCopyWith(_$RepeatPasswordChanged value,
+          $Res Function(_$RepeatPasswordChanged) then) =
+      __$$RepeatPasswordChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String password});
+}
+
+/// @nodoc
+class __$$RepeatPasswordChangedCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$RepeatPasswordChanged>
+    implements _$$RepeatPasswordChangedCopyWith<$Res> {
+  __$$RepeatPasswordChangedCopyWithImpl(_$RepeatPasswordChanged _value,
+      $Res Function(_$RepeatPasswordChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? password = null,
+  }) {
+    return _then(_$RepeatPasswordChanged(
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RepeatPasswordChanged implements RepeatPasswordChanged {
+  const _$RepeatPasswordChanged(this.password);
+
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.repeatPasswordChanged(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RepeatPasswordChanged &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RepeatPasswordChangedCopyWith<_$RepeatPasswordChanged> get copyWith =>
+      __$$RepeatPasswordChangedCopyWithImpl<_$RepeatPasswordChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailAddressChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
+    required TResult Function(String phone) phoneNumberChanged,
+    required TResult Function(String firstName) firstNameChagned,
+    required TResult Function(String lastName) lastNameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
+    required TResult Function() btnPressed,
+  }) {
+    return repeatPasswordChanged(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailAddressChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
+    TResult? Function(String phone)? phoneNumberChanged,
+    TResult? Function(String firstName)? firstNameChagned,
+    TResult? Function(String lastName)? lastNameChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
+    TResult? Function()? btnPressed,
+  }) {
+    return repeatPasswordChanged?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailAddressChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
+    TResult Function(String phone)? phoneNumberChanged,
+    TResult Function(String firstName)? firstNameChagned,
+    TResult Function(String lastName)? lastNameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
+    TResult Function()? btnPressed,
+    required TResult orElse(),
+  }) {
+    if (repeatPasswordChanged != null) {
+      return repeatPasswordChanged(password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(FirstNameChanged value) firstNameChagned,
+    required TResult Function(LastNameChanged value) lastNameChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
+    required TResult Function(BtnPressed value) btnPressed,
+  }) {
+    return repeatPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult? Function(FirstNameChanged value)? firstNameChagned,
+    TResult? Function(LastNameChanged value)? lastNameChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult? Function(BtnPressed value)? btnPressed,
+  }) {
+    return repeatPasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(FirstNameChanged value)? firstNameChagned,
+    TResult Function(LastNameChanged value)? lastNameChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult Function(BtnPressed value)? btnPressed,
+    required TResult orElse(),
+  }) {
+    if (repeatPasswordChanged != null) {
+      return repeatPasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RepeatPasswordChanged implements SignUpEvent {
+  const factory RepeatPasswordChanged(final String password) =
+      _$RepeatPasswordChanged;
+
+  String get password;
+  @JsonKey(ignore: true)
+  _$$RepeatPasswordChangedCopyWith<_$RepeatPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -499,10 +729,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return phoneNumberChanged(phone);
@@ -513,10 +745,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return phoneNumberChanged?.call(phone);
@@ -527,10 +761,12 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -545,10 +781,14 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return phoneNumberChanged(this);
@@ -559,10 +799,13 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return phoneNumberChanged?.call(this);
@@ -573,10 +816,13 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -663,10 +909,12 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return firstNameChagned(firstName);
@@ -677,10 +925,12 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return firstNameChagned?.call(firstName);
@@ -691,10 +941,12 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -709,10 +961,14 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return firstNameChagned(this);
@@ -723,10 +979,13 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return firstNameChagned?.call(this);
@@ -737,10 +996,13 @@ class _$FirstNameChanged implements FirstNameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -827,10 +1089,12 @@ class _$LastNameChanged implements LastNameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return lastNameChanged(lastName);
@@ -841,10 +1105,12 @@ class _$LastNameChanged implements LastNameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return lastNameChanged?.call(lastName);
@@ -855,10 +1121,12 @@ class _$LastNameChanged implements LastNameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -873,10 +1141,14 @@ class _$LastNameChanged implements LastNameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return lastNameChanged(this);
@@ -887,10 +1159,13 @@ class _$LastNameChanged implements LastNameChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return lastNameChanged?.call(this);
@@ -901,10 +1176,13 @@ class _$LastNameChanged implements LastNameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -991,10 +1269,12 @@ class _$UsernameChanged implements UsernameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return usernameChanged(username);
@@ -1005,10 +1285,12 @@ class _$UsernameChanged implements UsernameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return usernameChanged?.call(username);
@@ -1019,10 +1301,12 @@ class _$UsernameChanged implements UsernameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -1037,10 +1321,14 @@ class _$UsernameChanged implements UsernameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return usernameChanged(this);
@@ -1051,10 +1339,13 @@ class _$UsernameChanged implements UsernameChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return usernameChanged?.call(this);
@@ -1065,10 +1356,13 @@ class _$UsernameChanged implements UsernameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -1086,6 +1380,188 @@ abstract class UsernameChanged implements SignUpEvent {
   @JsonKey(ignore: true)
   _$$UsernameChangedCopyWith<_$UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TermsAndConditionsChangedCopyWith<$Res> {
+  factory _$$TermsAndConditionsChangedCopyWith(
+          _$TermsAndConditionsChanged value,
+          $Res Function(_$TermsAndConditionsChanged) then) =
+      __$$TermsAndConditionsChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool check});
+}
+
+/// @nodoc
+class __$$TermsAndConditionsChangedCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$TermsAndConditionsChanged>
+    implements _$$TermsAndConditionsChangedCopyWith<$Res> {
+  __$$TermsAndConditionsChangedCopyWithImpl(_$TermsAndConditionsChanged _value,
+      $Res Function(_$TermsAndConditionsChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? check = null,
+  }) {
+    return _then(_$TermsAndConditionsChanged(
+      null == check
+          ? _value.check
+          : check // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
+  const _$TermsAndConditionsChanged(this.check);
+
+  @override
+  final bool check;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.termsAndConditionsChanged(check: $check)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TermsAndConditionsChanged &&
+            (identical(other.check, check) || other.check == check));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, check);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TermsAndConditionsChangedCopyWith<_$TermsAndConditionsChanged>
+      get copyWith => __$$TermsAndConditionsChangedCopyWithImpl<
+          _$TermsAndConditionsChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailAddressChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
+    required TResult Function(String phone) phoneNumberChanged,
+    required TResult Function(String firstName) firstNameChagned,
+    required TResult Function(String lastName) lastNameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
+    required TResult Function() btnPressed,
+  }) {
+    return termsAndConditionsChanged(check);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailAddressChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
+    TResult? Function(String phone)? phoneNumberChanged,
+    TResult? Function(String firstName)? firstNameChagned,
+    TResult? Function(String lastName)? lastNameChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
+    TResult? Function()? btnPressed,
+  }) {
+    return termsAndConditionsChanged?.call(check);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailAddressChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
+    TResult Function(String phone)? phoneNumberChanged,
+    TResult Function(String firstName)? firstNameChagned,
+    TResult Function(String lastName)? lastNameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
+    TResult Function()? btnPressed,
+    required TResult orElse(),
+  }) {
+    if (termsAndConditionsChanged != null) {
+      return termsAndConditionsChanged(check);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(FirstNameChanged value) firstNameChagned,
+    required TResult Function(LastNameChanged value) lastNameChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
+    required TResult Function(BtnPressed value) btnPressed,
+  }) {
+    return termsAndConditionsChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult? Function(FirstNameChanged value)? firstNameChagned,
+    TResult? Function(LastNameChanged value)? lastNameChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult? Function(BtnPressed value)? btnPressed,
+  }) {
+    return termsAndConditionsChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(FirstNameChanged value)? firstNameChagned,
+    TResult Function(LastNameChanged value)? lastNameChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult Function(BtnPressed value)? btnPressed,
+    required TResult orElse(),
+  }) {
+    if (termsAndConditionsChanged != null) {
+      return termsAndConditionsChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TermsAndConditionsChanged implements SignUpEvent {
+  const factory TermsAndConditionsChanged(final bool check) =
+      _$TermsAndConditionsChanged;
+
+  bool get check;
+  @JsonKey(ignore: true)
+  _$$TermsAndConditionsChangedCopyWith<_$TermsAndConditionsChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1128,10 +1604,12 @@ class _$BtnPressed implements BtnPressed {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
     required TResult Function(String phone) phoneNumberChanged,
     required TResult Function(String firstName) firstNameChagned,
     required TResult Function(String lastName) lastNameChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
   }) {
     return btnPressed();
@@ -1142,10 +1620,12 @@ class _$BtnPressed implements BtnPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
     TResult? Function(String phone)? phoneNumberChanged,
     TResult? Function(String firstName)? firstNameChagned,
     TResult? Function(String lastName)? lastNameChanged,
     TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
   }) {
     return btnPressed?.call();
@@ -1156,10 +1636,12 @@ class _$BtnPressed implements BtnPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
     TResult Function(String phone)? phoneNumberChanged,
     TResult Function(String firstName)? firstNameChagned,
     TResult Function(String lastName)? lastNameChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
     required TResult orElse(),
   }) {
@@ -1174,10 +1656,14 @@ class _$BtnPressed implements BtnPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
     required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
     required TResult Function(FirstNameChanged value) firstNameChagned,
     required TResult Function(LastNameChanged value) lastNameChanged,
     required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
   }) {
     return btnPressed(this);
@@ -1188,10 +1674,13 @@ class _$BtnPressed implements BtnPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult? Function(FirstNameChanged value)? firstNameChagned,
     TResult? Function(LastNameChanged value)? lastNameChanged,
     TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
   }) {
     return btnPressed?.call(this);
@@ -1202,10 +1691,13 @@ class _$BtnPressed implements BtnPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
     TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
     TResult Function(FirstNameChanged value)? firstNameChagned,
     TResult Function(LastNameChanged value)? lastNameChanged,
     TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
     required TResult orElse(),
   }) {
@@ -1224,10 +1716,12 @@ abstract class BtnPressed implements SignUpEvent {
 mixin _$SignUpState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
+  RepeatPassword get repeatPassword => throw _privateConstructorUsedError;
   PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
   FirstName get firstName => throw _privateConstructorUsedError;
   LastName get lastName => throw _privateConstructorUsedError;
   Username get username => throw _privateConstructorUsedError;
+  bool get termsAndConditions => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<ApiFailure, Unit>> get authFailureOrSuccessOption =>
@@ -1247,10 +1741,12 @@ abstract class $SignUpStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      RepeatPassword repeatPassword,
       PhoneNumber phoneNumber,
       FirstName firstName,
       LastName lastName,
       Username username,
+      bool termsAndConditions,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ApiFailure, Unit>> authFailureOrSuccessOption});
@@ -1271,10 +1767,12 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
   $Res call({
     Object? emailAddress = null,
     Object? password = null,
+    Object? repeatPassword = null,
     Object? phoneNumber = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? username = null,
+    Object? termsAndConditions = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
     Object? authFailureOrSuccessOption = null,
@@ -1288,6 +1786,10 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
+      repeatPassword: null == repeatPassword
+          ? _value.repeatPassword
+          : repeatPassword // ignore: cast_nullable_to_non_nullable
+              as RepeatPassword,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -1304,6 +1806,10 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
+      termsAndConditions: null == termsAndConditions
+          ? _value.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1331,10 +1837,12 @@ abstract class _$$_SignUpStateCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      RepeatPassword repeatPassword,
       PhoneNumber phoneNumber,
       FirstName firstName,
       LastName lastName,
       Username username,
+      bool termsAndConditions,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ApiFailure, Unit>> authFailureOrSuccessOption});
@@ -1353,10 +1861,12 @@ class __$$_SignUpStateCopyWithImpl<$Res>
   $Res call({
     Object? emailAddress = null,
     Object? password = null,
+    Object? repeatPassword = null,
     Object? phoneNumber = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? username = null,
+    Object? termsAndConditions = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
     Object? authFailureOrSuccessOption = null,
@@ -1370,6 +1880,10 @@ class __$$_SignUpStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
+      repeatPassword: null == repeatPassword
+          ? _value.repeatPassword
+          : repeatPassword // ignore: cast_nullable_to_non_nullable
+              as RepeatPassword,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -1386,6 +1900,10 @@ class __$$_SignUpStateCopyWithImpl<$Res>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
+      termsAndConditions: null == termsAndConditions
+          ? _value.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1408,10 +1926,12 @@ class _$_SignUpState implements _SignUpState {
   const _$_SignUpState(
       {required this.emailAddress,
       required this.password,
+      required this.repeatPassword,
       required this.phoneNumber,
       required this.firstName,
       required this.lastName,
       required this.username,
+      required this.termsAndConditions,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.authFailureOrSuccessOption});
@@ -1421,6 +1941,8 @@ class _$_SignUpState implements _SignUpState {
   @override
   final Password password;
   @override
+  final RepeatPassword repeatPassword;
+  @override
   final PhoneNumber phoneNumber;
   @override
   final FirstName firstName;
@@ -1428,6 +1950,8 @@ class _$_SignUpState implements _SignUpState {
   final LastName lastName;
   @override
   final Username username;
+  @override
+  final bool termsAndConditions;
   @override
   final bool showErrorMessages;
   @override
@@ -1437,7 +1961,7 @@ class _$_SignUpState implements _SignUpState {
 
   @override
   String toString() {
-    return 'SignUpState(emailAddress: $emailAddress, password: $password, phoneNumber: $phoneNumber, firstName: $firstName, lastName: $lastName, username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignUpState(emailAddress: $emailAddress, password: $password, repeatPassword: $repeatPassword, phoneNumber: $phoneNumber, firstName: $firstName, lastName: $lastName, username: $username, termsAndConditions: $termsAndConditions, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -1449,6 +1973,8 @@ class _$_SignUpState implements _SignUpState {
                 other.emailAddress == emailAddress) &&
             (identical(other.password, password) ||
                 other.password == password) &&
+            (identical(other.repeatPassword, repeatPassword) ||
+                other.repeatPassword == repeatPassword) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
             (identical(other.firstName, firstName) ||
@@ -1457,6 +1983,8 @@ class _$_SignUpState implements _SignUpState {
                 other.lastName == lastName) &&
             (identical(other.username, username) ||
                 other.username == username) &&
+            (identical(other.termsAndConditions, termsAndConditions) ||
+                other.termsAndConditions == termsAndConditions) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
@@ -1472,10 +2000,12 @@ class _$_SignUpState implements _SignUpState {
       runtimeType,
       emailAddress,
       password,
+      repeatPassword,
       phoneNumber,
       firstName,
       lastName,
       username,
+      termsAndConditions,
       showErrorMessages,
       isSubmitting,
       authFailureOrSuccessOption);
@@ -1491,10 +2021,12 @@ abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {required final EmailAddress emailAddress,
       required final Password password,
+      required final RepeatPassword repeatPassword,
       required final PhoneNumber phoneNumber,
       required final FirstName firstName,
       required final LastName lastName,
       required final Username username,
+      required final bool termsAndConditions,
       required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<ApiFailure, Unit>>
@@ -1505,6 +2037,8 @@ abstract class _SignUpState implements SignUpState {
   @override
   Password get password;
   @override
+  RepeatPassword get repeatPassword;
+  @override
   PhoneNumber get phoneNumber;
   @override
   FirstName get firstName;
@@ -1512,6 +2046,8 @@ abstract class _SignUpState implements SignUpState {
   LastName get lastName;
   @override
   Username get username;
+  @override
+  bool get termsAndConditions;
   @override
   bool get showErrorMessages;
   @override
