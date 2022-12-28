@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/presentation/error/error_screen.dart';
 import 'package:rentop/presentation/forgetPassword/forget_password_screen.dart';
+import 'package:rentop/presentation/home/home_screen.dart';
 import 'package:rentop/presentation/signin/signin_screen.dart';
 import 'package:rentop/presentation/signup/signup_screen.dart';
 import 'package:rentop/presentation/splash/splash_screen.dart';
@@ -12,7 +13,7 @@ final GoRouter router = GoRouter(
   errorBuilder: (context, state) => const ErrorScreen(),
   routes: <GoRoute>[
     GoRoute(
-      name: 'home',
+      name: 'splash',
       path: '/',
       builder: (context, state) => const SplashScreen(),
     ),
@@ -35,7 +36,12 @@ final GoRouter router = GoRouter(
       name: "ForgetPassword",
       path: "/forgetPassword",
       builder: (context, state) => const ForgetPasswordScreen(),
-    )
+    ),
+    GoRoute(
+      name: 'home',
+      path: '/home',
+      builder: (context, state) => const HomeScreen(),
+    ),
   ],
 );
 

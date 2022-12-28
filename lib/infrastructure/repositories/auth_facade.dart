@@ -78,7 +78,7 @@ class AuthFacade implements IAuthFacade {
           'Authorization': 'Bearer $token',
         });
         if (response.statusCode == 200) {
-          print(response.body);
+          // print(response.body);
           return right(unit);
         } else {
           return left(const ApiFailure.serverError());

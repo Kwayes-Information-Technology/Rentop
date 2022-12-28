@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -18,8 +19,21 @@ class SignInScreen extends StatelessWidget {
           state.authFailureOrSuccessOption.fold(
             () {},
             (either) => either.fold(
-              (failure) {},
-              (_) {},
+              (failure) {
+                Flushbar(
+                  margin: const EdgeInsets.all(8),
+                  borderRadius: BorderRadius.circular(8),
+                  message: failure.map(
+                    serverError: (_) => 'Server Error',
+                    notFound: (_) => 'Not Found',
+                    badRequest: (_) => 'Bad Request',
+                    unauthorized: (_) => 'Unauthorized Request',
+                  ),
+                ).show(context);
+              },
+              (_) {
+                context.goNamed("Home");
+              },
             ),
           );
         },
