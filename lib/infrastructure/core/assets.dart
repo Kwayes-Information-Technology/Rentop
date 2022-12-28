@@ -6,4 +6,5 @@ class Assets {
   static const String googleVector = "assets/images/icons/google.svg";
   static const String carEclipse = "assets/images/images/car_eclipse.png";
   static const String lockVector = "assets/images/icons/lock.svg";
+  static const String errorIcon = 'assets/images/icons/error.png';
 }

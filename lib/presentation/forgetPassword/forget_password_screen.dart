@@ -40,6 +40,9 @@ class ForgetPasswordScreen extends StatelessWidget {
                     context: context,
                     onChanged: (val) {},
                     hintText: "Email",
+                    obsecureText: false,
+                    onVaildator: null,
+                    suffixIcon: null,
                   ),
                   const SizedBox(
                     height: 23,

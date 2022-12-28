@@ -6,12 +6,18 @@ class RentopTextFields {
     required BuildContext context,
     required Function(String)? onChanged,
     required String hintText,
+    required String? onVaildator,
+    required Widget? suffixIcon,
+    required bool obsecureText,
   }) {
     return SizedBox(
       height: 51,
       child: TextFormField(
         onChanged: onChanged,
+        validator: (_) => onVaildator,
+        obscureText: obsecureText,
         decoration: InputDecoration(
+          suffixIcon: suffixIcon,
           filled: true,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(13),

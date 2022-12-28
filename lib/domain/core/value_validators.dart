@@ -49,8 +49,7 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  const passwordRegex = r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$';
-  if (RegExp(passwordRegex).hasMatch(input)) {
+  if (input.length > 8) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPassword(failedValue: input));
