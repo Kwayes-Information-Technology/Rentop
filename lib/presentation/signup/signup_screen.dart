@@ -86,6 +86,9 @@ class SignUpScreen extends StatelessWidget {
                   height: 24,
                 ),
                 Form(
+                  autovalidateMode: state.showErrorMessages
+                      ? AutovalidateMode.always
+                      : AutovalidateMode.disabled,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: Column(

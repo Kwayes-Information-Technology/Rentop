@@ -36,8 +36,18 @@ class RentopTextFields {
               color: mainColor,
             ),
           ),
-          hintText: hintText,
-          hintStyle:
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(13),
+            borderSide: const BorderSide(
+              color: Color(0xFFFF3131),
+            ),
+          ),
+          errorStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontSize: 12,
+                color: const Color(0xFFFF3131),
+              ),
+          labelText: hintText,
+          labelStyle:
               Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 16),
         ),
       ),

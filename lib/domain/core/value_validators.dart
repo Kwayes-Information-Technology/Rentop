@@ -60,7 +60,7 @@ Either<ValueFailure<String>, String> validateRepeatPassword(
   String password,
   String repeatPassword,
 ) {
-  if (password == repeatPassword) {
+  if (password == repeatPassword && password.isNotEmpty) {
     return right(repeatPassword);
   } else {
     return left(
