@@ -4,11 +4,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rentop/application/auth/auth_bloc.dart';
+import 'package:rentop/application/navigation/navigation_bloc.dart';
 import 'package:rentop/application/sign_in/sign_in_bloc.dart';
 import 'package:rentop/application/sign_up/sign_up_bloc.dart';
 import 'package:rentop/infrastructure/core/refresh_stream.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/injection.dart';
+import 'package:rentop/presentation/core/app_screen.dart';
 import 'package:rentop/presentation/error/error_screen.dart';
 import 'package:rentop/presentation/forgetPassword/forget_password_screen.dart';
 import 'package:rentop/presentation/home/home_screen.dart';
@@ -32,6 +34,7 @@ void main() async {
               const AuthEvent.authCheckRequested(),
             ),
         ),
+        BlocProvider(create: (context) => getIt<NavigationBloc>())
       ],
       child: const AppWidget(),
     ),
@@ -106,7 +109,7 @@ class AppWidget extends StatelessWidget {
         GoRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => const AppScreen(),
         ),
       ],
     );

@@ -7,9 +7,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:rentop/application/auth/auth_bloc.dart' as _i7;
-import 'package:rentop/application/sign_in/sign_in_bloc.dart' as _i5;
-import 'package:rentop/application/sign_up/sign_up_bloc.dart' as _i6;
+import 'package:rentop/application/auth/auth_bloc.dart' as _i8;
+import 'package:rentop/application/navigation/navigation_bloc.dart' as _i5;
+import 'package:rentop/application/sign_in/sign_in_bloc.dart' as _i6;
+import 'package:rentop/application/sign_up/sign_up_bloc.dart' as _i7;
 import 'package:rentop/domain/repositories/i_auth_facade.dart' as _i3;
 import 'package:rentop/infrastructure/repositories/auth_facade.dart' as _i4;
 
@@ -27,8 +28,9 @@ _i1.GetIt init(
     environmentFilter,
   );
   gh.lazySingleton<_i3.IAuthFacade>(() => _i4.AuthFacade());
-  gh.factory<_i5.SignInBloc>(() => _i5.SignInBloc(gh<_i3.IAuthFacade>()));
-  gh.factory<_i6.SignUpBloc>(() => _i6.SignUpBloc(gh<_i3.IAuthFacade>()));
-  gh.factory<_i7.AuthBloc>(() => _i7.AuthBloc(gh<_i3.IAuthFacade>()));
+  gh.factory<_i5.NavigationBloc>(() => _i5.NavigationBloc());
+  gh.factory<_i6.SignInBloc>(() => _i6.SignInBloc(gh<_i3.IAuthFacade>()));
+  gh.factory<_i7.SignUpBloc>(() => _i7.SignUpBloc(gh<_i3.IAuthFacade>()));
+  gh.factory<_i8.AuthBloc>(() => _i8.AuthBloc(gh<_i3.IAuthFacade>()));
   return getIt;
 }

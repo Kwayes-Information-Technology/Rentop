@@ -13,7 +13,7 @@ ThemeData rentopTheme() {
           color: minorColor,
         ),
         headline2: const TextStyle(fontWeight: FontWeight.w800),
-        bodyText1: const TextStyle(fontWeight: FontWeight.w400),
+        bodyText1: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
         bodyText2: const TextStyle(fontWeight: FontWeight.w600),
         subtitle1: TextStyle(
           fontWeight: FontWeight.w300,
