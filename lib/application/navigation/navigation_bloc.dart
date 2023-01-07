@@ -7,7 +7,7 @@ import 'package:rentop/presentation/favourite/favourite_screen.dart';
 import 'package:rentop/presentation/home/home_screen.dart';
 import 'package:rentop/presentation/messages/messages_screen.dart';
 import 'package:rentop/presentation/more/more_screen.dart';
-import 'package:rentop/presentation/search/search_screen.dart';
+import 'package:rentop/presentation/search/explore_screen.dart';
 
 part 'navigation_event.dart';
 part 'navigation_state.dart';

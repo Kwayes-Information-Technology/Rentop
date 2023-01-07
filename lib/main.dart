@@ -12,8 +12,8 @@ import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/injection.dart';
 import 'package:rentop/presentation/core/app_screen.dart';
 import 'package:rentop/presentation/error/error_screen.dart';
+import 'package:rentop/presentation/faq/faq_screen.dart';
 import 'package:rentop/presentation/forgetPassword/forget_password_screen.dart';
-import 'package:rentop/presentation/home/home_screen.dart';
 import 'package:rentop/presentation/signin/signin_screen.dart';
 import 'package:rentop/presentation/signup/signup_screen.dart';
 import 'package:rentop/presentation/splash/splash_screen.dart';
@@ -110,6 +110,11 @@ class AppWidget extends StatelessWidget {
           name: 'Home',
           path: '/home',
           builder: (context, state) => const AppScreen(),
+        ),
+        GoRoute(
+          path: '/faq',
+          name: 'FAQ',
+          builder: (context, state) => const FAQScreen(),
         ),
       ],
     );

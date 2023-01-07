@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
-class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({super.key});
+class ExploreScreen extends StatelessWidget {
+  const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class MessagesScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 23),
         child: Column(
           children: [
-            RentopCards.rentopAppBar(title: 'Messages', context: context),
+            RentopCards.rentopAppBar(title: 'Explore', context: context),
           ],
         ),
       ),

@@ -97,4 +97,31 @@ class RentopButtons {
       ),
     );
   }
+
+  static Widget rentopTextButton({
+    required String btnText,
+    required BuildContext context,
+    required VoidCallback onBtnPressed,
+  }) {
+    return InkWell(
+      onTap: onBtnPressed,
+      child: Container(
+        height: 60,
+        margin: const EdgeInsets.symmetric(horizontal: 29),
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: Color.fromRGBO(0, 0, 0, 0.2),
+            ),
+          ),
+        ),
+        alignment: Alignment.centerLeft,
+        child: Text(
+          btnText,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
+        ),
+      ),
+    );
+  }
 }

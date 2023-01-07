@@ -11,7 +11,7 @@ class NavigationState with _$NavigationState {
   factory NavigationState.initial() => const NavigationState(
         selectedIndex: 2,
         screens: [
-          SearchScreen(),
+          ExploreScreen(),
           FavouriteScreen(),
           HomeScreen(),
           MessagesScreen(),
