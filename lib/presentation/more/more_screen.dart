@@ -23,11 +23,6 @@ class MoreScreen extends StatelessWidget {
               height: 31,
             ),
             RentopButtons.rentopTextButton(
-              btnText: 'Explore',
-              context: context,
-              onBtnPressed: () {},
-            ),
-            RentopButtons.rentopTextButton(
               btnText: 'About Us',
               context: context,
               onBtnPressed: () {},
