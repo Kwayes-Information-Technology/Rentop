@@ -15,10 +15,11 @@ class FAQScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 23),
             child: Column(
               children: [
-                RentopCards.rentopAppBar(title: 'FAQs', context: context),
-                // const SizedBox(
-                //   height: 20,
-                // ),
+                RentopCards.rentopAppBar(
+                  title: 'FAQs',
+                  context: context,
+                  backBtn: true,
+                ),
                 const SizedBox(
                   height: 23,
                 ),

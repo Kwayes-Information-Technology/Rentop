@@ -3,6 +3,7 @@ import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/models/car_brand.dart';
@@ -438,29 +439,85 @@ class RentopCards {
   static Widget rentopAppBar({
     required String title,
     required BuildContext context,
+    required bool backBtn,
   }) {
-    return Container(
-      height: 47,
-      margin: const EdgeInsets.symmetric(horizontal: 29),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(22),
-        color: Colors.white,
-        boxShadow: const [
-          BoxShadow(
-            color: Color.fromRGBO(0, 0, 0, 0.25),
-            blurRadius: 10,
-          )
-        ],
-      ),
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-        ],
-      ),
-    );
+    if (backBtn) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 29),
+        child: Row(
+          children: [
+            GestureDetector(
+              onTap: () => context.pop(),
+              child: Container(
+                width: 47,
+                height: 47,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: const Icon(Icons.arrow_back_ios_new),
+              ),
+            ),
+            const SizedBox(
+              width: 7,
+            ),
+            Expanded(
+              child: Container(
+                height: 47,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                      blurRadius: 10,
+                    )
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    } else {
+      return Container(
+        height: 47,
+        margin: const EdgeInsets.symmetric(horizontal: 29),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22),
+          color: Colors.white,
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromRGBO(0, 0, 0, 0.25),
+              blurRadius: 10,
+            )
+          ],
+        ),
+        child: Row(
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+          ],
+        ),
+      );
+    }
   }
 }

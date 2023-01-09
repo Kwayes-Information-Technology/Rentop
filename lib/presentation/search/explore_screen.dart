@@ -11,7 +11,11 @@ class ExploreScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 23),
         child: Column(
           children: [
-            RentopCards.rentopAppBar(title: 'Explore', context: context),
+            RentopCards.rentopAppBar(
+              title: 'Explore',
+              context: context,
+              backBtn: false,
+            ),
           ],
         ),
       ),

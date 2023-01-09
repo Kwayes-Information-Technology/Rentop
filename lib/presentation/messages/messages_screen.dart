@@ -11,7 +11,11 @@ class MessagesScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 23),
         child: Column(
           children: [
-            RentopCards.rentopAppBar(title: 'Messages', context: context),
+            RentopCards.rentopAppBar(
+              title: 'Messages',
+              context: context,
+              backBtn: false,
+            ),
           ],
         ),
       ),

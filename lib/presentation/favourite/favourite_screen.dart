@@ -11,7 +11,11 @@ class FavouriteScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 23),
         child: Column(
           children: [
-            RentopCards.rentopAppBar(title: 'Favourites', context: context),
+            RentopCards.rentopAppBar(
+              title: 'Favourites',
+              context: context,
+              backBtn: false,
+            ),
           ],
         ),
       ),
