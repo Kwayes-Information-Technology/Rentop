@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:go_router/go_router.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
@@ -30,7 +29,7 @@ class MoreScreen extends StatelessWidget {
             RentopButtons.rentopTextButton(
               btnText: 'FAQs',
               context: context,
-              onBtnPressed: () => context.goNamed('FAQ'),
+              onBtnPressed: () => Navigator.pushNamed(context, '/FAQ'),
             ),
             RentopButtons.rentopTextButton(
               btnText: 'Contact',

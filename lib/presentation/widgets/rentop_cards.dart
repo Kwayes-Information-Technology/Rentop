@@ -3,7 +3,6 @@ import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/models/car_brand.dart';
@@ -447,7 +446,7 @@ class RentopCards {
         child: Row(
           children: [
             GestureDetector(
-              onTap: () => context.pop(),
+              onTap: () => Navigator.pop(context),
               child: Container(
                 width: 47,
                 height: 47,

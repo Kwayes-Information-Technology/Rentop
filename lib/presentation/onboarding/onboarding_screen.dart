@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class SplashScreen extends StatelessWidget {
             RentopButtons.rentopButton(
               text: "Start exploring",
               context: context,
-              onBtnPressed: () => context.goNamed('welcome'),
+              onBtnPressed: () => Navigator.pushNamed(context, '/Welcome'),
               width: 224,
             )
           ],

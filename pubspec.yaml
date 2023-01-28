@@ -13,11 +13,9 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
-  flutter_native_splash: ^2.2.16
   getwidget: ^3.0.1
   freezed_annotation: ^2.2.0
   dartz: ^0.10.1
-  go_router: ^6.0.0
   injectable: ^2.1.0
   flutter_dotenv: ^5.0.2
   http: ^0.13.5
@@ -27,6 +25,7 @@ dependencies:
   another_flushbar: ^1.12.29
   carousel_slider: ^4.2.1
   favorite_button: ^0.0.4
+  animation_wrappers: ^3.0.0
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -48,9 +47,3 @@ flutter:
     - family: Comfortaa
       fonts:
         - asset: assets/fonts/Comfortaa.ttf
-
-flutter_native_splash:
-  color: "#FFFFFF"
-  image: assets/images/logo/logo.png
-  android: true
-  ios: true
