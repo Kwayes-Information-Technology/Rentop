@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/navigation/navigation_bloc.dart';
+import 'package:rentop/application/repositories/cars/bloc/cars_bloc.dart';
 import 'package:rentop/application/sign_in/sign_in_bloc.dart';
 import 'package:rentop/application/sign_up/sign_up_bloc.dart';
 import 'package:rentop/injection.dart';
@@ -24,7 +25,13 @@ void main() async {
               const AuthEvent.authCheckRequested(),
             ),
         ),
-        BlocProvider(create: (context) => getIt<NavigationBloc>())
+        BlocProvider(create: (context) => getIt<NavigationBloc>()),
+        BlocProvider(
+          create: (context) => getIt<CarsBloc>()
+            ..add(
+              const CarsEvent.watchCarsData(),
+            ),
+        ),
       ],
       child: const AppWidget(),
     ),
