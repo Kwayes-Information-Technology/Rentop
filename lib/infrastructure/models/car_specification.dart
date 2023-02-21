@@ -1,34 +1,54 @@
+import 'package:flutter/material.dart';
+import 'package:rentop/infrastructure/core/assets.dart';
+
 class CarSpecification {
-  final String icon;
+  final Widget icon;
   final String name;
-  final String id;
+  final String slug;
+  final int id;
 
   CarSpecification({
     required this.icon,
     required this.name,
     required this.id,
+    required this.slug,
   });
+
+  static List<CarSpecification> fromData(List<dynamic> data) {
+    final List<CarSpecification> carSpecifications = [];
+    for (final element in data) {
+      carSpecifications.add(
+        CarSpecification(
+          id: int.parse(element['term_id'].toString()),
+          name: element['name'],
+          slug: element['slug'],
+          icon: Assets.getImageFromString(element['meta_value']),
+        ),
+      );
+    }
+    return carSpecifications;
+  }
 }
 
-List<CarSpecification> tempCarSpecifications = [
-  CarSpecification(
-    icon: 'https://cdn-icons-png.flaticon.com/512/3347/3347701.png',
-    name: 'Auto Transmission',
-    id: 'auto-transmission',
-  ),
-  CarSpecification(
-    icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042311.png',
-    name: 'Fits 4 Passengers',
-    id: 'fits-4-passengers',
-  ),
-  CarSpecification(
-    icon: 'https://cdn-icons-png.flaticon.com/512/1063/1063376.png',
-    name: 'Fits 3 Bag(s)',
-    id: 'fits-3-bag',
-  ),
-  CarSpecification(
-    icon: 'https://cdn-icons-png.flaticon.com/512/3381/3381635.png',
-    name: 'GCC Specs: Yes',
-    id: 'gcc-specs',
-  ),
-];
+// List<CarSpecification> tempCarSpecifications = [
+//   CarSpecification(
+//     icon: 'assets/images/icons/car_features/automatic-transmission.png',
+//     name: 'Auto Transmission',
+//     id: 'auto-transmission',
+//   ),
+//   CarSpecification(
+//     icon: 'assets/images/icons/car_features/chair.png',
+//     name: 'Fits 4 Passengers',
+//     id: 'fits-4-passengers',
+//   ),
+//   CarSpecification(
+//     icon: 'assets/images/icons/car_features/suitcase.png',
+//     name: 'Fits 3 Bag(s)',
+//     id: 'fits-3-bag',
+//   ),
+//   CarSpecification(
+//     icon: 'assets/images/icons/car_features/car.png',
+//     name: 'GCC Specs: Yes',
+//     id: 'gcc-specs',
+//   ),
+// ];

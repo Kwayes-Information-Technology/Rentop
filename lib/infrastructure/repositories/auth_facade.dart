@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rentop/domain/core/api_failure.dart';
+import 'package:rentop/domain/core/reset_password_api_failure.dart';
 import 'package:rentop/domain/core/value_objects.dart';
 import 'package:rentop/domain/repositories/i_auth_facade.dart';
 import 'package:rentop/infrastructure/models/jwt.dart';
@@ -80,7 +81,7 @@ class AuthFacade implements IAuthFacade {
     try {
       final emailAddressStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
-      const String url = "https://rentop.co/wp-json/jwt-auth/v1/token";
+      const String url = "http://rentop.co/wp-json/jwt-auth/v1/token";
       final Response response = await post(
         Uri.parse(url),
         body: {
@@ -93,6 +94,7 @@ class AuthFacade implements IAuthFacade {
         if (result.success! && result.data!.token != null) {
           final prefs = await SharedPreferences.getInstance();
           await prefs.setString('token', result.data!.token!);
+          await prefs.setInt('userId', result.data!.id!);
           return right(unit);
         } else {
           return left(const ApiFailure.serverError());
@@ -112,7 +114,7 @@ class AuthFacade implements IAuthFacade {
       final String? token = prefs.getString('token');
       if (token != null && token.isNotEmpty) {
         const String url =
-            'https://rentop.co/wp-json/jwt-auth/v1/token/validate';
+            'http://rentop.co/wp-json/jwt-auth/v1/token/validate';
         final Response response = await post(Uri.parse(url), headers: {
           'Authorization': 'Bearer $token',
         });
@@ -134,5 +136,128 @@ class AuthFacade implements IAuthFacade {
   Future<void> signOut() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('token');
+    await prefs.remove('userId');
+  }
+
+  @override
+  Future<Either<ResetPasswordApiFailure, Unit>> sendResetCode({
+    required EmailAddress emailAddress,
+  }) async {
+    try {
+      final emailAddressStr = emailAddress.getOrCrash();
+
+      final data = json.encode(<String, dynamic>{
+        'email': emailAddressStr,
+      });
+
+      final Response response = await post(
+        Uri.parse("${dotenv.env['RESET_PASSWORD_API_URL']}reset-password"),
+        headers: <String, String>{"Content-Type": "application/json"},
+        body: data,
+      );
+
+      if (response.statusCode == 200) {
+        return right(unit);
+      } else if (response.statusCode == 500) {
+        final errorCode = jsonDecode(response.body)['code'];
+        switch (errorCode) {
+          case 'bad_email':
+            return left(const ResetPasswordApiFailure.badEmail());
+          case 'bad_request':
+            return left(const ResetPasswordApiFailure.badRequest());
+          default:
+            return left(const ResetPasswordApiFailure.serverError());
+        }
+      } else {
+        return left(const ResetPasswordApiFailure.serverError());
+      }
+    } catch (e) {
+      return left(const ResetPasswordApiFailure.serverError());
+    }
+  }
+
+  @override
+  Future<Either<ResetPasswordApiFailure, Unit>> validateResetCode({
+    required EmailAddress emailAddress,
+    required ResetCode code,
+  }) async {
+    try {
+      final emailAddressStr = emailAddress.getOrCrash();
+      final codeStr = code.getOrCrash();
+
+      final data = json.encode(<String, dynamic>{
+        'email': emailAddressStr,
+        'code': codeStr,
+      });
+      final Response response = await post(
+        Uri.parse("${dotenv.env['RESET_PASSWORD_API_URL']}validate-code"),
+        headers: <String, String>{
+          "Content-Type": "application/json",
+        },
+        body: data,
+      );
+
+      if (response.statusCode == 200) {
+        return right(unit);
+      } else if (response.statusCode == 500) {
+        final errorCode = jsonDecode(response.body)['code'];
+        switch (errorCode) {
+          case 'bad_email':
+            return left(const ResetPasswordApiFailure.badEmail());
+          case 'bad_request':
+            return left(const ResetPasswordApiFailure.badRequest());
+          default:
+            return left(const ResetPasswordApiFailure.serverError());
+        }
+      } else {
+        return left(const ResetPasswordApiFailure.serverError());
+      }
+    } catch (_) {
+      return left(const ResetPasswordApiFailure.serverError());
+    }
+  }
+
+  @override
+  Future<Either<ResetPasswordApiFailure, Unit>> resetPassword({
+    required EmailAddress emailAddress,
+    required ResetCode code,
+    required Password password,
+  }) async {
+    try {
+      final emailAddressStr = emailAddress.getOrCrash();
+      final codeStr = code.getOrCrash();
+      final passwordStr = password.getOrCrash();
+
+      final data = json.encode(<String, dynamic>{
+        'email': emailAddressStr,
+        'code': codeStr,
+        'password': passwordStr,
+      });
+
+      final Response response = await post(
+        Uri.parse("${dotenv.env['RESET_PASSWORD_API_URL']}set-password"),
+        headers: <String, String>{
+          "Content-Type": "application/json",
+        },
+        body: data,
+      );
+      if (response.statusCode == 200) {
+        return right(unit);
+      } else if (response.statusCode == 500) {
+        final errorCode = jsonDecode(response.body)['code'];
+        switch (errorCode) {
+          case 'bad_email':
+            return left(const ResetPasswordApiFailure.badEmail());
+          case 'bad_request':
+            return left(const ResetPasswordApiFailure.badRequest());
+          default:
+            return left(const ResetPasswordApiFailure.serverError());
+        }
+      } else {
+        return left(const ResetPasswordApiFailure.serverError());
+      }
+    } catch (_) {
+      return left(const ResetPasswordApiFailure.serverError());
+    }
   }
 }

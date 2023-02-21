@@ -19,6 +19,7 @@ class FAQScreen extends StatelessWidget {
                   title: 'FAQs',
                   context: context,
                   backBtn: true,
+                  btn: null,
                 ),
                 const SizedBox(
                   height: 23,

@@ -25,4 +25,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidRepeatPassword({
     required String failedValue,
   }) = InvalidRepeatPassword<T>;
+  const factory ValueFailure.invalidResetCode({
+    required String failedValue,
+  }) = InvalidResetCode<T>;
 }

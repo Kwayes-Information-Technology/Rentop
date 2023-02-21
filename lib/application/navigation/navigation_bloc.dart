@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
+import 'package:rentop/presentation/explore/explore_screen.dart';
 import 'package:rentop/presentation/favourite/favourite_screen.dart';
 import 'package:rentop/presentation/home/home_screen.dart';
 import 'package:rentop/presentation/messages/messages_screen.dart';
 import 'package:rentop/presentation/more/more_screen.dart';
-import 'package:rentop/presentation/search/explore_screen.dart';
 
+part 'navigation_bloc.freezed.dart';
 part 'navigation_event.dart';
 part 'navigation_state.dart';
-part 'navigation_bloc.freezed.dart';
 
 @injectable
 class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rentop/infrastructure/models/car.dart';
-import 'package:rentop/infrastructure/models/car_brand.dart';
-import 'package:rentop/infrastructure/models/car_type.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/repositories/cars/cars_bloc.dart';
+import 'package:rentop/application/repositories/listings/listings_bloc.dart';
+import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
@@ -22,53 +23,69 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 23),
             child: Column(
               children: [
-                RentopCards.rentopProfileCard(
-                  userPhoto:
-                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
-                  userName: "Dalia",
-                  notificationsActive: true,
-                  context: context,
-                ),
-                const SizedBox(
-                  height: 23,
-                ),
-                SizedBox(
-                  height: 131,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: tempCarBrands.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return RentopCards.rentopCarBrand(
-                        carBrand: tempCarBrands[index],
+                BlocBuilder<ProfileBloc, ProfileState>(
+                  builder: (context, state) {
+                    if (state.profile != null) {
+                      return RentopCards.rentopProfileCard(
+                        userPhoto: state.profile!.avater!,
+                        userName: state.profile!.firstName!,
+                        notificationsActive: true,
                         context: context,
-                        index: index,
                       );
-                    },
-                  ),
+                    } else {
+                      return Container();
+                    }
+                  },
                 ),
                 const SizedBox(
                   height: 23,
                 ),
-                SizedBox(
-                  height: 200,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
-                    ),
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: tempCarTypes.length,
-                      itemBuilder: (context, index) {
-                        return RentopCards.rentopCarType(
-                          carType: tempCarTypes[index],
-                          context: context,
-                          index: index,
-                          selectedCarTypeIndex: 0,
-                        );
-                      },
-                    ),
-                  ),
+                BlocBuilder<ListingsBloc, ListingsState>(
+                  builder: (context, state) {
+                    return SizedBox(
+                      height: 151,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: state.carBrands.length,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return RentopCards.rentopCarBrand(
+                              carBrand: state.carBrands[index],
+                              context: context,
+                              index: index,
+                            );
+                          },
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 23,
+                ),
+                BlocBuilder<ListingsBloc, ListingsState>(
+                  builder: (context, state) {
+                    return SizedBox(
+                      height: 150,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 15,
+                        ),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: state.carCategories.length,
+                          itemBuilder: (context, index) {
+                            return RentopCards.rentopCarCategory(
+                              carCategory: state.carCategories[index],
+                              context: context,
+                            );
+                          },
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(
                   height: 23,
@@ -83,14 +100,23 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 23,
                 ),
-                ListView.builder(
-                  itemCount: tempCars.length,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return RentopCards.rentopCarCard(
-                      car: tempCars[index],
-                      context: context,
+                BlocBuilder<CarsBloc, CarsState>(
+                  builder: (context, state) {
+                    return ListView.builder(
+                      itemCount: state.topCars.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return RentopCards.rentopCarCard(
+                          car: state.topCars[index],
+                          context: context,
+                          onCarTapped: (car) => Navigator.pushNamed(
+                            context,
+                            '/CarDetails',
+                            arguments: car,
+                          ),
+                        );
+                      },
                     );
                   },
                 ),

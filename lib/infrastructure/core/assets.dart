@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/name_icon_mapping.dart';
+import 'package:rentop/infrastructure/style/colors.dart';
+
 class Assets {
   static const String logo = "assets/images/logo/logo.png";
   static const String fullLogo = "assets/images/logo/full_logo.svg";
@@ -16,4 +21,31 @@ class Assets {
       'assets/images/icons/notifications_inactive.svg';
   static const String notificationActive =
       'assets/images/icons/notifications_active.svg';
+  static const String filterIcon = 'assets/images/icons/tune.png';
+  static const String clearIcon = 'assets/images/icons/restart_alt.svg';
+
+  static Widget getImageFromString(String metaValue) {
+    if (metaValue.contains('icon-auto')) {
+      final String icon = metaValue.replaceAll("icon-auto icon-auto", "");
+      final String iconPath = "assets/images/icons/auto/$icon.png";
+      return Image.asset(
+        iconPath,
+        height: 21,
+        width: 21,
+        color: minorShadeColor,
+      );
+    } else if (metaValue.contains('fas')) {
+      return FaIcon(
+        getIconFromCss(metaValue),
+        size: 21,
+        color: minorShadeColor,
+      );
+    } else {
+      return FaIcon(
+        FontAwesomeIcons.alignJustify,
+        size: 21,
+        color: minorShadeColor,
+      );
+    }
+  }
 }

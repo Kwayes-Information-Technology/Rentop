@@ -105,3 +105,14 @@ class RepeatPassword extends ValueObject<String> {
 
   const RepeatPassword._(this.value);
 }
+
+class ResetCode extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory ResetCode(String input) {
+    return ResetCode._(validateResetCode(input));
+  }
+
+  const ResetCode._(this.value);
+}

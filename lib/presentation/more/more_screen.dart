@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
@@ -12,11 +14,18 @@ class MoreScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 23),
         child: Column(
           children: [
-            RentopCards.rentopProfileCardV2(
-              userPhoto:
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
-              userName: "Dalia",
-              context: context,
+            BlocBuilder<ProfileBloc, ProfileState>(
+              builder: (context, state) {
+                if (state.profile != null) {
+                  return RentopCards.rentopProfileCardV2(
+                    userPhoto: state.profile!.avater!,
+                    userName: state.profile!.firstName!,
+                    context: context,
+                  );
+                } else {
+                  return Container();
+                }
+              },
             ),
             const SizedBox(
               height: 31,
@@ -34,7 +43,7 @@ class MoreScreen extends StatelessWidget {
             RentopButtons.rentopTextButton(
               btnText: 'Contact',
               context: context,
-              onBtnPressed: () {},
+              onBtnPressed: () => Navigator.pushNamed(context, '/Contact'),
             )
           ],
         ),

@@ -4,6 +4,8 @@
         android:label="rentop"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCkrb0Vm_t-iufXtC2iYWni0ThahHbBqZ4"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

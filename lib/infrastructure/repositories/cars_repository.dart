@@ -6,15 +6,47 @@ import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rentop/domain/repositories/i_cars_repository.dart';
 import 'package:rentop/infrastructure/models/car.dart';
+import 'package:rentop/infrastructure/models/car_brand.dart';
+import 'package:rentop/infrastructure/models/car_category.dart';
+import 'package:rentop/infrastructure/models/car_region.dart';
 
 @LazySingleton(as: ICarsRepository)
 class CarsRepository implements ICarsRepository {
   CarsRepository();
 
   @override
-  Future<Option<List<Car>>> getCars() async {
-    final Response response =
-        await get(Uri.parse("${dotenv.env['RENTOP_API_URL']}/posts"));
-    return optionOf(Car.fromData(jsonDecode(response.body)['data']));
+  Future<Option<CarRequestResponse>> getCars({
+    required int pageNumber,
+    required CarRegion? carRegion,
+    required CarCategory? carCategory,
+    required CarBrand? carBrand,
+  }) async {
+    String url = "${dotenv.env['RENTOP_API_URL']}cars?page=$pageNumber";
+    if (carRegion != null) {
+      url += "&car_region=${carRegion.id}";
+    }
+    if (carBrand != null) {
+      url += "&car_brand=${carBrand.id}";
+    }
+    if (carCategory != null) {
+      url += "&car_category=${carCategory.id}";
+    }
+    final Response response = await get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      return optionOf(CarRequestResponse.fromData(jsonDecode(response.body)));
+    } else {
+      return optionOf(null);
+    }
+  }
+
+  @override
+  Future<Option<List<Car>>> getTopCars() async {
+    final String url = "${dotenv.env['RENTOP_API_URL']}cars?top_listing=true";
+    final Response response = await get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      return optionOf(Car.fromData(jsonDecode(response.body)['cars']));
+    } else {
+      return optionOf(null);
+    }
   }
 }

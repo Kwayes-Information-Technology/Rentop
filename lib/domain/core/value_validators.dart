@@ -67,3 +67,12 @@ Either<ValueFailure<String>, String> validateRepeatPassword(
         ValueFailure.invalidRepeatPassword(failedValue: repeatPassword));
   }
 }
+
+Either<ValueFailure<String>, String> validateResetCode(String input) {
+  const resetCodeRegex = r'^\d{4}$';
+  if (RegExp(resetCodeRegex).hasMatch(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidResetCode(failedValue: input));
+  }
+}
