@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentop/application/repositories/cars/cars_bloc.dart';
 import 'package:rentop/application/repositories/listings/listings_bloc.dart';
 import 'package:rentop/application/repositories/profile/profile_bloc.dart';
-import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,11 +12,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: mainColor,
-          child: const Icon(Icons.add),
-        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 23),
@@ -27,13 +21,14 @@ class HomeScreen extends StatelessWidget {
                   builder: (context, state) {
                     if (state.profile != null) {
                       return RentopCards.rentopProfileCard(
-                        userPhoto: state.profile!.avater!,
+                        userPhoto: state.profile!.userAvatar,
+                        userGravatar: state.profile!.userAvatarGravatar!,
                         userName: state.profile!.firstName!,
                         notificationsActive: true,
                         context: context,
                       );
                     } else {
-                      return Container();
+                      return RentopCards.rentopGuestUserCard(context: context);
                     }
                   },
                 ),
@@ -43,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 BlocBuilder<ListingsBloc, ListingsState>(
                   builder: (context, state) {
                     return SizedBox(
-                      height: 151,
+                      height: 104,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
                         child: ListView.builder(

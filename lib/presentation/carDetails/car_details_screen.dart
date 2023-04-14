@@ -2,8 +2,13 @@ import 'dart:async';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rentop/application/repositories/checkout/checkout_bloc.dart';
+import 'package:rentop/application/repositories/messages/messages_bloc.dart';
+import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/infrastructure/models/car.dart';
+import 'package:rentop/infrastructure/models/conversation.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/map/map_screen.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
@@ -206,9 +211,36 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       height: 29,
                     ),
                     RentopCards.rentopProfileCardV3(
-                      userPhoto: selectedCar.authorAvater,
-                      userName: selectedCar.authorName,
+                      userPhoto: selectedCar.author.userAvatar ??
+                          selectedCar.author.userAvatarGravatar!,
+                      userName:
+                          "${selectedCar.author.firstName} ${selectedCar.author.lastName}",
                       context: context,
+                      btnPressed: () {
+                        context.read<MessagesBloc>().add(
+                              const MessagesEvent.newConversationChanged(true),
+                            );
+                        context.read<MessagesBloc>().add(
+                              MessagesEvent.selectedConversationChanged(
+                                Conversation(
+                                  id: null,
+                                  car: selectedCar,
+                                  messages: [],
+                                  unseenMessages: 0,
+                                  messagesCount: 0,
+                                  sender: context
+                                      .read<ProfileBloc>()
+                                      .state
+                                      .profile!,
+                                  receiver: selectedCar.author,
+                                ),
+                              ),
+                            );
+                        Navigator.pushNamed(
+                          context,
+                          '/Message',
+                        );
+                      },
                     ),
                     const SizedBox(
                       height: 24,
@@ -228,12 +260,12 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         ),
                       ),
                     ),
-                    if (selectedCar.totalReviews > 0) ...[
+                    if (selectedCar.reviews.isNotEmpty) ...[
                       const SizedBox(
                         height: 30,
                       ),
                       RentopCards.rentopRatingCard(
-                        totalReviews: selectedCar.totalReviews,
+                        totalReviews: selectedCar.reviews.length,
                         avgRating: selectedCar.rating!,
                         cleanlinessRating: selectedCar.cleanlinessRating!,
                         checkinRating: selectedCar.checkinRating!,
@@ -284,8 +316,28 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                 text:
                     "AED/${selectedCar.price == selectedCar.price.roundToDouble() ? selectedCar.price.toStringAsFixed(0) : selectedCar.price.toStringAsFixed(2)} / Day - reserve now",
                 context: context,
-                onBtnPressed: () {},
+                onBtnPressed: () {
+                  if (context.read<ProfileBloc>().state.profile != null) {
+                    context
+                        .read<CheckoutBloc>()
+                        .add(CheckoutEvent.selectedCarChanged(selectedCar));
+                    context.read<CheckoutBloc>().add(
+                        CheckoutEvent.billingInfoChanged(context
+                            .read<ProfileBloc>()
+                            .state
+                            .profile!
+                            .billing));
+                    Navigator.pushNamed(
+                      context,
+                      '/CarReservation',
+                      arguments: selectedCar,
+                    );
+                  } else {
+                    Navigator.pushNamed(context, '/Welcome');
+                  }
+                },
                 width: 200,
+                isLoading: false,
               ),
             ),
           )

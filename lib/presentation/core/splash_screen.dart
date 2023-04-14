@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rentop/application/auth/auth_bloc.dart';
+import 'package:rentop/application/splash/splash_bloc.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -13,9 +13,9 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: BlocListener<AuthBloc, AuthState>(
+      body: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
-          if (state is Authenticated) {
+          if (state is ReturnUser) {
             Timer(
               const Duration(seconds: 5),
               () => Navigator.pushNamed(context, '/Home'),

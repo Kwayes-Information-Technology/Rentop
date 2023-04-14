@@ -12,40 +12,62 @@ class MoreScreen extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 23),
-        child: Column(
-          children: [
-            BlocBuilder<ProfileBloc, ProfileState>(
-              builder: (context, state) {
-                if (state.profile != null) {
-                  return RentopCards.rentopProfileCardV2(
-                    userPhoto: state.profile!.avater!,
+        child: BlocBuilder<ProfileBloc, ProfileState>(
+          builder: (context, state) {
+            return Column(
+              children: [
+                if (state.profile != null)
+                  RentopCards.rentopProfileCardV2(
+                    userPhoto: state.profile!.userAvatar,
+                    userGravatar: state.profile!.userAvatarGravatar!,
                     userName: state.profile!.firstName!,
                     context: context,
-                  );
-                } else {
-                  return Container();
-                }
-              },
-            ),
-            const SizedBox(
-              height: 31,
-            ),
-            RentopButtons.rentopTextButton(
-              btnText: 'About Us',
-              context: context,
-              onBtnPressed: () {},
-            ),
-            RentopButtons.rentopTextButton(
-              btnText: 'FAQs',
-              context: context,
-              onBtnPressed: () => Navigator.pushNamed(context, '/FAQ'),
-            ),
-            RentopButtons.rentopTextButton(
-              btnText: 'Contact',
-              context: context,
-              onBtnPressed: () => Navigator.pushNamed(context, '/Contact'),
-            )
-          ],
+                  )
+                else
+                  RentopCards.rentopGuestUserCard(context: context),
+                const SizedBox(
+                  height: 31,
+                ),
+                if (state.profile != null) ...[
+                  RentopButtons.rentopTextButton(
+                    btnText: 'My Orders',
+                    context: context,
+                    onBtnPressed: () => Navigator.pushNamed(
+                      context,
+                      '/Orders',
+                    ),
+                  ),
+                ],
+                if (state.profile == null) ...[
+                  RentopButtons.rentopTextButton(
+                    btnText: 'Sign in',
+                    context: context,
+                    onBtnPressed: () => Navigator.pushNamed(context, '/SignIn'),
+                  ),
+                  RentopButtons.rentopTextButton(
+                    btnText: 'Sign Up',
+                    context: context,
+                    onBtnPressed: () => Navigator.pushNamed(context, '/SignUp'),
+                  ),
+                ],
+                // RentopButtons.rentopTextButton(
+                //   btnText: 'About Us',
+                //   context: context,
+                //   onBtnPressed: () {},
+                // ),
+                RentopButtons.rentopTextButton(
+                  btnText: 'FAQs',
+                  context: context,
+                  onBtnPressed: () => Navigator.pushNamed(context, '/FAQ'),
+                ),
+                // RentopButtons.rentopTextButton(
+                //   btnText: 'Contact',
+                //   context: context,
+                //   onBtnPressed: () => Navigator.pushNamed(context, '/Contact'),
+                // )
+              ],
+            );
+          },
         ),
       ),
     );

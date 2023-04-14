@@ -1,52 +1,42 @@
 import 'package:rentop/infrastructure/models/billing.dart';
-import 'package:rentop/infrastructure/models/meta_data.dart';
 import 'package:rentop/infrastructure/models/shipping.dart';
 
 class Profile {
   int? id;
-  String? email;
   String? firstName;
   String? lastName;
+  String? displayName;
   String? role;
-  String? username;
+  String? userAvatar;
+  String? userAvatarGravatar;
   Billing? billing;
   Shipping? shipping;
-  bool? isPayingCustomer;
-  String? avater;
-  List<MetaData>? metaData;
 
   Profile(
     this.id,
-    this.email,
     this.firstName,
     this.lastName,
+    this.displayName,
     this.role,
-    this.username,
-    this.avater,
+    this.userAvatar,
+    this.userAvatarGravatar,
     this.billing,
-    this.isPayingCustomer,
     this.shipping,
-    this.metaData,
   );
 
   Profile.fromJson(Map<String, dynamic> data) {
-    id = data['id'];
-    email = data['email'];
+    id = int.tryParse(data['id'].toString());
     firstName = data['first_name'];
     lastName = data['last_name'];
-    role = data['role'];
-    username = data['username'];
+    displayName = data['display_name'];
+    role = data['rz_role'];
+    userAvatar = data['user_avatar'] == "" || data['user_avatar'] == null
+        ? null
+        : data['user_avatar'];
+    userAvatarGravatar = data['user_avatar_gavatar'];
     billing =
         data['billing'] != null ? Billing.fromJson(data['billing']) : null;
     shipping =
         data['shipping'] != null ? Shipping.fromJson(data['shipping']) : null;
-    isPayingCustomer = data['is_paying_customer'];
-    avater = data['avatar_url'];
-    if (data['meta_data'] != null) {
-      metaData = <MetaData>[];
-      data['meta_data'].forEach((v) {
-        metaData!.add(MetaData.fromJson(v));
-      });
-    }
   }
 }

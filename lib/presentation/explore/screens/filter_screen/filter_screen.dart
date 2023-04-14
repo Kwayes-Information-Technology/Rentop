@@ -76,15 +76,15 @@ class FilterScreen extends StatelessWidget {
                                               item! as CarRegion,
                                             )),
                                       ),
-                                      const SizedBox(
-                                        height: 15,
-                                      ),
-                                      RentopButtons.rentopFilterPriceRange(
-                                        title: 'Price Range',
-                                        context: context,
-                                        fromOnChanged: (val) {},
-                                        toOnChanged: (val) {},
-                                      ),
+                                      // const SizedBox(
+                                      //   height: 15,
+                                      // ),
+                                      // RentopButtons.rentopFilterPriceRange(
+                                      //   title: 'Price Range',
+                                      //   context: context,
+                                      //   fromOnChanged: (val) {},
+                                      //   toOnChanged: (val) {},
+                                      // ),
                                       const SizedBox(
                                         height: 15,
                                       ),
@@ -216,6 +216,7 @@ class FilterScreen extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 width: 200,
+                isLoading: false,
               ),
             ),
           )

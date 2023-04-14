@@ -41,6 +41,7 @@ class ContactScreen extends StatelessWidget {
                                     onVaildator: null,
                                     suffixIcon: null,
                                     obsecureText: false,
+                                    controller: null,
                                   ),
                                 ),
                                 const SizedBox(
@@ -54,6 +55,7 @@ class ContactScreen extends StatelessWidget {
                                     onVaildator: null,
                                     suffixIcon: null,
                                     obsecureText: false,
+                                    controller: null,
                                   ),
                                 ),
                               ],
@@ -68,6 +70,7 @@ class ContactScreen extends StatelessWidget {
                               onVaildator: null,
                               suffixIcon: null,
                               obsecureText: false,
+                              controller: null,
                             ),
                             const SizedBox(
                               height: 24,
@@ -79,6 +82,7 @@ class ContactScreen extends StatelessWidget {
                               onVaildator: null,
                               suffixIcon: null,
                               obsecureText: false,
+                              controller: null,
                             ),
                             const SizedBox(
                               height: 24,
@@ -90,6 +94,7 @@ class ContactScreen extends StatelessWidget {
                               onVaildator: null,
                               suffixIcon: null,
                               obsecureText: false,
+                              controller: null,
                             ),
                           ],
                         ),
@@ -120,6 +125,7 @@ class ContactScreen extends StatelessWidget {
                 context: context,
                 onBtnPressed: () {},
                 width: double.infinity,
+                isLoading: false,
               ),
             ),
           )

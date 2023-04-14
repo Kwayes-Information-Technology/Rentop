@@ -36,6 +36,7 @@ class OnboardingScreen extends StatelessWidget {
               context: context,
               onBtnPressed: () => Navigator.pushNamed(context, '/Welcome'),
               width: 224,
+              isLoading: false,
             )
           ],
         ),

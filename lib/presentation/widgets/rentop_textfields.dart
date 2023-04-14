@@ -9,16 +9,19 @@ class RentopTextFields {
     required String? onVaildator,
     required Widget? suffixIcon,
     required bool obsecureText,
+    required TextEditingController? controller,
   }) {
     return SizedBox(
       height: 51,
       child: TextFormField(
+        controller: controller,
         onChanged: onChanged,
         validator: (_) => onVaildator,
         obscureText: obsecureText,
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           filled: true,
+          fillColor: const Color(0xFFF1F1F1),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(13),
           ),

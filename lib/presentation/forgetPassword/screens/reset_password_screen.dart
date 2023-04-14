@@ -77,6 +77,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                 (_) => null,
                               ),
                           obsecureText: false,
+                          controller: null,
                         ),
                         const SizedBox(
                           height: 23,
@@ -88,15 +89,8 @@ class ResetPasswordScreen extends StatelessWidget {
                               .read<ResetPasswordBloc>()
                               .add(const ResetPasswordEvent.resetPassword()),
                           width: double.infinity,
+                          isLoading: state.isSubmitting,
                         ),
-                        if (state.isSubmitting) ...[
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          LinearProgressIndicator(
-                            color: mainColor,
-                          )
-                        ],
                       ],
                     ),
                   ),

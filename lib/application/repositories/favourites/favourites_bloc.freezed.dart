@@ -18,46 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FavouritesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFavouriteCarsData,
-    required TResult Function() refreshData,
-    required TResult Function(String ids) favouritesIdChanged,
+    required TResult Function() fetchFavouritesData,
+    required TResult Function(String carId) addFavourite,
+    required TResult Function(String carId) removeFavourite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchFavouriteCarsData,
-    TResult? Function()? refreshData,
-    TResult? Function(String ids)? favouritesIdChanged,
+    TResult? Function()? fetchFavouritesData,
+    TResult? Function(String carId)? addFavourite,
+    TResult? Function(String carId)? removeFavourite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFavouriteCarsData,
-    TResult Function()? refreshData,
-    TResult Function(String ids)? favouritesIdChanged,
+    TResult Function()? fetchFavouritesData,
+    TResult Function(String carId)? addFavourite,
+    TResult Function(String carId)? removeFavourite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchFavouriteCarsData value)
-        fetchFavouriteCarsData,
-    required TResult Function(RefreshData value) refreshData,
-    required TResult Function(FavouriteIdChanged value) favouritesIdChanged,
+    required TResult Function(FetchFavouritesData value) fetchFavouritesData,
+    required TResult Function(AddFavourite value) addFavourite,
+    required TResult Function(RemoveFavourite value) removeFavourite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult? Function(RefreshData value)? refreshData,
-    TResult? Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult? Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult? Function(AddFavourite value)? addFavourite,
+    TResult? Function(RemoveFavourite value)? removeFavourite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult Function(RefreshData value)? refreshData,
-    TResult Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult Function(AddFavourite value)? addFavourite,
+    TResult Function(RemoveFavourite value)? removeFavourite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,35 +81,35 @@ class _$FavouritesEventCopyWithImpl<$Res, $Val extends FavouritesEvent>
 }
 
 /// @nodoc
-abstract class _$$FetchFavouriteCarsDataCopyWith<$Res> {
-  factory _$$FetchFavouriteCarsDataCopyWith(_$FetchFavouriteCarsData value,
-          $Res Function(_$FetchFavouriteCarsData) then) =
-      __$$FetchFavouriteCarsDataCopyWithImpl<$Res>;
+abstract class _$$FetchFavouritesDataCopyWith<$Res> {
+  factory _$$FetchFavouritesDataCopyWith(_$FetchFavouritesData value,
+          $Res Function(_$FetchFavouritesData) then) =
+      __$$FetchFavouritesDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchFavouriteCarsDataCopyWithImpl<$Res>
-    extends _$FavouritesEventCopyWithImpl<$Res, _$FetchFavouriteCarsData>
-    implements _$$FetchFavouriteCarsDataCopyWith<$Res> {
-  __$$FetchFavouriteCarsDataCopyWithImpl(_$FetchFavouriteCarsData _value,
-      $Res Function(_$FetchFavouriteCarsData) _then)
+class __$$FetchFavouritesDataCopyWithImpl<$Res>
+    extends _$FavouritesEventCopyWithImpl<$Res, _$FetchFavouritesData>
+    implements _$$FetchFavouritesDataCopyWith<$Res> {
+  __$$FetchFavouritesDataCopyWithImpl(
+      _$FetchFavouritesData _value, $Res Function(_$FetchFavouritesData) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FetchFavouriteCarsData implements FetchFavouriteCarsData {
-  const _$FetchFavouriteCarsData();
+class _$FetchFavouritesData implements FetchFavouritesData {
+  const _$FetchFavouritesData();
 
   @override
   String toString() {
-    return 'FavouritesEvent.fetchFavouriteCarsData()';
+    return 'FavouritesEvent.fetchFavouritesData()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchFavouriteCarsData);
+        (other.runtimeType == runtimeType && other is _$FetchFavouritesData);
   }
 
   @override
@@ -119,33 +118,33 @@ class _$FetchFavouriteCarsData implements FetchFavouriteCarsData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFavouriteCarsData,
-    required TResult Function() refreshData,
-    required TResult Function(String ids) favouritesIdChanged,
+    required TResult Function() fetchFavouritesData,
+    required TResult Function(String carId) addFavourite,
+    required TResult Function(String carId) removeFavourite,
   }) {
-    return fetchFavouriteCarsData();
+    return fetchFavouritesData();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchFavouriteCarsData,
-    TResult? Function()? refreshData,
-    TResult? Function(String ids)? favouritesIdChanged,
+    TResult? Function()? fetchFavouritesData,
+    TResult? Function(String carId)? addFavourite,
+    TResult? Function(String carId)? removeFavourite,
   }) {
-    return fetchFavouriteCarsData?.call();
+    return fetchFavouritesData?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFavouriteCarsData,
-    TResult Function()? refreshData,
-    TResult Function(String ids)? favouritesIdChanged,
+    TResult Function()? fetchFavouritesData,
+    TResult Function(String carId)? addFavourite,
+    TResult Function(String carId)? removeFavourite,
     required TResult orElse(),
   }) {
-    if (fetchFavouriteCarsData != null) {
-      return fetchFavouriteCarsData();
+    if (fetchFavouritesData != null) {
+      return fetchFavouritesData();
     }
     return orElse();
   }
@@ -153,178 +152,68 @@ class _$FetchFavouriteCarsData implements FetchFavouriteCarsData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchFavouriteCarsData value)
-        fetchFavouriteCarsData,
-    required TResult Function(RefreshData value) refreshData,
-    required TResult Function(FavouriteIdChanged value) favouritesIdChanged,
+    required TResult Function(FetchFavouritesData value) fetchFavouritesData,
+    required TResult Function(AddFavourite value) addFavourite,
+    required TResult Function(RemoveFavourite value) removeFavourite,
   }) {
-    return fetchFavouriteCarsData(this);
+    return fetchFavouritesData(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult? Function(RefreshData value)? refreshData,
-    TResult? Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult? Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult? Function(AddFavourite value)? addFavourite,
+    TResult? Function(RemoveFavourite value)? removeFavourite,
   }) {
-    return fetchFavouriteCarsData?.call(this);
+    return fetchFavouritesData?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult Function(RefreshData value)? refreshData,
-    TResult Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult Function(AddFavourite value)? addFavourite,
+    TResult Function(RemoveFavourite value)? removeFavourite,
     required TResult orElse(),
   }) {
-    if (fetchFavouriteCarsData != null) {
-      return fetchFavouriteCarsData(this);
+    if (fetchFavouritesData != null) {
+      return fetchFavouritesData(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchFavouriteCarsData implements FavouritesEvent {
-  const factory FetchFavouriteCarsData() = _$FetchFavouriteCarsData;
+abstract class FetchFavouritesData implements FavouritesEvent {
+  const factory FetchFavouritesData() = _$FetchFavouritesData;
 }
 
 /// @nodoc
-abstract class _$$RefreshDataCopyWith<$Res> {
-  factory _$$RefreshDataCopyWith(
-          _$RefreshData value, $Res Function(_$RefreshData) then) =
-      __$$RefreshDataCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RefreshDataCopyWithImpl<$Res>
-    extends _$FavouritesEventCopyWithImpl<$Res, _$RefreshData>
-    implements _$$RefreshDataCopyWith<$Res> {
-  __$$RefreshDataCopyWithImpl(
-      _$RefreshData _value, $Res Function(_$RefreshData) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RefreshData implements RefreshData {
-  const _$RefreshData();
-
-  @override
-  String toString() {
-    return 'FavouritesEvent.refreshData()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RefreshData);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() fetchFavouriteCarsData,
-    required TResult Function() refreshData,
-    required TResult Function(String ids) favouritesIdChanged,
-  }) {
-    return refreshData();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchFavouriteCarsData,
-    TResult? Function()? refreshData,
-    TResult? Function(String ids)? favouritesIdChanged,
-  }) {
-    return refreshData?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFavouriteCarsData,
-    TResult Function()? refreshData,
-    TResult Function(String ids)? favouritesIdChanged,
-    required TResult orElse(),
-  }) {
-    if (refreshData != null) {
-      return refreshData();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FetchFavouriteCarsData value)
-        fetchFavouriteCarsData,
-    required TResult Function(RefreshData value) refreshData,
-    required TResult Function(FavouriteIdChanged value) favouritesIdChanged,
-  }) {
-    return refreshData(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult? Function(RefreshData value)? refreshData,
-    TResult? Function(FavouriteIdChanged value)? favouritesIdChanged,
-  }) {
-    return refreshData?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult Function(RefreshData value)? refreshData,
-    TResult Function(FavouriteIdChanged value)? favouritesIdChanged,
-    required TResult orElse(),
-  }) {
-    if (refreshData != null) {
-      return refreshData(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RefreshData implements FavouritesEvent {
-  const factory RefreshData() = _$RefreshData;
-}
-
-/// @nodoc
-abstract class _$$FavouriteIdChangedCopyWith<$Res> {
-  factory _$$FavouriteIdChangedCopyWith(_$FavouriteIdChanged value,
-          $Res Function(_$FavouriteIdChanged) then) =
-      __$$FavouriteIdChangedCopyWithImpl<$Res>;
+abstract class _$$AddFavouriteCopyWith<$Res> {
+  factory _$$AddFavouriteCopyWith(
+          _$AddFavourite value, $Res Function(_$AddFavourite) then) =
+      __$$AddFavouriteCopyWithImpl<$Res>;
   @useResult
-  $Res call({String ids});
+  $Res call({String carId});
 }
 
 /// @nodoc
-class __$$FavouriteIdChangedCopyWithImpl<$Res>
-    extends _$FavouritesEventCopyWithImpl<$Res, _$FavouriteIdChanged>
-    implements _$$FavouriteIdChangedCopyWith<$Res> {
-  __$$FavouriteIdChangedCopyWithImpl(
-      _$FavouriteIdChanged _value, $Res Function(_$FavouriteIdChanged) _then)
+class __$$AddFavouriteCopyWithImpl<$Res>
+    extends _$FavouritesEventCopyWithImpl<$Res, _$AddFavourite>
+    implements _$$AddFavouriteCopyWith<$Res> {
+  __$$AddFavouriteCopyWithImpl(
+      _$AddFavourite _value, $Res Function(_$AddFavourite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ids = null,
+    Object? carId = null,
   }) {
-    return _then(_$FavouriteIdChanged(
-      null == ids
-          ? _value.ids
-          : ids // ignore: cast_nullable_to_non_nullable
+    return _then(_$AddFavourite(
+      null == carId
+          ? _value.carId
+          : carId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -332,65 +221,64 @@ class __$$FavouriteIdChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FavouriteIdChanged implements FavouriteIdChanged {
-  const _$FavouriteIdChanged(this.ids);
+class _$AddFavourite implements AddFavourite {
+  const _$AddFavourite(this.carId);
 
   @override
-  final String ids;
+  final String carId;
 
   @override
   String toString() {
-    return 'FavouritesEvent.favouritesIdChanged(ids: $ids)';
+    return 'FavouritesEvent.addFavourite(carId: $carId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavouriteIdChanged &&
-            (identical(other.ids, ids) || other.ids == ids));
+            other is _$AddFavourite &&
+            (identical(other.carId, carId) || other.carId == carId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ids);
+  int get hashCode => Object.hash(runtimeType, carId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FavouriteIdChangedCopyWith<_$FavouriteIdChanged> get copyWith =>
-      __$$FavouriteIdChangedCopyWithImpl<_$FavouriteIdChanged>(
-          this, _$identity);
+  _$$AddFavouriteCopyWith<_$AddFavourite> get copyWith =>
+      __$$AddFavouriteCopyWithImpl<_$AddFavourite>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchFavouriteCarsData,
-    required TResult Function() refreshData,
-    required TResult Function(String ids) favouritesIdChanged,
+    required TResult Function() fetchFavouritesData,
+    required TResult Function(String carId) addFavourite,
+    required TResult Function(String carId) removeFavourite,
   }) {
-    return favouritesIdChanged(ids);
+    return addFavourite(carId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchFavouriteCarsData,
-    TResult? Function()? refreshData,
-    TResult? Function(String ids)? favouritesIdChanged,
+    TResult? Function()? fetchFavouritesData,
+    TResult? Function(String carId)? addFavourite,
+    TResult? Function(String carId)? removeFavourite,
   }) {
-    return favouritesIdChanged?.call(ids);
+    return addFavourite?.call(carId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchFavouriteCarsData,
-    TResult Function()? refreshData,
-    TResult Function(String ids)? favouritesIdChanged,
+    TResult Function()? fetchFavouritesData,
+    TResult Function(String carId)? addFavourite,
+    TResult Function(String carId)? removeFavourite,
     required TResult orElse(),
   }) {
-    if (favouritesIdChanged != null) {
-      return favouritesIdChanged(ids);
+    if (addFavourite != null) {
+      return addFavourite(carId);
     }
     return orElse();
   }
@@ -398,56 +286,189 @@ class _$FavouriteIdChanged implements FavouriteIdChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchFavouriteCarsData value)
-        fetchFavouriteCarsData,
-    required TResult Function(RefreshData value) refreshData,
-    required TResult Function(FavouriteIdChanged value) favouritesIdChanged,
+    required TResult Function(FetchFavouritesData value) fetchFavouritesData,
+    required TResult Function(AddFavourite value) addFavourite,
+    required TResult Function(RemoveFavourite value) removeFavourite,
   }) {
-    return favouritesIdChanged(this);
+    return addFavourite(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult? Function(RefreshData value)? refreshData,
-    TResult? Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult? Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult? Function(AddFavourite value)? addFavourite,
+    TResult? Function(RemoveFavourite value)? removeFavourite,
   }) {
-    return favouritesIdChanged?.call(this);
+    return addFavourite?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchFavouriteCarsData value)? fetchFavouriteCarsData,
-    TResult Function(RefreshData value)? refreshData,
-    TResult Function(FavouriteIdChanged value)? favouritesIdChanged,
+    TResult Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult Function(AddFavourite value)? addFavourite,
+    TResult Function(RemoveFavourite value)? removeFavourite,
     required TResult orElse(),
   }) {
-    if (favouritesIdChanged != null) {
-      return favouritesIdChanged(this);
+    if (addFavourite != null) {
+      return addFavourite(this);
     }
     return orElse();
   }
 }
 
-abstract class FavouriteIdChanged implements FavouritesEvent {
-  const factory FavouriteIdChanged(final String ids) = _$FavouriteIdChanged;
+abstract class AddFavourite implements FavouritesEvent {
+  const factory AddFavourite(final String carId) = _$AddFavourite;
 
-  String get ids;
+  String get carId;
   @JsonKey(ignore: true)
-  _$$FavouriteIdChangedCopyWith<_$FavouriteIdChanged> get copyWith =>
+  _$$AddFavouriteCopyWith<_$AddFavourite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveFavouriteCopyWith<$Res> {
+  factory _$$RemoveFavouriteCopyWith(
+          _$RemoveFavourite value, $Res Function(_$RemoveFavourite) then) =
+      __$$RemoveFavouriteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String carId});
+}
+
+/// @nodoc
+class __$$RemoveFavouriteCopyWithImpl<$Res>
+    extends _$FavouritesEventCopyWithImpl<$Res, _$RemoveFavourite>
+    implements _$$RemoveFavouriteCopyWith<$Res> {
+  __$$RemoveFavouriteCopyWithImpl(
+      _$RemoveFavourite _value, $Res Function(_$RemoveFavourite) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? carId = null,
+  }) {
+    return _then(_$RemoveFavourite(
+      null == carId
+          ? _value.carId
+          : carId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFavourite implements RemoveFavourite {
+  const _$RemoveFavourite(this.carId);
+
+  @override
+  final String carId;
+
+  @override
+  String toString() {
+    return 'FavouritesEvent.removeFavourite(carId: $carId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveFavourite &&
+            (identical(other.carId, carId) || other.carId == carId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, carId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveFavouriteCopyWith<_$RemoveFavourite> get copyWith =>
+      __$$RemoveFavouriteCopyWithImpl<_$RemoveFavourite>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchFavouritesData,
+    required TResult Function(String carId) addFavourite,
+    required TResult Function(String carId) removeFavourite,
+  }) {
+    return removeFavourite(carId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchFavouritesData,
+    TResult? Function(String carId)? addFavourite,
+    TResult? Function(String carId)? removeFavourite,
+  }) {
+    return removeFavourite?.call(carId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchFavouritesData,
+    TResult Function(String carId)? addFavourite,
+    TResult Function(String carId)? removeFavourite,
+    required TResult orElse(),
+  }) {
+    if (removeFavourite != null) {
+      return removeFavourite(carId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchFavouritesData value) fetchFavouritesData,
+    required TResult Function(AddFavourite value) addFavourite,
+    required TResult Function(RemoveFavourite value) removeFavourite,
+  }) {
+    return removeFavourite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult? Function(AddFavourite value)? addFavourite,
+    TResult? Function(RemoveFavourite value)? removeFavourite,
+  }) {
+    return removeFavourite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchFavouritesData value)? fetchFavouritesData,
+    TResult Function(AddFavourite value)? addFavourite,
+    TResult Function(RemoveFavourite value)? removeFavourite,
+    required TResult orElse(),
+  }) {
+    if (removeFavourite != null) {
+      return removeFavourite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFavourite implements FavouritesEvent {
+  const factory RemoveFavourite(final String carId) = _$RemoveFavourite;
+
+  String get carId;
+  @JsonKey(ignore: true)
+  _$$RemoveFavouriteCopyWith<_$RemoveFavourite> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$FavouritesState {
-  List<Car> get cars => throw _privateConstructorUsedError;
-  String? get favouritesId => throw _privateConstructorUsedError;
-  int get totalPages => throw _privateConstructorUsedError;
-  int get currentPage => throw _privateConstructorUsedError;
-  RefreshController get refreshController => throw _privateConstructorUsedError;
-  bool get loading => throw _privateConstructorUsedError;
+  List<Car> get favourites => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FavouritesStateCopyWith<FavouritesState> get copyWith =>
@@ -460,13 +481,7 @@ abstract class $FavouritesStateCopyWith<$Res> {
           FavouritesState value, $Res Function(FavouritesState) then) =
       _$FavouritesStateCopyWithImpl<$Res, FavouritesState>;
   @useResult
-  $Res call(
-      {List<Car> cars,
-      String? favouritesId,
-      int totalPages,
-      int currentPage,
-      RefreshController refreshController,
-      bool loading});
+  $Res call({List<Car> favourites});
 }
 
 /// @nodoc
@@ -482,38 +497,13 @@ class _$FavouritesStateCopyWithImpl<$Res, $Val extends FavouritesState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cars = null,
-    Object? favouritesId = freezed,
-    Object? totalPages = null,
-    Object? currentPage = null,
-    Object? refreshController = null,
-    Object? loading = null,
+    Object? favourites = null,
   }) {
     return _then(_value.copyWith(
-      cars: null == cars
-          ? _value.cars
-          : cars // ignore: cast_nullable_to_non_nullable
+      favourites: null == favourites
+          ? _value.favourites
+          : favourites // ignore: cast_nullable_to_non_nullable
               as List<Car>,
-      favouritesId: freezed == favouritesId
-          ? _value.favouritesId
-          : favouritesId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      totalPages: null == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-      currentPage: null == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      refreshController: null == refreshController
-          ? _value.refreshController
-          : refreshController // ignore: cast_nullable_to_non_nullable
-              as RefreshController,
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
   }
 }
@@ -526,13 +516,7 @@ abstract class _$$_FavouritesStateCopyWith<$Res>
       __$$_FavouritesStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<Car> cars,
-      String? favouritesId,
-      int totalPages,
-      int currentPage,
-      RefreshController refreshController,
-      bool loading});
+  $Res call({List<Car> favourites});
 }
 
 /// @nodoc
@@ -546,38 +530,13 @@ class __$$_FavouritesStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cars = null,
-    Object? favouritesId = freezed,
-    Object? totalPages = null,
-    Object? currentPage = null,
-    Object? refreshController = null,
-    Object? loading = null,
+    Object? favourites = null,
   }) {
     return _then(_$_FavouritesState(
-      cars: null == cars
-          ? _value._cars
-          : cars // ignore: cast_nullable_to_non_nullable
+      favourites: null == favourites
+          ? _value._favourites
+          : favourites // ignore: cast_nullable_to_non_nullable
               as List<Car>,
-      favouritesId: freezed == favouritesId
-          ? _value.favouritesId
-          : favouritesId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      totalPages: null == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-      currentPage: null == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      refreshController: null == refreshController
-          ? _value.refreshController
-          : refreshController // ignore: cast_nullable_to_non_nullable
-              as RefreshController,
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -585,37 +544,20 @@ class __$$_FavouritesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_FavouritesState implements _FavouritesState {
-  const _$_FavouritesState(
-      {required final List<Car> cars,
-      required this.favouritesId,
-      required this.totalPages,
-      required this.currentPage,
-      required this.refreshController,
-      required this.loading})
-      : _cars = cars;
+  const _$_FavouritesState({required final List<Car> favourites})
+      : _favourites = favourites;
 
-  final List<Car> _cars;
+  final List<Car> _favourites;
   @override
-  List<Car> get cars {
-    if (_cars is EqualUnmodifiableListView) return _cars;
+  List<Car> get favourites {
+    if (_favourites is EqualUnmodifiableListView) return _favourites;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cars);
+    return EqualUnmodifiableListView(_favourites);
   }
 
   @override
-  final String? favouritesId;
-  @override
-  final int totalPages;
-  @override
-  final int currentPage;
-  @override
-  final RefreshController refreshController;
-  @override
-  final bool loading;
-
-  @override
   String toString() {
-    return 'FavouritesState(cars: $cars, favouritesId: $favouritesId, totalPages: $totalPages, currentPage: $currentPage, refreshController: $refreshController, loading: $loading)';
+    return 'FavouritesState(favourites: $favourites)';
   }
 
   @override
@@ -623,27 +565,13 @@ class _$_FavouritesState implements _FavouritesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FavouritesState &&
-            const DeepCollectionEquality().equals(other._cars, _cars) &&
-            (identical(other.favouritesId, favouritesId) ||
-                other.favouritesId == favouritesId) &&
-            (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            (identical(other.currentPage, currentPage) ||
-                other.currentPage == currentPage) &&
-            (identical(other.refreshController, refreshController) ||
-                other.refreshController == refreshController) &&
-            (identical(other.loading, loading) || other.loading == loading));
+            const DeepCollectionEquality()
+                .equals(other._favourites, _favourites));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_cars),
-      favouritesId,
-      totalPages,
-      currentPage,
-      refreshController,
-      loading);
+      runtimeType, const DeepCollectionEquality().hash(_favourites));
 
   @JsonKey(ignore: true)
   @override
@@ -653,26 +581,11 @@ class _$_FavouritesState implements _FavouritesState {
 }
 
 abstract class _FavouritesState implements FavouritesState {
-  const factory _FavouritesState(
-      {required final List<Car> cars,
-      required final String? favouritesId,
-      required final int totalPages,
-      required final int currentPage,
-      required final RefreshController refreshController,
-      required final bool loading}) = _$_FavouritesState;
+  const factory _FavouritesState({required final List<Car> favourites}) =
+      _$_FavouritesState;
 
   @override
-  List<Car> get cars;
-  @override
-  String? get favouritesId;
-  @override
-  int get totalPages;
-  @override
-  int get currentPage;
-  @override
-  RefreshController get refreshController;
-  @override
-  bool get loading;
+  List<Car> get favourites;
   @override
   @JsonKey(ignore: true)
   _$$_FavouritesStateCopyWith<_$_FavouritesState> get copyWith =>

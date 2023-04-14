@@ -77,6 +77,7 @@ class ValidateResetCodeScreen extends StatelessWidget {
                                 (_) => null,
                               ),
                           obsecureText: false,
+                          controller: null,
                         ),
                         const SizedBox(
                           height: 23,
@@ -89,15 +90,8 @@ class ValidateResetCodeScreen extends StatelessWidget {
                               .add(
                                   const ResetPasswordEvent.validateResetCode()),
                           width: double.infinity,
+                          isLoading: state.isSubmitting,
                         ),
-                        if (state.isSubmitting) ...[
-                          const SizedBox(
-                            height: 23,
-                          ),
-                          LinearProgressIndicator(
-                            color: mainColor,
-                          )
-                        ],
                       ],
                     ),
                   ),

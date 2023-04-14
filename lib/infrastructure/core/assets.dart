@@ -5,6 +5,7 @@ import 'package:rentop/infrastructure/style/colors.dart';
 
 class Assets {
   static const String logo = "assets/images/logo/logo.png";
+  static const String logoV2 = "assets/images/logo/logo_v2.png";
   static const String fullLogo = "assets/images/logo/full_logo.svg";
   static const String customerVector = "assets/images/icons/customer.svg";
   static const String businessVector = "assets/images/icons/business.svg";
@@ -23,6 +24,15 @@ class Assets {
       'assets/images/icons/notifications_active.svg';
   static const String filterIcon = 'assets/images/icons/tune.png';
   static const String clearIcon = 'assets/images/icons/restart_alt.svg';
+  static const String entriesIcon = 'assets/images/icons/entries.png';
+  static const String ordersIcon = 'assets/images/icons/orders.png';
+  static const String addressIcon = 'assets/images/icons/address.png';
+  static const String logoutIcon = 'assets/images/icons/logout.png';
+  static const String payIcon = 'assets/images/icons/pay.png';
+  static const String forwardArrowIcon =
+      'assets/images/icons/forward_outlined.svg';
+  static const String userIcon = "assets/images/icons/user.png";
+  static const String warningIcon = "assets/images/icons/warning.png";
 
   static Widget getImageFromString(String metaValue) {
     if (metaValue.contains('icon-auto')) {

@@ -53,6 +53,8 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
               );
             },
           );
+        } else {
+          state.refreshControlloer.loadNoData();
         }
       },
       refreshData: (e) async* {

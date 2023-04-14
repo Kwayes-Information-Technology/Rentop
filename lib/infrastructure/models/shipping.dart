@@ -22,28 +22,26 @@ class Shipping {
   });
 
   Shipping.fromJson(Map<String, dynamic> json) {
-    firstName = json['first_name'];
-    lastName = json['last_name'];
-    company = json['company'];
-    address1 = json['address_1'];
-    address2 = json['address_2'];
-    city = json['city'];
-    state = json['state'];
-    postcode = json['postcode'];
-    country = json['country'];
+    firstName = json['shipping_first_name'];
+    lastName = json['shipping_last_name'];
+    company = json['shipping_company'];
+    address1 = json['shipping_address_1'];
+    address2 = json['shipping_address_2'];
+    city = json['shipping_city'];
+    state = json['shipping_state'];
+    postcode = json['shipping_postcode'];
+    country = json['shipping_country'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['first_name'] = firstName;
-    data['last_name'] = lastName;
-    data['company'] = company;
-    data['address_1'] = address1;
-    data['address_2'] = address2;
-    data['city'] = city;
-    data['state'] = state;
-    data['postcode'] = postcode;
-    data['country'] = country;
-    return data;
+  Shipping.fromWOOCOMMERCE(Map<String, dynamic> data) {
+    firstName = data['first_name'];
+    lastName = data['last_name'];
+    company = data['company'];
+    address1 = data['address_1'];
+    address2 = data['address_2'];
+    city = data['city'];
+    state = data['state'];
+    postcode = data['postcode'];
+    country = data['country'];
   }
 }

@@ -18,16 +18,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Stream<ProfileState> mapEventToState(
     ProfileEvent event,
   ) async* {
-    yield* event.map(fetchProfileData: (e) async* {
-      final profile = await _profileRepository.getProfile();
-      yield profile.fold(
-        () {
-          return state.copyWith(profile: null);
-        },
-        (data) {
-          return state.copyWith(profile: data);
-        },
-      );
-    });
+    yield* event.map(
+      fetchProfileData: (e) async* {
+        final profile = await _profileRepository.getProfile();
+        yield profile.fold(
+          () {
+            return state.copyWith(profile: null);
+          },
+          (data) {
+            return state.copyWith(profile: data);
+          },
+        );
+      },
+    );
   }
 }

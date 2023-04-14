@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:rentop/application/repositories/messages/messages_bloc.dart';
+import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
+import 'package:rentop/presentation/widgets/rentop_widgets.dart';
 
 class MessagesScreen extends StatelessWidget {
   const MessagesScreen({super.key});
@@ -18,18 +23,39 @@ class MessagesScreen extends StatelessWidget {
               btn: null,
             ),
             const SizedBox(
-              height: 25,
+              height: 7,
             ),
-            RentopCards.rentopMessageCard(
-              carPhoto:
-                  "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-              carName: "Lamborghini Urus",
-              displayName: "Jamal Nurmagomedov",
-              messages: 2,
-              lastMsg: "Hey !",
-              lastMsgDate: DateTime.now(),
-              context: context,
-            ),
+            if (context.read<ProfileBloc>().state.profile != null)
+              BlocBuilder<MessagesBloc, MessagesState>(
+                builder: (context, state) {
+                  return Expanded(
+                    child: SmartRefresher(
+                      controller: state.refreshController,
+                      enablePullUp: true,
+                      onRefresh: () => context
+                          .read<MessagesBloc>()
+                          .add(const MessagesEvent.refreshData()),
+                      onLoading: () => context
+                          .read<MessagesBloc>()
+                          .add(const MessagesEvent.fetchMessagesData()),
+                      child: ListView.builder(
+                        itemCount: state.conversations.length,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return RentopCards.rentopMessageCard(
+                            conversation: state.conversations[index],
+                            context: context,
+                          );
+                        },
+                      ),
+                    ),
+                  );
+                },
+              )
+            else
+              Padding(
+                  padding: const EdgeInsets.only(top: 18),
+                  child: rentopGuestUserWarning(context: context)),
           ],
         ),
       ),

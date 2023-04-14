@@ -40,7 +40,16 @@ class SignInScreen extends StatelessWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
-                Image.asset(Assets.carEclipse),
+                Stack(
+                  children: [
+                    Image.asset(Assets.carEclipse),
+                    SafeArea(
+                      child: RentopButtons.rentopReturnButton(
+                        context: context,
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(
                   height: 40,
                 ),
@@ -91,6 +100,7 @@ class SignInScreen extends StatelessWidget {
                                 ),
                                 (_) => null,
                               ),
+                          controller: null,
                         ),
                         const SizedBox(
                           height: 24,
@@ -127,6 +137,7 @@ class SignInScreen extends StatelessWidget {
                                 ),
                                 (_) => null,
                               ),
+                          controller: null,
                         ),
                         const SizedBox(
                           height: 24,
@@ -148,6 +159,7 @@ class SignInScreen extends StatelessWidget {
                               .read<SignInBloc>()
                               .add(const SignInEvent.btnPressed()),
                           width: double.infinity,
+                          isLoading: state.isSubmitting,
                         )
                       ],
                     ),
