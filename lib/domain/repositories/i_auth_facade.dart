@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:rentop/domain/core/api_failure.dart';
 import 'package:rentop/domain/core/reset_password_api_failure.dart';
 import 'package:rentop/domain/core/value_objects.dart';
+import 'package:rentop/infrastructure/models/profile.dart';
 
 abstract class IAuthFacade {
   Future<Either<ApiFailure, Unit>> signUpWithEmailAndPassword({
@@ -16,7 +17,7 @@ abstract class IAuthFacade {
     required EmailAddress emailAddress,
     required Password password,
   });
-  Future<Either<ApiFailure, Unit>> validateUserToken();
+  Future<Either<ApiFailure, Profile>> validateUserToken();
   Future<void> signOut();
   Future<Either<ResetPasswordApiFailure, Unit>> sendResetCode({
     required EmailAddress emailAddress,

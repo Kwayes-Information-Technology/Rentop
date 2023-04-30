@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/favourites/favourites_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 import 'package:rentop/presentation/widgets/rentop_widgets.dart';
 
@@ -24,7 +24,7 @@ class FavouriteScreen extends StatelessWidget {
             const SizedBox(
               height: 23,
             ),
-            if (context.read<ProfileBloc>().state.profile != null)
+            if (context.read<AuthBloc>().state is Authenticated)
               BlocBuilder<FavouritesBloc, FavouritesState>(
                 builder: (context, state) {
                   return ListView.builder(

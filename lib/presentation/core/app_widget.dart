@@ -11,6 +11,7 @@ import 'package:rentop/presentation/forgetPassword/screens/reset_password_screen
 import 'package:rentop/presentation/forgetPassword/screens/validate_reset_code_screen.dart';
 import 'package:rentop/presentation/message/message_screen.dart';
 import 'package:rentop/presentation/onboarding/onboarding_screen.dart';
+import 'package:rentop/presentation/privacyPolicy/privacy_policy_screen.dart';
 import 'package:rentop/presentation/profile/profile_screen.dart';
 import 'package:rentop/presentation/profile/screens/accountDetails/account_details_screen.dart';
 import 'package:rentop/presentation/profile/screens/address/address_screen.dart';
@@ -24,6 +25,7 @@ import 'package:rentop/presentation/reservation/reservation_screen.dart';
 import 'package:rentop/presentation/reservation/screens/reservation_done_screen.dart';
 import 'package:rentop/presentation/signin/signin_screen.dart';
 import 'package:rentop/presentation/signup/signup_screen.dart';
+import 'package:rentop/presentation/termsAndConditions/terms_and_conditions_screen.dart';
 import 'package:rentop/presentation/welcome/welcome_screen.dart';
 
 Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -53,6 +55,9 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   '/Message': (BuildContext context) => const MessageScreen(),
   '/BillingAddress': (BuildContext context) => const BillingAddressScreen(),
   '/ShippingAddress': (BuildContext context) => const ShippingAddressScreen(),
+  '/PrivacyPolicy': (BuildContext context) => const PrivacyPolicyScreen(),
+  '/TermsAndConditions': (BuildContext context) =>
+      const TermsAndConditionsScreen(),
 };
 
 class AppWidget extends StatelessWidget {

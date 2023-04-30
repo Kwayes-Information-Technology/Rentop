@@ -2,8 +2,8 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/entryCheckout/entry_checkout_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/infrastructure/models/entry.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
@@ -422,15 +422,22 @@ class OrderCheckoutScreen extends StatelessWidget {
                     text: "Pay Now",
                     context: context,
                     onBtnPressed: () {
-                      context.read<EntryCheckoutBloc>().add(
-                          EntryCheckoutEvent.billingInfoChanged(context
-                              .read<ProfileBloc>()
-                              .state
-                              .profile!
-                              .billing));
-                      context
-                          .read<EntryCheckoutBloc>()
-                          .add(const EntryCheckoutEvent.btnPressed());
+                      final authState = context.read<AuthBloc>().state;
+                      if (authState is Authenticated) {
+                        context.read<EntryCheckoutBloc>().add(
+                            EntryCheckoutEvent.billingInfoChanged(
+                                authState.profile.billing));
+                        context
+                            .read<EntryCheckoutBloc>()
+                            .add(const EntryCheckoutEvent.btnPressed());
+                      } else {
+                        Flushbar(
+                          margin: const EdgeInsets.all(8),
+                          borderRadius: BorderRadius.circular(8),
+                          message:
+                              "You're not registered user. You have to be registered user in order to use this feature!",
+                        ).show(context);
+                      }
                     },
                     width: 200,
                     isLoading: state.isSubmitting,

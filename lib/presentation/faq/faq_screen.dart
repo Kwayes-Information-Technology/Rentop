@@ -24,19 +24,9 @@ class FAQScreen extends StatelessWidget {
                 const SizedBox(
                   height: 23,
                 ),
-                Text(
-                  "Rentop for customers",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline1!
-                      .copyWith(fontSize: 18),
-                ),
-                const SizedBox(
-                  height: 23,
-                ),
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: tempCustomerFAQs.length,
+                  itemCount: customerFAQs.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return ExpansionTile(
@@ -44,7 +34,7 @@ class FAQScreen extends StatelessWidget {
                       childrenPadding:
                           const EdgeInsets.symmetric(horizontal: 14.5),
                       title: Text(
-                        tempCustomerFAQs[index].title,
+                        customerFAQs[index].title,
                         style: Theme.of(context)
                             .textTheme
                             .headline1!
@@ -54,48 +44,7 @@ class FAQScreen extends StatelessWidget {
                       children: [
                         ListTile(
                           title: Text(
-                            tempCustomerFAQs[index].description,
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-                const SizedBox(
-                  height: 23,
-                ),
-                Text(
-                  "Rentop for professionals",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline1!
-                      .copyWith(fontSize: 18),
-                ),
-                const SizedBox(
-                  height: 23,
-                ),
-                ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: tempProffesionalFAQs.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return ExpansionTile(
-                      tilePadding: const EdgeInsets.symmetric(horizontal: 29),
-                      childrenPadding:
-                          const EdgeInsets.symmetric(horizontal: 14.5),
-                      title: Text(
-                        tempProffesionalFAQs[index].title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1!
-                            .copyWith(fontSize: 18, color: mainColor),
-                      ),
-                      iconColor: mainColor,
-                      children: [
-                        ListTile(
-                          title: Text(
-                            tempProffesionalFAQs[index].description,
+                            customerFAQs[index].description,
                             style: Theme.of(context).textTheme.bodyText1,
                           ),
                         ),

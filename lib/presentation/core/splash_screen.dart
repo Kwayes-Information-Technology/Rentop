@@ -21,6 +21,9 @@ class SplashScreen extends StatelessWidget {
               () => Navigator.pushNamed(context, '/Home'),
             );
           } else {
+            context
+                .read<SplashBloc>()
+                .add(const SplashEvent.assignUserAsReturnUser());
             Timer(
               const Duration(seconds: 5),
               () => Navigator.pushNamed(context, '/Onboarding'),

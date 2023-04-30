@@ -9,12 +9,16 @@ import 'package:rentop/domain/core/api_failure.dart';
 import 'package:rentop/domain/core/reset_password_api_failure.dart';
 import 'package:rentop/domain/core/value_objects.dart';
 import 'package:rentop/domain/repositories/i_auth_facade.dart';
+import 'package:rentop/domain/repositories/i_profile_repository.dart';
 import 'package:rentop/infrastructure/models/jwt.dart';
+import 'package:rentop/infrastructure/models/profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @LazySingleton(as: IAuthFacade)
 class AuthFacade implements IAuthFacade {
-  AuthFacade();
+  final IProfileRepository _profileRepository;
+
+  AuthFacade(this._profileRepository);
 
   @override
   Future<Either<ResetPasswordApiFailure, Unit>> resetPassword({
@@ -242,7 +246,7 @@ class AuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<ApiFailure, Unit>> validateUserToken() async {
+  Future<Either<ApiFailure, Profile>> validateUserToken() async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final String? token = prefs.getString('token');
@@ -253,8 +257,9 @@ class AuthFacade implements IAuthFacade {
           'Authorization': 'Bearer $token',
         });
         if (response.statusCode == 200) {
-          // print(response.body);
-          return right(unit);
+          final profile = await _profileRepository.getProfile();
+          return profile.fold(() => left(const ApiFailure.serverError()),
+              (data) => right(data));
         } else {
           return left(const ApiFailure.serverError());
         }

@@ -1,12 +1,13 @@
 import 'dart:async';
 
+import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/checkout/checkout_bloc.dart';
 import 'package:rentop/application/repositories/messages/messages_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/models/conversation.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
@@ -167,7 +168,10 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       ),
                       child: Text(
                         selectedCar.content,
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle1!
+                            .copyWith(fontFamily: "Open Sans"),
                       ),
                     ),
                     const SizedBox(
@@ -217,29 +221,37 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           "${selectedCar.author.firstName} ${selectedCar.author.lastName}",
                       context: context,
                       btnPressed: () {
-                        context.read<MessagesBloc>().add(
-                              const MessagesEvent.newConversationChanged(true),
-                            );
-                        context.read<MessagesBloc>().add(
-                              MessagesEvent.selectedConversationChanged(
-                                Conversation(
-                                  id: null,
-                                  car: selectedCar,
-                                  messages: [],
-                                  unseenMessages: 0,
-                                  messagesCount: 0,
-                                  sender: context
-                                      .read<ProfileBloc>()
-                                      .state
-                                      .profile!,
-                                  receiver: selectedCar.author,
+                        final authState = context.read<AuthBloc>().state;
+                        if (authState is Authenticated) {
+                          context.read<MessagesBloc>().add(
+                                const MessagesEvent.newConversationChanged(
+                                    true),
+                              );
+                          context.read<MessagesBloc>().add(
+                                MessagesEvent.selectedConversationChanged(
+                                  Conversation(
+                                    id: null,
+                                    car: selectedCar,
+                                    messages: [],
+                                    unseenMessages: 0,
+                                    messagesCount: 0,
+                                    sender: authState.profile,
+                                    receiver: selectedCar.author,
+                                  ),
                                 ),
-                              ),
-                            );
-                        Navigator.pushNamed(
-                          context,
-                          '/Message',
-                        );
+                              );
+                          Navigator.pushNamed(
+                            context,
+                            '/Message',
+                          );
+                        } else {
+                          Flushbar(
+                            margin: const EdgeInsets.all(8),
+                            borderRadius: BorderRadius.circular(8),
+                            message:
+                                "You're not registered user. You have to be registered user in order to use this feature!",
+                          ).show(context);
+                        }
                       },
                     ),
                     const SizedBox(
@@ -276,9 +288,6 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         context: context,
                       ),
                     ],
-                    // const SizedBox(
-                    //   height: 20,
-                    // ),
                     ListView.builder(
                       itemCount: selectedCar.reviews.length,
                       shrinkWrap: true,
@@ -317,23 +326,28 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     "AED/${selectedCar.price == selectedCar.price.roundToDouble() ? selectedCar.price.toStringAsFixed(0) : selectedCar.price.toStringAsFixed(2)} / Day - reserve now",
                 context: context,
                 onBtnPressed: () {
-                  if (context.read<ProfileBloc>().state.profile != null) {
+                  final authState = context.read<AuthBloc>().state;
+                  if (authState is Authenticated) {
                     context
                         .read<CheckoutBloc>()
                         .add(CheckoutEvent.selectedCarChanged(selectedCar));
                     context.read<CheckoutBloc>().add(
-                        CheckoutEvent.billingInfoChanged(context
-                            .read<ProfileBloc>()
-                            .state
-                            .profile!
-                            .billing));
+                          CheckoutEvent.billingInfoChanged(
+                            authState.profile.billing,
+                          ),
+                        );
                     Navigator.pushNamed(
                       context,
                       '/CarReservation',
                       arguments: selectedCar,
                     );
                   } else {
-                    Navigator.pushNamed(context, '/Welcome');
+                    Flushbar(
+                      margin: const EdgeInsets.all(8),
+                      borderRadius: BorderRadius.circular(8),
+                      message:
+                          "You're not registered user. You have to be registered user in order to use this feature!",
+                    ).show(context);
                   }
                 },
                 width: 200,

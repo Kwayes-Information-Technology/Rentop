@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/cars/cars_bloc.dart';
 import 'package:rentop/application/repositories/listings/listings_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,13 +17,13 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 23),
             child: Column(
               children: [
-                BlocBuilder<ProfileBloc, ProfileState>(
+                BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, state) {
-                    if (state.profile != null) {
+                    if (state is Authenticated) {
                       return RentopCards.rentopProfileCard(
-                        userPhoto: state.profile!.userAvatar,
-                        userGravatar: state.profile!.userAvatarGravatar!,
-                        userName: state.profile!.firstName!,
+                        userPhoto: state.profile.userAvatar,
+                        userGravatar: state.profile.userAvatarGravatar!,
+                        userName: state.profile.firstName!,
                         notificationsActive: true,
                         context: context,
                       );

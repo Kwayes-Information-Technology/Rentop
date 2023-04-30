@@ -52,12 +52,7 @@ class WelcomeScreen extends StatelessWidget {
               RentopButtons.rentopOutlineButton(
                 text: "Continue as a Guest",
                 context: context,
-                onBtnPressed: () {
-                  context
-                      .read<SplashBloc>()
-                      .add(const SplashEvent.assignUserAsReturnUser());
-                  Navigator.pushNamed(context, '/Home');
-                },
+                onBtnPressed: () => Navigator.pushNamed(context, '/Home'),
                 color: minorColor,
               ),
             ],

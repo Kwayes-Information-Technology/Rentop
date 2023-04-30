@@ -10,12 +10,12 @@ import 'package:rentop/application/repositories/accountDetails/account_details_b
 import 'package:rentop/application/repositories/billingAddress/billing_address_bloc.dart';
 import 'package:rentop/application/repositories/cars/cars_bloc.dart';
 import 'package:rentop/application/repositories/checkout/checkout_bloc.dart';
+import 'package:rentop/application/repositories/contactUs/contact_us_bloc.dart';
 import 'package:rentop/application/repositories/entries/entries_bloc.dart';
 import 'package:rentop/application/repositories/entryCheckout/entry_checkout_bloc.dart';
 import 'package:rentop/application/repositories/favourites/favourites_bloc.dart';
 import 'package:rentop/application/repositories/listings/listings_bloc.dart';
 import 'package:rentop/application/repositories/messages/messages_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/application/repositories/shippingAddress/shipping_address_bloc.dart';
 import 'package:rentop/application/reset_password/reset_password_bloc.dart';
 import 'package:rentop/application/sign_in/sign_in_bloc.dart';
@@ -64,12 +64,6 @@ void main() async {
           create: (_) => getIt<ListingsBloc>()
             ..add(const ListingsEvent.fetchListingsData()),
         ),
-        BlocProvider(
-          create: (_) => getIt<ProfileBloc>()
-            ..add(
-              const ProfileEvent.fetchProfileData(),
-            ),
-        ),
         BlocProvider(create: (_) => getIt<CheckoutBloc>()),
         BlocProvider(create: (_) => getIt<EntriesBloc>()),
         BlocProvider(create: (_) => getIt<EntryCheckoutBloc>()),
@@ -79,7 +73,8 @@ void main() async {
         BlocProvider(create: (_) => getIt<AccountDetailsBloc>()),
         BlocProvider(
             create: (_) => getIt<FavouritesBloc>()
-              ..add(const FavouritesEvent.fetchFavouritesData()))
+              ..add(const FavouritesEvent.fetchFavouritesData())),
+        BlocProvider(create: (_) => getIt<ContactUsBloc>()),
       ],
       child: const AppWidget(),
     ),

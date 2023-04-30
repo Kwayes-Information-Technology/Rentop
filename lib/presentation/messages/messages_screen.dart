@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/messages/messages_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
 import 'package:rentop/presentation/widgets/rentop_widgets.dart';
 
@@ -25,7 +25,7 @@ class MessagesScreen extends StatelessWidget {
             const SizedBox(
               height: 7,
             ),
-            if (context.read<ProfileBloc>().state.profile != null)
+            if (context.read<AuthBloc>().state is Authenticated)
               BlocBuilder<MessagesBloc, MessagesState>(
                 builder: (context, state) {
                   return Expanded(

@@ -2,7 +2,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/shippingAddress/shipping_address_bloc.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
@@ -48,8 +48,8 @@ class ShippingAddressScreen extends StatelessWidget {
               },
               (_) {
                 context
-                    .read<ProfileBloc>()
-                    .add(const ProfileEvent.fetchProfileData());
+                    .read<AuthBloc>()
+                    .add(const AuthEvent.fetchUserProfileData());
                 Navigator.pop(context);
               },
             ),

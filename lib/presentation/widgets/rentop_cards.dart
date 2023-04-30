@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/navigation/navigation_bloc.dart';
 import 'package:rentop/application/repositories/accountDetails/account_details_bloc.dart';
 import 'package:rentop/application/repositories/billingAddress/billing_address_bloc.dart';
@@ -13,7 +15,6 @@ import 'package:rentop/application/repositories/entryCheckout/entry_checkout_blo
 import 'package:rentop/application/repositories/favourites/favourites_bloc.dart';
 import 'package:rentop/application/repositories/listings/listings_bloc.dart';
 import 'package:rentop/application/repositories/messages/messages_bloc.dart';
-import 'package:rentop/application/repositories/profile/profile_bloc.dart';
 import 'package:rentop/application/repositories/shippingAddress/shipping_address_bloc.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/models/billing.dart';
@@ -264,13 +265,23 @@ class RentopCards {
                 ),
               ),
               onPressed: () {
-                context.read<AccountDetailsBloc>().add(
-                    AccountDetailsEvent.initialAccountDetails(
-                        context.read<ProfileBloc>().state.profile!));
-                Navigator.pushNamed(
-                  context,
-                  '/AccountDetails',
-                );
+                final authState = context.read<AuthBloc>().state;
+                if (authState is Authenticated) {
+                  context.read<AccountDetailsBloc>().add(
+                      AccountDetailsEvent.initialAccountDetails(
+                          authState.profile));
+                  Navigator.pushNamed(
+                    context,
+                    '/AccountDetails',
+                  );
+                } else {
+                  Flushbar(
+                    margin: const EdgeInsets.all(8),
+                    borderRadius: BorderRadius.circular(8),
+                    message:
+                        "You're not registered user. You have to be registered user in order to use this feature!",
+                  ).show(context);
+                }
               },
               child: Text(
                 "Edit account details",
@@ -465,11 +476,9 @@ class RentopCards {
                                 isFavorite: favourites
                                     .any((element) => element.id == car.id),
                                 valueChanged: (val) {
-                                  if (context
-                                          .read<ProfileBloc>()
-                                          .state
-                                          .profile !=
-                                      null) {
+                                  final authState =
+                                      context.read<AuthBloc>().state;
+                                  if (authState is Authenticated) {
                                     if (val == true) {
                                       context.read<FavouritesBloc>().add(
                                           FavouritesEvent.addFavourite(
@@ -544,7 +553,9 @@ class RentopCards {
                 Flexible(
                   child: Text(
                     car.name,
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          fontFamily: "Poppins",
+                        ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
