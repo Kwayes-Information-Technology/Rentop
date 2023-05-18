@@ -65,7 +65,7 @@ class RentopCards {
               ),
               Text(
                 "Hi, $userName",
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       fontSize: 18,
                     ),
               ),
@@ -117,7 +117,7 @@ class RentopCards {
             children: [
               Text(
                 userName,
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       fontSize: 18,
                     ),
               ),
@@ -133,7 +133,7 @@ class RentopCards {
                   "Show Profile",
                   style: Theme.of(context)
                       .textTheme
-                      .subtitle1!
+                      .titleMedium!
                       .copyWith(color: mainShadeColor),
                 ),
               ),
@@ -178,7 +178,7 @@ class RentopCards {
               ),
               Text(
                 userName,
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       fontSize: 18,
                     ),
               ),
@@ -222,7 +222,7 @@ class RentopCards {
             "Hello",
             style: Theme.of(context)
                 .textTheme
-                .bodyText1!
+                .bodyLarge!
                 .copyWith(color: Colors.white),
           ),
           const SizedBox(
@@ -230,7 +230,7 @@ class RentopCards {
           ),
           Text(
             userName,
-            style: Theme.of(context).textTheme.headline1!.copyWith(
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
                   color: Colors.white,
                   fontSize: 18,
                 ),
@@ -285,8 +285,10 @@ class RentopCards {
               },
               child: Text(
                 "Edit account details",
-                style:
-                    Theme.of(context).textTheme.button!.copyWith(fontSize: 16),
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .copyWith(fontSize: 16),
               ),
             ),
           )
@@ -329,7 +331,7 @@ class RentopCards {
               ),
               Text(
                 "Guest User",
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       fontSize: 18,
                     ),
               ),
@@ -425,7 +427,7 @@ class RentopCards {
             ),
             Text(
               carCategory.name,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: minorColor,
                   ),
             ),
@@ -553,7 +555,7 @@ class RentopCards {
                 Flexible(
                   child: Text(
                     car.name,
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontFamily: "Poppins",
                         ),
                     overflow: TextOverflow.ellipsis,
@@ -574,7 +576,7 @@ class RentopCards {
                         car.rating!.toStringAsFixed(2),
                         style: Theme.of(context)
                             .textTheme
-                            .headline1!
+                            .displayLarge!
                             .copyWith(fontSize: 14, color: mainColor),
                       ),
                     ],
@@ -591,7 +593,7 @@ class RentopCards {
                   itemCount: car.carSpecifications.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 6,
+                    childAspectRatio: 4,
                   ),
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -608,7 +610,7 @@ class RentopCards {
                             car.carSpecifications[index].name,
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1!
+                                .displayLarge!
                                 .copyWith(fontSize: 13, color: minorShadeColor),
                           ),
                         )
@@ -634,7 +636,7 @@ class RentopCards {
                   car.geoCity,
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 13, color: minorShadeColor),
                 )
               ],
@@ -646,19 +648,19 @@ class RentopCards {
               "AED ${car.price == car.price.roundToDouble() ? car.price.toStringAsFixed(0) : car.price.toStringAsFixed(2)}",
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(fontSize: 15, color: mainColor),
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            Divider(
-              height: 1,
-              color: minorShadeColor,
-            ),
-            const SizedBox(
-              height: 19,
-            ),
+            // const SizedBox(
+            //   height: 15,
+            // ),
+            // Divider(
+            //   height: 1,
+            //   color: minorShadeColor,
+            // ),
+            // const SizedBox(
+            //   height: 19,
+            // ),
           ],
         ),
       ),
@@ -721,7 +723,7 @@ class RentopCards {
                   children: [
                     Text(
                       title,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),
@@ -750,7 +752,7 @@ class RentopCards {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             btn,
           ],
@@ -775,7 +777,7 @@ class RentopCards {
           children: [
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
           ],
         ),
@@ -804,7 +806,7 @@ class RentopCards {
                 "$totalReviews reviews",
                 style: Theme.of(context)
                     .textTheme
-                    .headline1!
+                    .displayLarge!
                     .copyWith(fontSize: 20),
               ),
               const SizedBox(
@@ -824,7 +826,7 @@ class RentopCards {
                     avgRating.toStringAsFixed(2),
                     style: Theme.of(context)
                         .textTheme
-                        .headline1!
+                        .displayLarge!
                         .copyWith(fontSize: 17, color: mainColor),
                   ),
                 ],
@@ -928,7 +930,7 @@ class RentopCards {
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context)
                           .textTheme
-                          .headline1!
+                          .displayLarge!
                           .copyWith(fontSize: 13),
                     ),
                   )
@@ -998,7 +1000,7 @@ class RentopCards {
                                 : "${conversation.receiver.firstName} ${conversation.receiver.lastName}",
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle1!
+                                .titleMedium!
                                 .copyWith(fontSize: 12, color: mainColor),
                           ),
                           const SizedBox(
@@ -1009,7 +1011,7 @@ class RentopCards {
                           conversation.car.name,
                           style: Theme.of(context)
                               .textTheme
-                              .headline1!
+                              .displayLarge!
                               .copyWith(fontSize: 13),
                         ),
                         if (conversation.messages.isNotEmpty) ...[
@@ -1021,7 +1023,7 @@ class RentopCards {
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle1!
+                                .titleMedium!
                                 .copyWith(fontSize: 10),
                           ),
                         ],
@@ -1040,7 +1042,7 @@ class RentopCards {
                     backgroundColor: mainColor,
                     child: Text(
                       conversation.unseenMessages.toString(),
-                      style: Theme.of(context).textTheme.headline1!.copyWith(
+                      style: Theme.of(context).textTheme.displayLarge!.copyWith(
                             fontSize: 11,
                             color: Colors.white,
                           ),
@@ -1064,7 +1066,7 @@ class RentopCards {
                             ? "Yesterday"
                             : DateFormat.yMd()
                                 .format(conversation.messages.last.createdAt),
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(
                     height: 5,
@@ -1072,7 +1074,7 @@ class RentopCards {
                   Text(
                     DateFormat.jm()
                         .format(conversation.messages.last.createdAt),
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ],
               ],
@@ -1128,7 +1130,7 @@ class RentopCards {
                 ],
                 Text(
                   entry.car.name,
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),
@@ -1166,7 +1168,7 @@ class RentopCards {
                             : entry.status == 'publish'
                                 ? 'Active'
                                 : entry.status,
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       fontSize: 13,
                       color: entry.status == 'declined'
                           ? mainShadeColor
@@ -1186,11 +1188,11 @@ class RentopCards {
               children: [
                 Text(
                   "Type",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
                   "Daily Reservation",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -1202,11 +1204,11 @@ class RentopCards {
               children: [
                 Text(
                   "Created",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
                   DateFormat("dd MMMM yyyy").format(entry.date),
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -1218,11 +1220,11 @@ class RentopCards {
               children: [
                 Text(
                   "Checkin",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
                   DateFormat("dd MMMM yyyy").format(entry.checkin),
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -1234,11 +1236,11 @@ class RentopCards {
               children: [
                 Text(
                   "Checkout",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
                   DateFormat("dd MMMM yyyy").format(entry.checkout),
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -1338,7 +1340,7 @@ class RentopCards {
                   ),
                   Text(
                     carName,
-                    style: Theme.of(context).textTheme.headline1!.copyWith(
+                    style: Theme.of(context).textTheme.displayLarge!.copyWith(
                           fontSize: 18,
                         ),
                   ),
@@ -1367,7 +1369,7 @@ class RentopCards {
           children: [
             Text(
               DateFormat.jm().format(message.createdAt),
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize: 10,
                     color: minorColor,
                   ),
@@ -1391,7 +1393,7 @@ class RentopCards {
               ),
               child: Text(
                 message.text,
-                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: message.sendByMe ? Colors.white : minorColor,
                       fontSize: 16,
                     ),
@@ -1433,8 +1435,10 @@ class RentopCards {
           children: [
             Text(
               "Billing Address",
-              style:
-                  Theme.of(context).textTheme.headline1!.copyWith(fontSize: 18),
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(fontSize: 18),
             ),
             const SizedBox(
               height: 12,
@@ -1442,7 +1446,7 @@ class RentopCards {
             Text(
               "You have not set up this type of address yet",
               style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14),
+                  Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 14),
             ),
             const SizedBox(
               height: 12,
@@ -1480,8 +1484,10 @@ class RentopCards {
           children: [
             Text(
               "Billing Address",
-              style:
-                  Theme.of(context).textTheme.headline1!.copyWith(fontSize: 18),
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(fontSize: 18),
             ),
             const SizedBox(
               height: 12,
@@ -1492,7 +1498,7 @@ class RentopCards {
                 "${billingInfo.firstName} ${billingInfo.lastName}",
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1505,7 +1511,7 @@ class RentopCards {
                 billingInfo.company!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1518,7 +1524,7 @@ class RentopCards {
                 billingInfo.address1!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1531,7 +1537,7 @@ class RentopCards {
                 billingInfo.address2!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1544,7 +1550,7 @@ class RentopCards {
                 billingInfo.postcode!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1556,7 +1562,7 @@ class RentopCards {
                 billingInfo.city!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1568,7 +1574,7 @@ class RentopCards {
                 billingInfo.state!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1581,7 +1587,7 @@ class RentopCards {
                 billingInfo.country!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1593,7 +1599,7 @@ class RentopCards {
                 billingInfo.email!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1605,7 +1611,7 @@ class RentopCards {
                 billingInfo.phone!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1663,8 +1669,10 @@ class RentopCards {
           children: [
             Text(
               "Shipping Address",
-              style:
-                  Theme.of(context).textTheme.headline1!.copyWith(fontSize: 18),
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(fontSize: 18),
             ),
             const SizedBox(
               height: 12,
@@ -1672,7 +1680,7 @@ class RentopCards {
             Text(
               "You have not set up this type of address yet",
               style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14),
+                  Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 14),
             ),
             const SizedBox(
               height: 12,
@@ -1710,8 +1718,10 @@ class RentopCards {
           children: [
             Text(
               "Shipping Address",
-              style:
-                  Theme.of(context).textTheme.headline1!.copyWith(fontSize: 18),
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(fontSize: 18),
             ),
             const SizedBox(
               height: 12,
@@ -1722,7 +1732,7 @@ class RentopCards {
                 "${shippingInfo.firstName} ${shippingInfo.lastName}",
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1735,7 +1745,7 @@ class RentopCards {
                 shippingInfo.company!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1748,7 +1758,7 @@ class RentopCards {
                 shippingInfo.address1!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1761,7 +1771,7 @@ class RentopCards {
                 shippingInfo.address2!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1774,7 +1784,7 @@ class RentopCards {
                 shippingInfo.postcode!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1786,7 +1796,7 @@ class RentopCards {
                 shippingInfo.city!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1799,7 +1809,7 @@ class RentopCards {
                 shippingInfo.state!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(
@@ -1812,7 +1822,7 @@ class RentopCards {
                 shippingInfo.country!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 14),
               ),
               const SizedBox(

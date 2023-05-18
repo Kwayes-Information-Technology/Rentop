@@ -15,7 +15,7 @@ class CarRequestResponse {
     required this.cars,
   });
 
-  static CarRequestResponse fromData(Map<String, dynamic> data) {
+  factory CarRequestResponse.fromData(Map<String, dynamic> data) {
     return CarRequestResponse(
       meta: Meta.fromData(data['meta']),
       cars: Car.fromData(data['cars']),
@@ -219,7 +219,7 @@ class Car {
     return cars;
   }
 
-  static Car fromSingleData(dynamic data) {
+  factory Car.fromSingleData(dynamic data) {
     return Car(
       id: data['id'],
       images: imagesFromData(data['rz_gallery']),

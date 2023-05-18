@@ -45,13 +45,13 @@ class RentopTextFields {
               color: Color(0xFFFF3131),
             ),
           ),
-          errorStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+          errorStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontSize: 12,
                 color: const Color(0xFFFF3131),
               ),
           labelText: hintText,
           labelStyle:
-              Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 16),
+              Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 16),
         ),
       ),
     );
@@ -92,7 +92,7 @@ class RentopTextFields {
               color: Color(0xFFFF3131),
             ),
           ),
-          errorStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+          errorStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontSize: 12,
                 color: const Color(0xFFFF3131),
               ),
@@ -100,11 +100,11 @@ class RentopTextFields {
           prefixText: "AED ",
           labelStyle: Theme.of(context)
               .textTheme
-              .headline1!
+              .displayLarge!
               .copyWith(fontSize: 14, color: minorShadeColor),
           prefixStyle: Theme.of(context)
               .textTheme
-              .headline1!
+              .displayLarge!
               .copyWith(fontSize: 14, color: minorColor),
         ),
       ),

@@ -33,7 +33,7 @@ class ReservationDoneScreen extends StatelessWidget {
               ),
               Text(
                 "Thank you !",
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       color: Colors.green,
                     ),
               ),
@@ -43,7 +43,7 @@ class ReservationDoneScreen extends StatelessWidget {
               Text(messageTxt,
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(color: Colors.green, fontSize: 20),
                   textAlign: TextAlign.center)
             ],

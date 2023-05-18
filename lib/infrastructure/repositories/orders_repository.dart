@@ -197,7 +197,6 @@ class OrdersRepository implements IOrdersRepository {
           body: body,
         );
         final responseBody = jsonDecode(response.body);
-        print(responseBody);
         if (responseBody['message'] == 'pending-requests') {
           return left(const OrderFailure.pendingRequests());
         } else if (responseBody['message'] == 'payment-intent-error') {
@@ -254,7 +253,6 @@ class OrdersRepository implements IOrdersRepository {
         return left(const OrderFailure.serverError());
       }
     } catch (e) {
-      print(e.toString());
       return left(const OrderFailure.serverError());
     }
   }

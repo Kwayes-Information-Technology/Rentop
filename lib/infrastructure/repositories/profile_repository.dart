@@ -128,7 +128,6 @@ class ProfileRepository implements IProfileRepository {
         return left(const ApiFailure.serverError());
       }
     } catch (e) {
-      print(e.toString());
       return left(const ApiFailure.serverError());
     }
   }

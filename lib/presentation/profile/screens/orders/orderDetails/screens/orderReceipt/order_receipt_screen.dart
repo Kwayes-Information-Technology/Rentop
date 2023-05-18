@@ -36,7 +36,7 @@ class OrderReceiptScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         text: TextSpan(
                           text: 'Order ',
-                          style: Theme.of(context).textTheme.bodyText2,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           children: [
                             TextSpan(
                               text: "#${selectedEntry.order!.id} ",
@@ -107,7 +107,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "Product",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(
                                           fontSize: 14,
                                           color: Colors.white,
@@ -117,7 +117,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "Total",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(
                                           fontSize: 14,
                                           color: Colors.white,
@@ -142,7 +142,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         "Booking X1",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                       const SizedBox(
                                         height: 5,
@@ -151,7 +151,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.car.name,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline1!
+                                            .displayLarge!
                                             .copyWith(
                                               fontSize: 13,
                                               color: mainColor,
@@ -164,7 +164,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         "Checkin : ${DateFormat("dd MMMM yyyy").format(selectedEntry.checkin)}",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline1!
+                                            .displayLarge!
                                             .copyWith(
                                               fontSize: 13,
                                             ),
@@ -176,7 +176,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         "Checkout : ${DateFormat("dd MMMM yyyy").format(selectedEntry.checkout)}",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline1!
+                                            .displayLarge!
                                             .copyWith(
                                               fontSize: 13,
                                             ),
@@ -186,7 +186,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                   Text(
                                     "AED ${selectedEntry.pricing.dueNow}",
                                     style:
-                                        Theme.of(context).textTheme.subtitle1,
+                                        Theme.of(context).textTheme.titleMedium,
                                   )
                                 ],
                               ),
@@ -215,14 +215,14 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "Subtotal:",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   ),
                                   Text(
                                     "AED ${selectedEntry.pricing.dueNow}",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   )
                                 ],
@@ -252,14 +252,14 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "VAT:",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   ),
                                   Text(
                                     "AED ${selectedEntry.order!.totalTax}",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   )
                                 ],
@@ -289,7 +289,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "Payment Method:",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   ),
                                   Text(
@@ -298,7 +298,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.paymentMethodTitle,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   )
                                 ],
@@ -328,14 +328,14 @@ class OrderReceiptScreen extends StatelessWidget {
                                     "Total:",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   ),
                                   Text(
                                     "AED ${selectedEntry.order!.total}",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   )
                                 ],
@@ -354,7 +354,7 @@ class OrderReceiptScreen extends StatelessWidget {
                         "Billing Address",
                         style: Theme.of(context)
                             .textTheme
-                            .headline1!
+                            .displayLarge!
                             .copyWith(fontSize: 18),
                       ),
                       const SizedBox(
@@ -376,7 +376,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                   "Address:",
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline1!
+                                      .displayLarge!
                                       .copyWith(fontSize: 13),
                                 ),
                                 Column(
@@ -389,7 +389,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         "${selectedEntry.order!.billing.firstName} ${selectedEntry.order!.billing.lastName}",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                     if (selectedEntry.order!.billing.company!
@@ -398,7 +398,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.billing.company!,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                     if (selectedEntry.order!.billing.address1!
@@ -407,7 +407,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.billing.address1!,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                     if (selectedEntry.order!.billing.address2!
@@ -416,7 +416,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.billing.address2!,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                     if (selectedEntry
@@ -425,7 +425,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.billing.city!,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                     if (selectedEntry
@@ -434,7 +434,7 @@ class OrderReceiptScreen extends StatelessWidget {
                                         selectedEntry.order!.billing.state!,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1,
+                                            .titleMedium,
                                       ),
                                     ],
                                   ],
@@ -451,12 +451,12 @@ class OrderReceiptScreen extends StatelessWidget {
                                   "Phone:",
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline1!
+                                      .displayLarge!
                                       .copyWith(fontSize: 13),
                                 ),
                                 Text(
                                   selectedEntry.order!.billing.phone!,
-                                  style: Theme.of(context).textTheme.subtitle1,
+                                  style: Theme.of(context).textTheme.titleMedium,
                                 ),
                               ],
                             ),
@@ -470,12 +470,12 @@ class OrderReceiptScreen extends StatelessWidget {
                                   "Email:",
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline1!
+                                      .displayLarge!
                                       .copyWith(fontSize: 13),
                                 ),
                                 Text(
                                   selectedEntry.order!.billing.email!,
-                                  style: Theme.of(context).textTheme.subtitle1,
+                                  style: Theme.of(context).textTheme.titleMedium,
                                 ),
                               ],
                             ),

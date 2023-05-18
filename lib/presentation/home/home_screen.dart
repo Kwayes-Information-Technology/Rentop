@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                   "Top rented cars",
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 18),
                 ),
                 const SizedBox(
@@ -97,10 +97,18 @@ class HomeScreen extends StatelessWidget {
                 ),
                 BlocBuilder<CarsBloc, CarsState>(
                   builder: (context, state) {
-                    return ListView.builder(
+                    return GridView.builder(
                       itemCount: state.topCars.length,
-                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:
+                            (MediaQuery.of(context).size.width >= 600) ? 3 : 1,
+                        childAspectRatio:
+                            (MediaQuery.of(context).size.width >= 600)
+                                ? (2.3 / 3)
+                                : (2.8 / 3),
+                      ),
                       physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return RentopCards.rentopCarCard(
                           car: state.topCars[index],
@@ -113,6 +121,23 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                     );
+
+                    // ListView.builder(
+                    //   itemCount: state.topCars.length,
+                    //   shrinkWrap: true,
+                    //   physics: const NeverScrollableScrollPhysics(),
+                    //   itemBuilder: (context, index) {
+                    //     return RentopCards.rentopCarCard(
+                    //       car: state.topCars[index],
+                    //       context: context,
+                    //       onCarTapped: (car) => Navigator.pushNamed(
+                    //         context,
+                    //         '/CarDetails',
+                    //         arguments: car,
+                    //       ),
+                    //     );
+                    //   },
+                    // );
                   },
                 ),
               ],

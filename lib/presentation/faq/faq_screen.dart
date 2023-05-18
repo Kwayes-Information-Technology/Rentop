@@ -37,7 +37,7 @@ class FAQScreen extends StatelessWidget {
                         customerFAQs[index].title,
                         style: Theme.of(context)
                             .textTheme
-                            .headline1!
+                            .displayLarge!
                             .copyWith(fontSize: 18, color: mainColor),
                       ),
                       iconColor: mainColor,
@@ -45,7 +45,7 @@ class FAQScreen extends StatelessWidget {
                         ListTile(
                           title: Text(
                             customerFAQs[index].description,
-                            style: Theme.of(context).textTheme.bodyText1,
+                            style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ),
                       ],

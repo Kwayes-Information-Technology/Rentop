@@ -30,7 +30,7 @@ class Order {
     required this.customerNote,
   });
 
-  static Order fromData(Map<String, dynamic> data) {
+  factory Order.fromData(Map<String, dynamic> data) {
     return Order(
       id: data['id'],
       status: data['status'],

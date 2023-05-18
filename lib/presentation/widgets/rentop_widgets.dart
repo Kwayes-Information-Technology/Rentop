@@ -25,7 +25,7 @@ Widget rentopGuestUserWarning({
             ),
             Text(
               "You're not registered user!",
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
               textAlign: TextAlign.center,
             ),
             const SizedBox(
@@ -33,7 +33,7 @@ Widget rentopGuestUserWarning({
             ),
             Text(
               "You have to be registered user in order to use this page!",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             )
           ],

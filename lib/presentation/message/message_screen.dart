@@ -58,7 +58,7 @@ class MessageScreen extends StatelessWidget {
                                     ? "Yesterday"
                                     : DateFormat.yMd().format(value),
                             style:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
+                                Theme.of(context).textTheme.titleMedium!.copyWith(
                                       color: minorColor,
                                     ),
                           ),
@@ -120,7 +120,7 @@ class MessageScreen extends StatelessWidget {
                             borderSide: BorderSide.none,
                           ),
                           hintText: "Type your message",
-                          hintStyle: Theme.of(context).textTheme.subtitle1,
+                          hintStyle: Theme.of(context).textTheme.titleMedium,
                           suffixIcon: GestureDetector(
                             onTap: () => context
                                 .read<MessagesBloc>()

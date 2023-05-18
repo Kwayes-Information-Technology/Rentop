@@ -12,7 +12,7 @@ class RentopRating {
       children: [
         Text(
           text,
-          style: Theme.of(context).textTheme.subtitle1,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         Row(
           children: [
@@ -33,7 +33,7 @@ class RentopRating {
             ),
             Text(
               value.toString(),
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
         ),

@@ -31,10 +31,15 @@ void main() async {
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_LIVE_KEY']!;
   await Stripe.instance.applySettings();
   //Remove this method to stop OneSignal Debugging
-  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
-  OneSignal.shared.setAppId("dd66f3b7-0858-4fa3-bffc-ba1059557720");
+  // OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+  OneSignal.shared.setAppId(dotenv.env['ONESIGNAL_APP_ID']!);
 // The promptForPushNotificationsWithUserResponse function will show the iOS or Android push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-  OneSignal.shared.promptUserForPushNotificationPermission();
+  // OneSignal.shared.promptUserForPushNotificationPermission();
+  //restrict screen to be only portrait
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]);
   runApp(
     MultiBlocProvider(
       providers: [
@@ -54,10 +59,12 @@ void main() async {
         ),
         BlocProvider(create: (context) => getIt<NavigationBloc>()),
         BlocProvider(
-          create: (context) => getIt<CarsBloc>()
-            ..add(
-              const CarsEvent.fetchTopCarsData(),
-            ),
+          create: (context) {
+            return getIt<CarsBloc>()
+              ..add(
+                const CarsEvent.initial(),
+              );
+          },
         ),
         BlocProvider(create: (_) => getIt<ResetPasswordBloc>()),
         BlocProvider(

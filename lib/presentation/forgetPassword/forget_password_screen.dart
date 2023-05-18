@@ -49,7 +49,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               ),
               Text(
                 "Forgot password",
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(
                 height: 24,
@@ -64,7 +64,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     children: [
                       Text(
                         "Please enter you e-mail address. You will recieve a code to create a new password via email.",
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       const SizedBox(
                         height: 14,

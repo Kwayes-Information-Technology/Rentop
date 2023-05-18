@@ -10,6 +10,7 @@ abstract class ICarsRepository {
     required CarRegion? carRegion,
     required CarCategory? carCategory,
     required CarBrand? carBrand,
+    required int? listPerPage,
   });
   Future<Option<List<Car>>> getTopCars();
 }

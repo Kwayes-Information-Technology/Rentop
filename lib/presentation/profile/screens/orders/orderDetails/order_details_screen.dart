@@ -55,7 +55,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                 ],
                                 Text(
                                   selectedEntry.car.name,
-                                  style: Theme.of(context).textTheme.bodyText2,
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 ),
                               ],
                             ),
@@ -74,7 +74,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             "Reservation",
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1!
+                                .displayLarge!
                                 .copyWith(fontSize: 18),
                           ),
                           const SizedBox(
@@ -92,11 +92,11 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Reservation ID",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 "#${selectedEntry.id}",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -115,7 +115,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Reservation Status",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 selectedEntry.status == 'declined'
@@ -128,7 +128,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                             : selectedEntry.status == 'publish'
                                                 ? 'Active'
                                                 : selectedEntry.status,
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -147,12 +147,12 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Checkin Date",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 DateFormat("dd MMMM yyyy")
                                     .format(selectedEntry.checkin),
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -171,12 +171,12 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Checkout Date",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 DateFormat("dd MMMM yyyy")
                                     .format(selectedEntry.checkout),
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -195,11 +195,11 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Nights",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 "x${selectedEntry.pricing.nights}",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -217,7 +217,7 @@ class OrderDetailsScreen extends StatelessWidget {
                             "Pricing Details",
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1!
+                                .displayLarge!
                                 .copyWith(fontSize: 18),
                           ),
                           const SizedBox(
@@ -235,11 +235,11 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Base Price",
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                               Text(
                                 'AED ${selectedEntry.pricing.base == selectedEntry.pricing.base.roundToDouble() ? selectedEntry.pricing.base.toStringAsFixed(0) : selectedEntry.pricing.base.toStringAsFixed(2)}',
-                                style: Theme.of(context).textTheme.bodyText1,
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
                             ],
                           ),
@@ -259,11 +259,11 @@ class OrderDetailsScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Long term discount",
-                                  style: Theme.of(context).textTheme.bodyText1,
+                                  style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                                 Text(
                                   'AED ${selectedEntry.pricing.longTerm == selectedEntry.pricing.longTerm.roundToDouble() ? selectedEntry.pricing.longTerm.toStringAsFixed(0) : selectedEntry.pricing.longTerm.toStringAsFixed(2)}',
-                                  style: Theme.of(context).textTheme.bodyText1,
+                                  style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               ],
                             ),
@@ -291,12 +291,12 @@ class OrderDetailsScreen extends StatelessWidget {
                                     Text(
                                       selectedEntry.pricing.addons[index].name,
                                       style:
-                                          Theme.of(context).textTheme.bodyText1,
+                                          Theme.of(context).textTheme.bodyLarge,
                                     ),
                                     Text(
                                       'AED ${selectedEntry.pricing.addons[index].price == selectedEntry.pricing.addons[index].price.roundToDouble() ? selectedEntry.pricing.addons[index].price.toStringAsFixed(0) : selectedEntry.pricing.addons[index].price.toStringAsFixed(2)}',
                                       style:
-                                          Theme.of(context).textTheme.bodyText1,
+                                          Theme.of(context).textTheme.bodyLarge,
                                     ),
                                   ],
                                 );
@@ -318,11 +318,11 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Total",
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               Text(
                                 'AED ${selectedEntry.pricing.total == selectedEntry.pricing.total.roundToDouble() ? selectedEntry.pricing.total.toStringAsFixed(0) : selectedEntry.pricing.total.toStringAsFixed(2)}',
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),
@@ -341,11 +341,11 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Due Now",
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               Text(
                                 'AED ${selectedEntry.pricing.dueNow == selectedEntry.pricing.dueNow.roundToDouble() ? selectedEntry.pricing.dueNow.toStringAsFixed(0) : selectedEntry.pricing.dueNow.toStringAsFixed(2)}',
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),

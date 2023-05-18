@@ -158,7 +158,7 @@ class BillingAddressScreen extends StatelessWidget {
                                               : state.country,
                                           style: Theme.of(context)
                                               .textTheme
-                                              .subtitle1!
+                                              .titleMedium!
                                               .copyWith(fontSize: 16),
                                         ),
                                         const Icon(Icons.arrow_drop_down)

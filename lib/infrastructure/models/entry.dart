@@ -78,7 +78,7 @@ class Pricing {
     required this.dueNow,
   });
 
-  static Pricing fromData(Map<String, dynamic> data) {
+  factory Pricing.fromData(Map<String, dynamic> data) {
     return Pricing(
       nights: data['nights'],
       base: double.parse(data['base'].toString()),
@@ -104,7 +104,7 @@ class RzAddons {
     required this.price,
   });
 
-  static List<RzAddons> fromData(dynamic data) {
+  static List<RzAddons> fromData(Map<dynamic, dynamic> data) {
     if (data is List) {
       return [];
     } else {

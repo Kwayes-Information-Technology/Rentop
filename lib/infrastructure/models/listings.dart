@@ -19,7 +19,7 @@ class Listings {
     required this.carBrands,
   });
 
-  static Listings fromData(Map<String, dynamic> data) {
+  factory Listings.fromData(Map<String, dynamic> data) {
     return Listings(
       carCategories: CarCategory.fromData(data['car_categories']),
       carFeatures: CarFeature.fromData(data['car_features']),

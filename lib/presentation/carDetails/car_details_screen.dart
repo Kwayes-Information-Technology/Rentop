@@ -60,7 +60,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       child: CarouselSlider(
                         carouselController: controller,
                         options: CarouselOptions(
-                          height: 220,
+                          height: MediaQuery.of(context).size.height / 2,
                           viewportFraction: 1,
                           onPageChanged: (index, reason) {
                             setState(() {
@@ -127,9 +127,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     ),
                     GridView.builder(
                       itemCount: selectedCar.carSpecifications.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:
+                            (MediaQuery.of(context).size.width >= 600) ? 5 : 2,
                         childAspectRatio: 6,
                       ),
                       physics: const NeverScrollableScrollPhysics(),
@@ -150,7 +150,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 selectedCar.carSpecifications[index].name,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline1!
+                                    .displayLarge!
                                     .copyWith(
                                         fontSize: 13, color: minorShadeColor),
                               ),
@@ -170,7 +170,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         selectedCar.content,
                         style: Theme.of(context)
                             .textTheme
-                            .subtitle1!
+                            .titleMedium!
                             .copyWith(fontFamily: "Open Sans"),
                       ),
                     ),
@@ -179,9 +179,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     ),
                     GridView.builder(
                       itemCount: selectedCar.carFeatures.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:
+                            (MediaQuery.of(context).size.width >= 600) ? 4 : 2,
                         childAspectRatio: 6,
                       ),
                       physics: const NeverScrollableScrollPhysics(),
@@ -202,7 +202,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 selectedCar.carFeatures[index].name,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline1!
+                                    .displayLarge!
                                     .copyWith(
                                         fontSize: 13, color: minorShadeColor),
                               ),

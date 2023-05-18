@@ -1,6 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/sign_in/sign_in_bloc.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
@@ -31,6 +32,9 @@ class SignInScreen extends StatelessWidget {
                 ).show(context);
               },
               (_) {
+                context
+                    .read<AuthBloc>()
+                    .add(const AuthEvent.fetchUserProfileData());
                 Navigator.pushNamed(context, '/Home');
               },
             ),
@@ -55,7 +59,7 @@ class SignInScreen extends StatelessWidget {
                 ),
                 Text(
                   "Login",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 const SizedBox(
                   height: 24,

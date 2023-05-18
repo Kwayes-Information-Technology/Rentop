@@ -48,7 +48,7 @@ class ExploreScreen extends StatelessWidget {
                           InputChip(
                             label: Text(
                               state.selectedCarBrand!.name,
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             selected: true,
                             selectedColor: Colors.white,
@@ -65,7 +65,7 @@ class ExploreScreen extends StatelessWidget {
                           InputChip(
                             label: Text(
                               state.selectedCarCategory!.name,
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             selected: true,
                             selectedColor: Colors.white,
@@ -83,7 +83,7 @@ class ExploreScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(2.0),
                             label: Text(
                               state.selectedCarRegion!.name,
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             selected: true,
                             selectedColor: Colors.white,
@@ -119,8 +119,17 @@ class ExploreScreen extends StatelessWidget {
                     onLoading: () => context
                         .read<CarsBloc>()
                         .add(const CarsEvent.fetchCarsData()),
-                    child: ListView.builder(
+                    child: GridView.builder(
                       itemCount: state.cars.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:
+                            (MediaQuery.of(context).size.width >= 600) ? 3 : 1,
+                        childAspectRatio:
+                            (MediaQuery.of(context).size.width >= 600)
+                                ? (2.3 / 3)
+                                : (2.8 / 3),
+                      ),
+                      // physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return RentopCards.rentopCarCard(
@@ -134,6 +143,22 @@ class ExploreScreen extends StatelessWidget {
                         );
                       },
                     ),
+
+                    // ListView.builder(
+                    //   itemCount: state.cars.length,
+                    //   shrinkWrap: true,
+                    //   itemBuilder: (context, index) {
+                    //     return RentopCards.rentopCarCard(
+                    //       car: state.cars[index],
+                    //       context: context,
+                    //       onCarTapped: (car) => Navigator.pushNamed(
+                    //         context,
+                    //         '/CarDetails',
+                    //         arguments: car,
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
                   ),
                 );
               },

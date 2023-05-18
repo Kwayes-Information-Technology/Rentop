@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CarsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -39,6 +41,8 @@ mixin _$CarsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -58,6 +62,8 @@ mixin _$CarsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -78,6 +84,8 @@ mixin _$CarsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -102,6 +110,8 @@ mixin _$CarsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -121,6 +131,8 @@ mixin _$CarsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -156,6 +168,436 @@ class _$CarsEventCopyWithImpl<$Res, $Val extends CarsEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialCopyWithImpl<$Res>
+    extends _$CarsEventCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$Initial implements Initial {
+  const _$Initial();
+
+  @override
+  String toString() {
+    return 'CarsEvent.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
+    required TResult Function() fetchCarsData,
+    required TResult Function() refreshData,
+    required TResult Function(CarCategory? selectedCarCategory)
+        carCategorySelectedChanged,
+    required TResult Function(CarBrand? selectedCarBrand)
+        carBrandSelectedChanged,
+    required TResult Function(CarRegion? selectedCarRegion)
+        carRegionSelectedChanged,
+    required TResult Function(String price) fromPriceChanged,
+    required TResult Function(String price) toPriceChanged,
+    required TResult Function(PickerDateRange? range) dateRangeChanged,
+    required TResult Function() clearFilterationButton,
+    required TResult Function() filterationButton,
+    required TResult Function() removeCarBrandFilter,
+    required TResult Function() removeCarCategoryFilter,
+    required TResult Function() removeCarRegionFilter,
+    required TResult Function() fetchTopCarsData,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
+    TResult? Function()? fetchCarsData,
+    TResult? Function()? refreshData,
+    TResult? Function(CarCategory? selectedCarCategory)?
+        carCategorySelectedChanged,
+    TResult? Function(CarBrand? selectedCarBrand)? carBrandSelectedChanged,
+    TResult? Function(CarRegion? selectedCarRegion)? carRegionSelectedChanged,
+    TResult? Function(String price)? fromPriceChanged,
+    TResult? Function(String price)? toPriceChanged,
+    TResult? Function(PickerDateRange? range)? dateRangeChanged,
+    TResult? Function()? clearFilterationButton,
+    TResult? Function()? filterationButton,
+    TResult? Function()? removeCarBrandFilter,
+    TResult? Function()? removeCarCategoryFilter,
+    TResult? Function()? removeCarRegionFilter,
+    TResult? Function()? fetchTopCarsData,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
+    TResult Function()? fetchCarsData,
+    TResult Function()? refreshData,
+    TResult Function(CarCategory? selectedCarCategory)?
+        carCategorySelectedChanged,
+    TResult Function(CarBrand? selectedCarBrand)? carBrandSelectedChanged,
+    TResult Function(CarRegion? selectedCarRegion)? carRegionSelectedChanged,
+    TResult Function(String price)? fromPriceChanged,
+    TResult Function(String price)? toPriceChanged,
+    TResult Function(PickerDateRange? range)? dateRangeChanged,
+    TResult Function()? clearFilterationButton,
+    TResult Function()? filterationButton,
+    TResult Function()? removeCarBrandFilter,
+    TResult Function()? removeCarCategoryFilter,
+    TResult Function()? removeCarRegionFilter,
+    TResult Function()? fetchTopCarsData,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
+    required TResult Function(FetchCarsData value) fetchCarsData,
+    required TResult Function(RefreshData value) refreshData,
+    required TResult Function(CarCategorySelectedChanged value)
+        carCategorySelectedChanged,
+    required TResult Function(CarBrandSelectedChanged value)
+        carBrandSelectedChanged,
+    required TResult Function(CarRegionSelectedChanged value)
+        carRegionSelectedChanged,
+    required TResult Function(FromPriceChanged value) fromPriceChanged,
+    required TResult Function(ToPriceChanged value) toPriceChanged,
+    required TResult Function(DateRangeChanged value) dateRangeChanged,
+    required TResult Function(ClearFilterationButton value)
+        clearFilterationButton,
+    required TResult Function(FilterationButton value) filterationButton,
+    required TResult Function(RemoveCarBrandFilter value) removeCarBrandFilter,
+    required TResult Function(RemoveCarCategoryFilter value)
+        removeCarCategoryFilter,
+    required TResult Function(RemoveCarRegionFilter value)
+        removeCarRegionFilter,
+    required TResult Function(FetchTopCarsData value) fetchTopCarsData,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
+    TResult? Function(FetchCarsData value)? fetchCarsData,
+    TResult? Function(RefreshData value)? refreshData,
+    TResult? Function(CarCategorySelectedChanged value)?
+        carCategorySelectedChanged,
+    TResult? Function(CarBrandSelectedChanged value)? carBrandSelectedChanged,
+    TResult? Function(CarRegionSelectedChanged value)? carRegionSelectedChanged,
+    TResult? Function(FromPriceChanged value)? fromPriceChanged,
+    TResult? Function(ToPriceChanged value)? toPriceChanged,
+    TResult? Function(DateRangeChanged value)? dateRangeChanged,
+    TResult? Function(ClearFilterationButton value)? clearFilterationButton,
+    TResult? Function(FilterationButton value)? filterationButton,
+    TResult? Function(RemoveCarBrandFilter value)? removeCarBrandFilter,
+    TResult? Function(RemoveCarCategoryFilter value)? removeCarCategoryFilter,
+    TResult? Function(RemoveCarRegionFilter value)? removeCarRegionFilter,
+    TResult? Function(FetchTopCarsData value)? fetchTopCarsData,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
+    TResult Function(FetchCarsData value)? fetchCarsData,
+    TResult Function(RefreshData value)? refreshData,
+    TResult Function(CarCategorySelectedChanged value)?
+        carCategorySelectedChanged,
+    TResult Function(CarBrandSelectedChanged value)? carBrandSelectedChanged,
+    TResult Function(CarRegionSelectedChanged value)? carRegionSelectedChanged,
+    TResult Function(FromPriceChanged value)? fromPriceChanged,
+    TResult Function(ToPriceChanged value)? toPriceChanged,
+    TResult Function(DateRangeChanged value)? dateRangeChanged,
+    TResult Function(ClearFilterationButton value)? clearFilterationButton,
+    TResult Function(FilterationButton value)? filterationButton,
+    TResult Function(RemoveCarBrandFilter value)? removeCarBrandFilter,
+    TResult Function(RemoveCarCategoryFilter value)? removeCarCategoryFilter,
+    TResult Function(RemoveCarRegionFilter value)? removeCarRegionFilter,
+    TResult Function(FetchTopCarsData value)? fetchTopCarsData,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Initial implements CarsEvent {
+  const factory Initial() = _$Initial;
+}
+
+/// @nodoc
+abstract class _$$ListPerPageChangedCopyWith<$Res> {
+  factory _$$ListPerPageChangedCopyWith(_$ListPerPageChanged value,
+          $Res Function(_$ListPerPageChanged) then) =
+      __$$ListPerPageChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int listPerPage});
+}
+
+/// @nodoc
+class __$$ListPerPageChangedCopyWithImpl<$Res>
+    extends _$CarsEventCopyWithImpl<$Res, _$ListPerPageChanged>
+    implements _$$ListPerPageChangedCopyWith<$Res> {
+  __$$ListPerPageChangedCopyWithImpl(
+      _$ListPerPageChanged _value, $Res Function(_$ListPerPageChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listPerPage = null,
+  }) {
+    return _then(_$ListPerPageChanged(
+      null == listPerPage
+          ? _value.listPerPage
+          : listPerPage // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListPerPageChanged implements ListPerPageChanged {
+  const _$ListPerPageChanged(this.listPerPage);
+
+  @override
+  final int listPerPage;
+
+  @override
+  String toString() {
+    return 'CarsEvent.listPerPageChanged(listPerPage: $listPerPage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListPerPageChanged &&
+            (identical(other.listPerPage, listPerPage) ||
+                other.listPerPage == listPerPage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, listPerPage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListPerPageChangedCopyWith<_$ListPerPageChanged> get copyWith =>
+      __$$ListPerPageChangedCopyWithImpl<_$ListPerPageChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
+    required TResult Function() fetchCarsData,
+    required TResult Function() refreshData,
+    required TResult Function(CarCategory? selectedCarCategory)
+        carCategorySelectedChanged,
+    required TResult Function(CarBrand? selectedCarBrand)
+        carBrandSelectedChanged,
+    required TResult Function(CarRegion? selectedCarRegion)
+        carRegionSelectedChanged,
+    required TResult Function(String price) fromPriceChanged,
+    required TResult Function(String price) toPriceChanged,
+    required TResult Function(PickerDateRange? range) dateRangeChanged,
+    required TResult Function() clearFilterationButton,
+    required TResult Function() filterationButton,
+    required TResult Function() removeCarBrandFilter,
+    required TResult Function() removeCarCategoryFilter,
+    required TResult Function() removeCarRegionFilter,
+    required TResult Function() fetchTopCarsData,
+  }) {
+    return listPerPageChanged(listPerPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
+    TResult? Function()? fetchCarsData,
+    TResult? Function()? refreshData,
+    TResult? Function(CarCategory? selectedCarCategory)?
+        carCategorySelectedChanged,
+    TResult? Function(CarBrand? selectedCarBrand)? carBrandSelectedChanged,
+    TResult? Function(CarRegion? selectedCarRegion)? carRegionSelectedChanged,
+    TResult? Function(String price)? fromPriceChanged,
+    TResult? Function(String price)? toPriceChanged,
+    TResult? Function(PickerDateRange? range)? dateRangeChanged,
+    TResult? Function()? clearFilterationButton,
+    TResult? Function()? filterationButton,
+    TResult? Function()? removeCarBrandFilter,
+    TResult? Function()? removeCarCategoryFilter,
+    TResult? Function()? removeCarRegionFilter,
+    TResult? Function()? fetchTopCarsData,
+  }) {
+    return listPerPageChanged?.call(listPerPage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
+    TResult Function()? fetchCarsData,
+    TResult Function()? refreshData,
+    TResult Function(CarCategory? selectedCarCategory)?
+        carCategorySelectedChanged,
+    TResult Function(CarBrand? selectedCarBrand)? carBrandSelectedChanged,
+    TResult Function(CarRegion? selectedCarRegion)? carRegionSelectedChanged,
+    TResult Function(String price)? fromPriceChanged,
+    TResult Function(String price)? toPriceChanged,
+    TResult Function(PickerDateRange? range)? dateRangeChanged,
+    TResult Function()? clearFilterationButton,
+    TResult Function()? filterationButton,
+    TResult Function()? removeCarBrandFilter,
+    TResult Function()? removeCarCategoryFilter,
+    TResult Function()? removeCarRegionFilter,
+    TResult Function()? fetchTopCarsData,
+    required TResult orElse(),
+  }) {
+    if (listPerPageChanged != null) {
+      return listPerPageChanged(listPerPage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
+    required TResult Function(FetchCarsData value) fetchCarsData,
+    required TResult Function(RefreshData value) refreshData,
+    required TResult Function(CarCategorySelectedChanged value)
+        carCategorySelectedChanged,
+    required TResult Function(CarBrandSelectedChanged value)
+        carBrandSelectedChanged,
+    required TResult Function(CarRegionSelectedChanged value)
+        carRegionSelectedChanged,
+    required TResult Function(FromPriceChanged value) fromPriceChanged,
+    required TResult Function(ToPriceChanged value) toPriceChanged,
+    required TResult Function(DateRangeChanged value) dateRangeChanged,
+    required TResult Function(ClearFilterationButton value)
+        clearFilterationButton,
+    required TResult Function(FilterationButton value) filterationButton,
+    required TResult Function(RemoveCarBrandFilter value) removeCarBrandFilter,
+    required TResult Function(RemoveCarCategoryFilter value)
+        removeCarCategoryFilter,
+    required TResult Function(RemoveCarRegionFilter value)
+        removeCarRegionFilter,
+    required TResult Function(FetchTopCarsData value) fetchTopCarsData,
+  }) {
+    return listPerPageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
+    TResult? Function(FetchCarsData value)? fetchCarsData,
+    TResult? Function(RefreshData value)? refreshData,
+    TResult? Function(CarCategorySelectedChanged value)?
+        carCategorySelectedChanged,
+    TResult? Function(CarBrandSelectedChanged value)? carBrandSelectedChanged,
+    TResult? Function(CarRegionSelectedChanged value)? carRegionSelectedChanged,
+    TResult? Function(FromPriceChanged value)? fromPriceChanged,
+    TResult? Function(ToPriceChanged value)? toPriceChanged,
+    TResult? Function(DateRangeChanged value)? dateRangeChanged,
+    TResult? Function(ClearFilterationButton value)? clearFilterationButton,
+    TResult? Function(FilterationButton value)? filterationButton,
+    TResult? Function(RemoveCarBrandFilter value)? removeCarBrandFilter,
+    TResult? Function(RemoveCarCategoryFilter value)? removeCarCategoryFilter,
+    TResult? Function(RemoveCarRegionFilter value)? removeCarRegionFilter,
+    TResult? Function(FetchTopCarsData value)? fetchTopCarsData,
+  }) {
+    return listPerPageChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
+    TResult Function(FetchCarsData value)? fetchCarsData,
+    TResult Function(RefreshData value)? refreshData,
+    TResult Function(CarCategorySelectedChanged value)?
+        carCategorySelectedChanged,
+    TResult Function(CarBrandSelectedChanged value)? carBrandSelectedChanged,
+    TResult Function(CarRegionSelectedChanged value)? carRegionSelectedChanged,
+    TResult Function(FromPriceChanged value)? fromPriceChanged,
+    TResult Function(ToPriceChanged value)? toPriceChanged,
+    TResult Function(DateRangeChanged value)? dateRangeChanged,
+    TResult Function(ClearFilterationButton value)? clearFilterationButton,
+    TResult Function(FilterationButton value)? filterationButton,
+    TResult Function(RemoveCarBrandFilter value)? removeCarBrandFilter,
+    TResult Function(RemoveCarCategoryFilter value)? removeCarCategoryFilter,
+    TResult Function(RemoveCarRegionFilter value)? removeCarRegionFilter,
+    TResult Function(FetchTopCarsData value)? fetchTopCarsData,
+    required TResult orElse(),
+  }) {
+    if (listPerPageChanged != null) {
+      return listPerPageChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListPerPageChanged implements CarsEvent {
+  const factory ListPerPageChanged(final int listPerPage) =
+      _$ListPerPageChanged;
+
+  int get listPerPage;
+  @JsonKey(ignore: true)
+  _$$ListPerPageChangedCopyWith<_$ListPerPageChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -196,6 +638,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -220,6 +664,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -242,6 +688,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -268,6 +716,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -295,6 +745,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -317,6 +769,8 @@ class _$FetchCarsData implements FetchCarsData {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -383,6 +837,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -407,6 +863,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -429,6 +887,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -455,6 +915,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -482,6 +944,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -504,6 +968,8 @@ class _$RefreshData implements RefreshData {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -600,6 +1066,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -624,6 +1092,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -646,6 +1116,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -672,6 +1144,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -699,6 +1173,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -721,6 +1197,8 @@ class _$CarCategorySelectedChanged implements CarCategorySelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -821,6 +1299,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -845,6 +1325,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -867,6 +1349,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -893,6 +1377,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -920,6 +1406,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -942,6 +1430,8 @@ class _$CarBrandSelectedChanged implements CarBrandSelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -1043,6 +1533,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -1067,6 +1559,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -1089,6 +1583,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -1115,6 +1611,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -1142,6 +1640,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -1164,6 +1664,8 @@ class _$CarRegionSelectedChanged implements CarRegionSelectedChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -1262,6 +1764,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -1286,6 +1790,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -1308,6 +1814,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -1334,6 +1842,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -1361,6 +1871,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -1383,6 +1895,8 @@ class _$FromPriceChanged implements FromPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -1480,6 +1994,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -1504,6 +2020,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -1526,6 +2044,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -1552,6 +2072,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -1579,6 +2101,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -1601,6 +2125,8 @@ class _$ToPriceChanged implements ToPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -1698,6 +2224,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -1722,6 +2250,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -1744,6 +2274,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -1770,6 +2302,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -1797,6 +2331,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -1819,6 +2355,8 @@ class _$DateRangeChanged implements DateRangeChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -1891,6 +2429,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -1915,6 +2455,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -1937,6 +2479,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -1963,6 +2507,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -1990,6 +2536,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2012,6 +2560,8 @@ class _$ClearFilterationButton implements ClearFilterationButton {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2078,6 +2628,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -2102,6 +2654,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -2124,6 +2678,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -2150,6 +2706,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -2177,6 +2735,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2199,6 +2759,8 @@ class _$FilterationButton implements FilterationButton {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2265,6 +2827,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -2289,6 +2853,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -2311,6 +2877,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -2337,6 +2905,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -2364,6 +2934,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2386,6 +2958,8 @@ class _$RemoveCarBrandFilter implements RemoveCarBrandFilter {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2453,6 +3027,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -2477,6 +3053,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -2499,6 +3077,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -2525,6 +3105,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -2552,6 +3134,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2574,6 +3158,8 @@ class _$RemoveCarCategoryFilter implements RemoveCarCategoryFilter {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2640,6 +3226,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -2664,6 +3252,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -2686,6 +3276,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -2712,6 +3304,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -2739,6 +3333,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2761,6 +3357,8 @@ class _$RemoveCarRegionFilter implements RemoveCarRegionFilter {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2827,6 +3425,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int listPerPage) listPerPageChanged,
     required TResult Function() fetchCarsData,
     required TResult Function() refreshData,
     required TResult Function(CarCategory? selectedCarCategory)
@@ -2851,6 +3451,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int listPerPage)? listPerPageChanged,
     TResult? Function()? fetchCarsData,
     TResult? Function()? refreshData,
     TResult? Function(CarCategory? selectedCarCategory)?
@@ -2873,6 +3475,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int listPerPage)? listPerPageChanged,
     TResult Function()? fetchCarsData,
     TResult Function()? refreshData,
     TResult Function(CarCategory? selectedCarCategory)?
@@ -2899,6 +3503,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(ListPerPageChanged value) listPerPageChanged,
     required TResult Function(FetchCarsData value) fetchCarsData,
     required TResult Function(RefreshData value) refreshData,
     required TResult Function(CarCategorySelectedChanged value)
@@ -2926,6 +3532,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(ListPerPageChanged value)? listPerPageChanged,
     TResult? Function(FetchCarsData value)? fetchCarsData,
     TResult? Function(RefreshData value)? refreshData,
     TResult? Function(CarCategorySelectedChanged value)?
@@ -2948,6 +3556,8 @@ class _$FetchTopCarsData implements FetchTopCarsData {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(ListPerPageChanged value)? listPerPageChanged,
     TResult Function(FetchCarsData value)? fetchCarsData,
     TResult Function(RefreshData value)? refreshData,
     TResult Function(CarCategorySelectedChanged value)?
@@ -2993,6 +3603,7 @@ mixin _$CarsState {
   PickerDateRange? get dateRange => throw _privateConstructorUsedError;
   DateRangePickerController get dateRangeController =>
       throw _privateConstructorUsedError;
+  int get listPerPage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CarsStateCopyWith<CarsState> get copyWith =>
@@ -3017,7 +3628,8 @@ abstract class $CarsStateCopyWith<$Res> {
       String? fromPrice,
       String? toPrice,
       PickerDateRange? dateRange,
-      DateRangePickerController dateRangeController});
+      DateRangePickerController dateRangeController,
+      int listPerPage});
 }
 
 /// @nodoc
@@ -3046,6 +3658,7 @@ class _$CarsStateCopyWithImpl<$Res, $Val extends CarsState>
     Object? toPrice = freezed,
     Object? dateRange = freezed,
     Object? dateRangeController = null,
+    Object? listPerPage = null,
   }) {
     return _then(_value.copyWith(
       cars: null == cars
@@ -3100,6 +3713,10 @@ class _$CarsStateCopyWithImpl<$Res, $Val extends CarsState>
           ? _value.dateRangeController
           : dateRangeController // ignore: cast_nullable_to_non_nullable
               as DateRangePickerController,
+      listPerPage: null == listPerPage
+          ? _value.listPerPage
+          : listPerPage // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -3124,7 +3741,8 @@ abstract class _$$_CarsStateCopyWith<$Res> implements $CarsStateCopyWith<$Res> {
       String? fromPrice,
       String? toPrice,
       PickerDateRange? dateRange,
-      DateRangePickerController dateRangeController});
+      DateRangePickerController dateRangeController,
+      int listPerPage});
 }
 
 /// @nodoc
@@ -3151,6 +3769,7 @@ class __$$_CarsStateCopyWithImpl<$Res>
     Object? toPrice = freezed,
     Object? dateRange = freezed,
     Object? dateRangeController = null,
+    Object? listPerPage = null,
   }) {
     return _then(_$_CarsState(
       cars: null == cars
@@ -3205,6 +3824,10 @@ class __$$_CarsStateCopyWithImpl<$Res>
           ? _value.dateRangeController
           : dateRangeController // ignore: cast_nullable_to_non_nullable
               as DateRangePickerController,
+      listPerPage: null == listPerPage
+          ? _value.listPerPage
+          : listPerPage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -3225,7 +3848,8 @@ class _$_CarsState implements _CarsState {
       required this.fromPrice,
       required this.toPrice,
       required this.dateRange,
-      required this.dateRangeController})
+      required this.dateRangeController,
+      required this.listPerPage})
       : _cars = cars,
         _topCars = topCars;
 
@@ -3267,10 +3891,12 @@ class _$_CarsState implements _CarsState {
   final PickerDateRange? dateRange;
   @override
   final DateRangePickerController dateRangeController;
+  @override
+  final int listPerPage;
 
   @override
   String toString() {
-    return 'CarsState(cars: $cars, topCars: $topCars, totalPages: $totalPages, currentPage: $currentPage, refreshControlloer: $refreshControlloer, loading: $loading, selectedCarCategory: $selectedCarCategory, selectedCarRegion: $selectedCarRegion, selectedCarBrand: $selectedCarBrand, fromPrice: $fromPrice, toPrice: $toPrice, dateRange: $dateRange, dateRangeController: $dateRangeController)';
+    return 'CarsState(cars: $cars, topCars: $topCars, totalPages: $totalPages, currentPage: $currentPage, refreshControlloer: $refreshControlloer, loading: $loading, selectedCarCategory: $selectedCarCategory, selectedCarRegion: $selectedCarRegion, selectedCarBrand: $selectedCarBrand, fromPrice: $fromPrice, toPrice: $toPrice, dateRange: $dateRange, dateRangeController: $dateRangeController, listPerPage: $listPerPage)';
   }
 
   @override
@@ -3299,7 +3925,9 @@ class _$_CarsState implements _CarsState {
             (identical(other.dateRange, dateRange) ||
                 other.dateRange == dateRange) &&
             (identical(other.dateRangeController, dateRangeController) ||
-                other.dateRangeController == dateRangeController));
+                other.dateRangeController == dateRangeController) &&
+            (identical(other.listPerPage, listPerPage) ||
+                other.listPerPage == listPerPage));
   }
 
   @override
@@ -3317,7 +3945,8 @@ class _$_CarsState implements _CarsState {
       fromPrice,
       toPrice,
       dateRange,
-      dateRangeController);
+      dateRangeController,
+      listPerPage);
 
   @JsonKey(ignore: true)
   @override
@@ -3328,20 +3957,20 @@ class _$_CarsState implements _CarsState {
 
 abstract class _CarsState implements CarsState {
   const factory _CarsState(
-          {required final List<Car> cars,
-          required final List<Car> topCars,
-          required final int totalPages,
-          required final int currentPage,
-          required final RefreshController refreshControlloer,
-          required final bool loading,
-          required final CarCategory? selectedCarCategory,
-          required final CarRegion? selectedCarRegion,
-          required final CarBrand? selectedCarBrand,
-          required final String? fromPrice,
-          required final String? toPrice,
-          required final PickerDateRange? dateRange,
-          required final DateRangePickerController dateRangeController}) =
-      _$_CarsState;
+      {required final List<Car> cars,
+      required final List<Car> topCars,
+      required final int totalPages,
+      required final int currentPage,
+      required final RefreshController refreshControlloer,
+      required final bool loading,
+      required final CarCategory? selectedCarCategory,
+      required final CarRegion? selectedCarRegion,
+      required final CarBrand? selectedCarBrand,
+      required final String? fromPrice,
+      required final String? toPrice,
+      required final PickerDateRange? dateRange,
+      required final DateRangePickerController dateRangeController,
+      required final int listPerPage}) = _$_CarsState;
 
   @override
   List<Car> get cars;
@@ -3369,6 +3998,8 @@ abstract class _CarsState implements CarsState {
   PickerDateRange? get dateRange;
   @override
   DateRangePickerController get dateRangeController;
+  @override
+  int get listPerPage;
   @override
   @JsonKey(ignore: true)
   _$$_CarsStateCopyWith<_$_CarsState> get copyWith =>

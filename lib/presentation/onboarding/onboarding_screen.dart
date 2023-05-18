@@ -19,14 +19,14 @@ class OnboardingScreen extends StatelessWidget {
             ),
             Text(
               "Welcome!",
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             const SizedBox(
               height: 14,
             ),
             Text(
               "With Rentop no more blind car rentals.",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(
               height: 93,

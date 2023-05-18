@@ -2,6 +2,9 @@ part of 'cars_bloc.dart';
 
 @freezed
 class CarsEvent with _$CarsEvent {
+  const factory CarsEvent.initial() = Initial;
+  const factory CarsEvent.listPerPageChanged(int listPerPage) =
+      ListPerPageChanged;
   const factory CarsEvent.fetchCarsData() = FetchCarsData;
   const factory CarsEvent.refreshData() = RefreshData;
   const factory CarsEvent.carCategorySelectedChanged(

@@ -20,6 +20,7 @@ class CarsRepository implements ICarsRepository {
     required CarRegion? carRegion,
     required CarCategory? carCategory,
     required CarBrand? carBrand,
+    required int? listPerPage,
   }) async {
     String url = "${dotenv.env['RENTOP_API_URL']}cars?page=$pageNumber";
     if (carRegion != null) {
@@ -30,6 +31,9 @@ class CarsRepository implements ICarsRepository {
     }
     if (carCategory != null) {
       url += "&car_category=${carCategory.id}";
+    }
+    if (listPerPage != null) {
+      url += "&list_per_page=$listPerPage";
     }
     final Response response = await get(Uri.parse(url));
     if (response.statusCode == 200) {

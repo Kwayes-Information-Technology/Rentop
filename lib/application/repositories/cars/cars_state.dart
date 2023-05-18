@@ -1,7 +1,7 @@
 part of 'cars_bloc.dart';
 
 @freezed
-abstract class CarsState with _$CarsState {
+class CarsState with _$CarsState {
   const factory CarsState({
     required List<Car> cars,
     required List<Car> topCars,
@@ -16,6 +16,7 @@ abstract class CarsState with _$CarsState {
     required String? toPrice,
     required PickerDateRange? dateRange,
     required DateRangePickerController dateRangeController,
+    required int listPerPage,
   }) = _CarsState;
 
   factory CarsState.initial() => CarsState(
@@ -32,5 +33,6 @@ abstract class CarsState with _$CarsState {
         toPrice: null,
         dateRange: null,
         dateRangeController: DateRangePickerController(),
+        listPerPage: 3,
       );
 }

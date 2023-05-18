@@ -99,7 +99,7 @@ class ReservationScreen extends StatelessWidget {
                                     "AED${selectedCar.price == selectedCar.price.roundToDouble() ? selectedCar.price.toStringAsFixed(0) : selectedCar.price.toStringAsFixed(2)}",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 20),
                                   ),
                                   const SizedBox(
@@ -109,7 +109,7 @@ class ReservationScreen extends StatelessWidget {
                                     "Day",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline1!
+                                        .displayLarge!
                                         .copyWith(fontSize: 13),
                                   ),
                                 ],
@@ -165,7 +165,7 @@ class ReservationScreen extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     textStyle: Theme.of(context)
                                         .textTheme
-                                        .bodyText1!
+                                        .bodyLarge!
                                         .copyWith(
                                           fontSize: 14,
                                           color: const Color.fromRGBO(
@@ -199,7 +199,7 @@ class ReservationScreen extends StatelessWidget {
                                       "Clear dates",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .subtitle1!
+                                          .titleMedium!
                                           .copyWith(
                                             color: Colors.black,
                                             fontSize: 13,
@@ -218,14 +218,14 @@ class ReservationScreen extends StatelessWidget {
                                       'Res. length',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText1!
+                                          .bodyLarge!
                                           .copyWith(fontSize: 14),
                                     ),
                                     Text(
                                       'X ${state.reservationNights}',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText1!
+                                          .bodyLarge!
                                           .copyWith(fontSize: 14),
                                     ),
                                   ],
@@ -241,14 +241,14 @@ class ReservationScreen extends StatelessWidget {
                                       'Price',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText1!
+                                          .bodyLarge!
                                           .copyWith(fontSize: 14),
                                     ),
                                     Text(
                                       'AED ${state.basePrice == state.basePrice!.roundToDouble() ? state.basePrice!.toStringAsFixed(0) : state.basePrice!.toStringAsFixed(2)}',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText1!
+                                          .bodyLarge!
                                           .copyWith(fontSize: 14),
                                     ),
                                   ],
@@ -266,14 +266,14 @@ class ReservationScreen extends StatelessWidget {
                                           'Long term discount',
                                           style: Theme.of(context)
                                               .textTheme
-                                              .bodyText1!
+                                              .bodyLarge!
                                               .copyWith(fontSize: 14),
                                         ),
                                         Text(
                                           '- AED ${state.longTermDiscount == state.longTermDiscount!.roundToDouble() ? state.longTermDiscount!.toStringAsFixed(0) : state.longTermDiscount!.toStringAsFixed(2)}',
                                           style: Theme.of(context)
                                               .textTheme
-                                              .bodyText1!
+                                              .bodyLarge!
                                               .copyWith(fontSize: 14),
                                         ),
                                       ],
@@ -299,7 +299,7 @@ class ReservationScreen extends StatelessWidget {
                                               state.addons[index].fields.name,
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .bodyText1!
+                                                  .bodyLarge!
                                                   .copyWith(fontSize: 14),
                                             ),
                                             if (state.addons[index].fields
@@ -309,7 +309,7 @@ class ReservationScreen extends StatelessWidget {
                                                 "AED ${state.addons[index].fields.price == state.addons[index].fields.price!.roundToDouble() ? state.addons[index].fields.price!.toStringAsFixed(0) : state.addons[index].fields.price!.toStringAsFixed(2)}",
                                                 style: Theme.of(context)
                                                     .textTheme
-                                                    .bodyText1!
+                                                    .bodyLarge!
                                                     .copyWith(fontSize: 14),
                                               ),
                                             ]
@@ -328,7 +328,7 @@ class ReservationScreen extends StatelessWidget {
                                     'Process percentage payment',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodyText1!
+                                        .bodyLarge!
                                         .copyWith(fontSize: 14),
                                   ),
                                 ),
@@ -343,14 +343,14 @@ class ReservationScreen extends StatelessWidget {
                                       'Total',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(fontSize: 14),
                                     ),
                                     Text(
                                       'AED ${state.totalPrice == state.totalPrice!.roundToDouble() ? state.totalPrice!.toStringAsFixed(0) : state.totalPrice!.toStringAsFixed(2)}',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(fontSize: 14),
                                     ),
                                   ],
@@ -366,14 +366,14 @@ class ReservationScreen extends StatelessWidget {
                                       'Due now',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(fontSize: 14),
                                     ),
                                     Text(
                                       'AED ${state.dueNow == state.dueNow!.roundToDouble() ? state.dueNow!.toStringAsFixed(0) : state.dueNow!.toStringAsFixed(2)}',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(fontSize: 14),
                                     ),
                                   ],

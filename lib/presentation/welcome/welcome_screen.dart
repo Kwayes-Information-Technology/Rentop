@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rentop/application/splash/splash_bloc.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
@@ -40,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               Text(
                 "Or",
-                style: Theme.of(context).textTheme.button!.copyWith(
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
                       color: minorShadeColor,
                       fontWeight: FontWeight.w400,
                       fontSize: 18,

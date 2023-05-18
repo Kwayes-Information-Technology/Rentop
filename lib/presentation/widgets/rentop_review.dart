@@ -31,7 +31,7 @@ class RentopReview {
                         review.author,
                         style: Theme.of(context)
                             .textTheme
-                            .headline1!
+                            .displayLarge!
                             .copyWith(fontSize: 15),
                       ),
                       const SizedBox(
@@ -51,7 +51,7 @@ class RentopReview {
                             review.rating.toString(),
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1!
+                                .displayLarge!
                                 .copyWith(fontSize: 17, color: mainColor),
                           ),
                         ],
@@ -65,7 +65,7 @@ class RentopReview {
                     DateFormat("dd MMMM yyyy").format(review.date),
                     style: Theme.of(context)
                         .textTheme
-                        .subtitle1!
+                        .titleMedium!
                         .copyWith(fontSize: 10),
                   )
                 ],
@@ -78,7 +78,7 @@ class RentopReview {
           Text(
             review.content,
             style:
-                Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14),
+                Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 14),
           ),
           ListView.builder(
             itemCount: review.replies.length,
@@ -100,7 +100,7 @@ class RentopReview {
                       review.replies[index].displayName,
                       style: Theme.of(context)
                           .textTheme
-                          .headline1!
+                          .displayLarge!
                           .copyWith(fontSize: 15),
                     ),
                     const SizedBox(
@@ -108,7 +108,7 @@ class RentopReview {
                     ),
                     Text(
                       review.replies[index].replyMsg,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

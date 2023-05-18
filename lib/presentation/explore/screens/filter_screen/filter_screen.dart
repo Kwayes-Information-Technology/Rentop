@@ -124,7 +124,7 @@ class FilterScreen extends StatelessWidget {
                                         "Date Range",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyText1!
+                                            .bodyLarge!
                                             .copyWith(
                                                 fontWeight: FontWeight.w500),
                                       ),
@@ -156,7 +156,7 @@ class FilterScreen extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           textStyle: Theme.of(context)
                                               .textTheme
-                                              .bodyText1!
+                                              .bodyLarge!
                                               .copyWith(
                                                 fontSize: 14,
                                                 color: const Color.fromRGBO(

@@ -34,7 +34,7 @@ class AddonsTemplate {
     required this.headingTxt,
   });
 
-  static AddonsTemplate fromData(Map<String, dynamic> data) {
+  factory AddonsTemplate.fromData(Map<String, dynamic> data) {
     return AddonsTemplate(
       id: data['id'],
       name: data['name'],
@@ -55,7 +55,7 @@ class AddonsFields {
     required this.key,
   });
 
-  static AddonsFields fromData(Map<String, dynamic> data) {
+  factory AddonsFields.fromData(Map<String, dynamic> data) {
     return AddonsFields(
       name: data['name'],
       price: double.tryParse(data['price'].toString()),

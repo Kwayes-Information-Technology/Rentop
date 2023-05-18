@@ -45,7 +45,7 @@ class RentopButtons {
               )
             : Text(
                 text,
-                style: Theme.of(context).textTheme.button,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
       ),
     );
@@ -80,7 +80,7 @@ class RentopButtons {
             ),
             Text(
               text,
-              style: Theme.of(context).textTheme.button!.copyWith(
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: mainColor,
                     fontWeight: FontWeight.w400,
                     fontSize: 18,
@@ -103,7 +103,7 @@ class RentopButtons {
       icon: SvgPicture.asset(imagePath),
       label: Text(
         btnText,
-        style: Theme.of(context).textTheme.headline1!.copyWith(
+        style: Theme.of(context).textTheme.displayLarge!.copyWith(
               fontSize: 14,
               color: mainColor,
             ),
@@ -132,7 +132,7 @@ class RentopButtons {
         alignment: Alignment.centerLeft,
         child: Text(
           btnText,
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 18),
         ),
       ),
     );
@@ -152,7 +152,7 @@ class RentopButtons {
           title,
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontWeight: FontWeight.w500),
         ),
         const SizedBox(
@@ -187,7 +187,7 @@ class RentopButtons {
           value: selectedValue,
           hint: Text(
             'Select',
-            style: Theme.of(context).textTheme.headline1!.copyWith(
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
                   fontSize: 14,
                   color: minorShadeColor,
                 ),
@@ -199,7 +199,7 @@ class RentopButtons {
                 item.name,
                 style: Theme.of(context)
                     .textTheme
-                    .headline1!
+                    .displayLarge!
                     .copyWith(fontSize: 14),
               ),
             );
@@ -223,7 +223,7 @@ class RentopButtons {
           title,
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(fontWeight: FontWeight.w500),
         ),
         const SizedBox(
@@ -288,7 +288,7 @@ class RentopButtons {
       ),
       hint: Text(
         'Select Services',
-        style: Theme.of(context).textTheme.headline1!.copyWith(
+        style: Theme.of(context).textTheme.displayLarge!.copyWith(
               fontSize: 14,
               color: minorShadeColor,
             ),
@@ -312,7 +312,7 @@ class RentopButtons {
                         addon.fields.name,
                         style: Theme.of(context)
                             .textTheme
-                            .headline1!
+                            .displayLarge!
                             .copyWith(fontSize: 14),
                       ),
                     ],
@@ -325,7 +325,7 @@ class RentopButtons {
                   softWrap: true,
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14),
                 )
               ]
@@ -363,7 +363,7 @@ class RentopButtons {
             ),
             Text(
               btnTxt,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontSize: 14,
                     color: Colors.white,
                   ),
@@ -412,7 +412,7 @@ class RentopButtons {
             ),
             Text(
               btnTxt,
-              style: Theme.of(context).textTheme.button,
+              style: Theme.of(context).textTheme.labelLarge,
             ),
           ],
         ),
@@ -460,7 +460,7 @@ class RentopButtons {
             children: [
               Text(
                 text,
-                style: Theme.of(context).textTheme.button,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
               SvgPicture.asset(Assets.forwardArrowIcon),
             ],
@@ -498,7 +498,7 @@ class RentopButtons {
                   text,
                   style: Theme.of(context)
                       .textTheme
-                      .button!
+                      .labelLarge!
                       .copyWith(color: color),
                 ),
                 SvgPicture.asset(

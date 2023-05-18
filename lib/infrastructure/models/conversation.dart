@@ -12,7 +12,7 @@ class ConversationRequestResponse {
     required this.conversations,
   });
 
-  static ConversationRequestResponse fromData(Map<String, dynamic> data) {
+  factory ConversationRequestResponse.fromData(Map<String, dynamic> data) {
     return ConversationRequestResponse(
       meta: Meta.fromData(data['meta']),
       conversations: Conversation.fromData(data['messages']),

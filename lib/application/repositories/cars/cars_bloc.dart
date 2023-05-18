@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -31,6 +32,7 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
             carBrand: state.selectedCarBrand,
             carCategory: state.selectedCarCategory,
             carRegion: state.selectedCarRegion,
+            listPerPage: state.listPerPage,
           );
           yield cars.fold(
             () {
@@ -68,6 +70,7 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
           carBrand: state.selectedCarBrand,
           carCategory: state.selectedCarCategory,
           carRegion: state.selectedCarRegion,
+          listPerPage: state.listPerPage,
         );
         yield cars.fold(
           () {
@@ -160,6 +163,18 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
         yield state.copyWith(
           dateRange: e.range,
         );
+      },
+      listPerPageChanged: (e) async* {
+        yield state.copyWith(
+          listPerPage: e.listPerPage,
+        );
+      },
+      initial: (e) async* {
+        final listPerPage =
+            // ignore: deprecated_member_use
+            WidgetsBinding.instance.window.physicalSize.width >= 600 ? 9 : 3;
+        yield state.copyWith(listPerPage: listPerPage);
+        add(const FetchTopCarsData());
       },
     );
   }

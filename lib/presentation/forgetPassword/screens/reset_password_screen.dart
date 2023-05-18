@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentop/application/reset_password/reset_password_bloc.dart';
 import 'package:rentop/infrastructure/core/assets.dart';
-import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_textfields.dart';
 
@@ -25,7 +24,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 ),
                 Text(
                   "Forgot Password",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 const SizedBox(
                   height: 24,
@@ -40,7 +39,7 @@ class ResetPasswordScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Please enter you new password.",
-                          style: Theme.of(context).textTheme.subtitle1,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                         const SizedBox(
                           height: 14,
