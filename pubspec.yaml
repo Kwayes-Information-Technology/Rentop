@@ -7,6 +7,7 @@ environment:
 dependencies: 
   animation_wrappers: ^3.0.0
   another_flushbar: ^1.12.29
+  cached_network_image: ^3.2.3
   carousel_slider: ^4.2.1
   country_picker: ^2.0.20
   cupertino_icons: ^1.0.2
@@ -52,6 +53,7 @@ flutter:
     - assets/images/icons/car_brands/
     - assets/images/icons/car_categories/
     - assets/images/images/
+    - assets/images/placeholders/
     - .env
   fonts: 
     - 

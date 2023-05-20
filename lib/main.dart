@@ -30,16 +30,7 @@ void main() async {
   configureInjection(Environment.prod);
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_LIVE_KEY']!;
   await Stripe.instance.applySettings();
-  //Remove this method to stop OneSignal Debugging
-  // OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
   OneSignal.shared.setAppId(dotenv.env['ONESIGNAL_APP_ID']!);
-// The promptForPushNotificationsWithUserResponse function will show the iOS or Android push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-  // OneSignal.shared.promptUserForPushNotificationPermission();
-  //restrict screen to be only portrait
-  // SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitUp,
-  //   DeviceOrientation.portraitDown,
-  // ]);
   runApp(
     MultiBlocProvider(
       providers: [

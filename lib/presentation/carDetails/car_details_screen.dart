@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:another_flushbar/flushbar.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +9,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rentop/application/auth/auth_bloc.dart';
 import 'package:rentop/application/repositories/checkout/checkout_bloc.dart';
 import 'package:rentop/application/repositories/messages/messages_bloc.dart';
+import 'package:rentop/infrastructure/core/assets.dart';
 import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/models/conversation.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
@@ -59,8 +61,34 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       ),
                       child: CarouselSlider(
                         carouselController: controller,
+                        items: selectedCar.images.map((image) {
+                          return CachedNetworkImage(
+                            placeholder: (context, url) => Center(
+                              child: Image.asset(
+                                Assets.imagePlaceholder,
+                              ),
+                            ),
+                            imageUrl: image,
+                            imageBuilder: (context, imageProvider) {
+                              return Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(13),
+                                    image: DecorationImage(
+                                      image: imageProvider,
+                                      fit: BoxFit.cover,
+                                    )),
+                              );
+                            },
+                            errorWidget: (context, url, error) => const Center(
+                              child: Icon(
+                                Icons.error,
+                                color: Colors.red,
+                              ),
+                            ),
+                          );
+                        }).toList(),
                         options: CarouselOptions(
-                          height: MediaQuery.of(context).size.height / 2,
                           viewportFraction: 1,
                           onPageChanged: (index, reason) {
                             setState(() {
@@ -68,27 +96,11 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             });
                           },
                         ),
-                        items: selectedCar.images.map((image) {
-                          return Builder(
-                            builder: (context) {
-                              return Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(13),
-                                  image: DecorationImage(
-                                    image: NetworkImage(image),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        }).toList(),
                       ),
                     ),
                     Container(
                       width: double.infinity,
-                      height: 98,
+                      height: 100,
                       padding: const EdgeInsets.symmetric(
                         vertical: 12,
                       ),
@@ -99,22 +111,38 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () => controller.animateToPage(index),
-                            child: Container(
-                              width: 86,
-                              margin: const EdgeInsets.symmetric(horizontal: 9),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(13),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    selectedCar.images[index],
+                            child: CachedNetworkImage(
+                              placeholder: (context, url) => Center(
+                                child: Image.asset(
+                                  Assets.imagePlaceholder,
+                                ),
+                              ),
+                              imageUrl: selectedCar.images[index],
+                              imageBuilder: (context, imageProvider) {
+                                return Container(
+                                  width: 86,
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 9),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(13),
+                                    image: DecorationImage(
+                                      image: imageProvider,
+                                      fit: BoxFit.cover,
+                                      colorFilter: _currentIndex == index
+                                          ? null
+                                          : ColorFilter.mode(
+                                              Colors.white.withOpacity(0.6),
+                                              BlendMode.lighten,
+                                            ),
+                                    ),
                                   ),
-                                  fit: BoxFit.cover,
-                                  colorFilter: _currentIndex == index
-                                      ? null
-                                      : ColorFilter.mode(
-                                          Colors.white.withOpacity(0.6),
-                                          BlendMode.lighten,
-                                        ),
+                                );
+                              },
+                              errorWidget: (context, url, error) =>
+                                  const Center(
+                                child: Icon(
+                                  Icons.error,
+                                  color: Colors.red,
                                 ),
                               ),
                             ),

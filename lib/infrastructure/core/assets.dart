@@ -33,6 +33,8 @@ class Assets {
       'assets/images/icons/forward_outlined.svg';
   static const String userIcon = "assets/images/icons/user.png";
   static const String warningIcon = "assets/images/icons/warning.png";
+  static const String imagePlaceholder =
+      "assets/images/placeholders/loading.gif";
 
   static Widget getImageFromString(String metaValue) {
     if (metaValue.contains('icon-auto')) {

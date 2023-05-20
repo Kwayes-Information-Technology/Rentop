@@ -129,7 +129,6 @@ class ExploreScreen extends StatelessWidget {
                                 ? (2.3 / 3)
                                 : (2.8 / 3),
                       ),
-                      // physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return RentopCards.rentopCarCard(
@@ -143,22 +142,6 @@ class ExploreScreen extends StatelessWidget {
                         );
                       },
                     ),
-
-                    // ListView.builder(
-                    //   itemCount: state.cars.length,
-                    //   shrinkWrap: true,
-                    //   itemBuilder: (context, index) {
-                    //     return RentopCards.rentopCarCard(
-                    //       car: state.cars[index],
-                    //       context: context,
-                    //       onCarTapped: (car) => Navigator.pushNamed(
-                    //         context,
-                    //         '/CarDetails',
-                    //         arguments: car,
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
                   ),
                 );
               },

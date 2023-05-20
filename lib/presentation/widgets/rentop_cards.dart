@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
@@ -57,8 +58,24 @@ class RentopCards {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(userPhoto ?? userGravatar),
+              CachedNetworkImage(
+                placeholder: (context, url) => Center(
+                  child: Image.asset(
+                    Assets.imagePlaceholder,
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(
+                    Icons.error,
+                    color: Colors.red,
+                  ),
+                ),
+                imageUrl: userPhoto ?? userGravatar,
+                imageBuilder: (context, imageProvider) {
+                  return CircleAvatar(
+                    backgroundImage: imageProvider,
+                  );
+                },
               ),
               const SizedBox(
                 width: 15,
@@ -105,8 +122,24 @@ class RentopCards {
       ),
       child: Row(
         children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(userPhoto ?? userGravatar),
+          CachedNetworkImage(
+            placeholder: (context, url) => Center(
+              child: Image.asset(
+                Assets.imagePlaceholder,
+              ),
+            ),
+            errorWidget: (context, url, error) => const Center(
+              child: Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+            ),
+            imageUrl: userPhoto ?? userGravatar,
+            imageBuilder: (context, imageProvider) {
+              return CircleAvatar(
+                backgroundImage: imageProvider,
+              );
+            },
           ),
           const SizedBox(
             width: 15,
@@ -170,8 +203,24 @@ class RentopCards {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(userPhoto),
+              CachedNetworkImage(
+                placeholder: (context, url) => Center(
+                  child: Image.asset(
+                    Assets.imagePlaceholder,
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(
+                    Icons.error,
+                    color: Colors.red,
+                  ),
+                ),
+                imageUrl: userPhoto,
+                imageBuilder: (context, imageProvider) {
+                  return CircleAvatar(
+                    backgroundImage: imageProvider,
+                  );
+                },
               ),
               const SizedBox(
                 width: 15,
@@ -212,8 +261,24 @@ class RentopCards {
       ),
       child: Column(
         children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(userPhoto ?? userGravatar),
+          CachedNetworkImage(
+            placeholder: (context, url) => Center(
+              child: Image.asset(
+                Assets.imagePlaceholder,
+              ),
+            ),
+            errorWidget: (context, url, error) => const Center(
+              child: Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+            ),
+            imageUrl: userPhoto ?? userGravatar,
+            imageBuilder: (context, imageProvider) {
+              return CircleAvatar(
+                backgroundImage: imageProvider,
+              );
+            },
           ),
           const SizedBox(
             height: 5,
@@ -420,7 +485,6 @@ class RentopCards {
             Image.asset(
               carCategory.icon,
               height: 40,
-              // color: minorColor,
             ),
             const SizedBox(
               height: 30,
@@ -453,18 +517,24 @@ class RentopCards {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CarouselSlider(
+            CarouselSlider.builder(
               carouselController: controller,
-              options: CarouselOptions(height: 220, viewportFraction: 1),
-              items: car.images.map((image) {
-                return Builder(
-                  builder: (context) {
+              itemCount: car.images.length,
+              itemBuilder: (context, index, realIndex) {
+                return CachedNetworkImage(
+                  placeholder: (context, url) => Center(
+                    child: Image.asset(
+                      Assets.imagePlaceholder,
+                    ),
+                  ),
+                  imageUrl: car.images[index],
+                  imageBuilder: (context, imageProvider) {
                     return Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(13),
                         image: DecorationImage(
-                          image: NetworkImage(image),
+                          image: imageProvider,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -543,8 +613,15 @@ class RentopCards {
                       ),
                     );
                   },
+                  errorWidget: (context, url, error) => const Center(
+                    child: Icon(
+                      Icons.error,
+                      color: Colors.red,
+                    ),
+                  ),
                 );
-              }).toList(),
+              },
+              options: CarouselOptions(height: 220, viewportFraction: 1),
             ),
             const SizedBox(
               height: 20,
@@ -651,16 +728,6 @@ class RentopCards {
                   .displayLarge!
                   .copyWith(fontSize: 15, color: mainColor),
             ),
-            // const SizedBox(
-            //   height: 15,
-            // ),
-            // Divider(
-            //   height: 1,
-            //   color: minorShadeColor,
-            // ),
-            // const SizedBox(
-            //   height: 19,
-            // ),
           ],
         ),
       ),
@@ -917,9 +984,25 @@ class RentopCards {
             Expanded(
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(carPhoto),
-                    radius: 39,
+                  CachedNetworkImage(
+                    placeholder: (context, url) => Center(
+                      child: Image.asset(
+                        Assets.imagePlaceholder,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.error,
+                        color: Colors.red,
+                      ),
+                    ),
+                    imageUrl: carPhoto,
+                    imageBuilder: (context, imageProvider) {
+                      return CircleAvatar(
+                        backgroundImage: imageProvider,
+                        radius: 39,
+                      );
+                    },
                   ),
                   const SizedBox(
                     width: 16,
@@ -959,11 +1042,6 @@ class RentopCards {
   }) {
     return GestureDetector(
       onTap: () {
-        // if (conversation.unseenMessages > 0) {
-        //   context
-        //       .read<MessagesBloc>()
-        //       .add(MessagesEvent.unseenMessages(conversation.id));
-        // }
         context
             .read<MessagesBloc>()
             .add(MessagesEvent.selectedConversationChanged(conversation));
@@ -980,10 +1058,25 @@ class RentopCards {
             Expanded(
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage:
-                        NetworkImage(conversation.car.images.first),
-                    radius: 38.5,
+                  CachedNetworkImage(
+                    placeholder: (context, url) => Center(
+                      child: Image.asset(
+                        Assets.imagePlaceholder,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.error,
+                        color: Colors.red,
+                      ),
+                    ),
+                    imageUrl: conversation.car.images.first,
+                    imageBuilder: (context, imageProvider) {
+                      return CircleAvatar(
+                        backgroundImage: imageProvider,
+                        radius: 38.5,
+                      );
+                    },
                   ),
                   const SizedBox(
                     width: 15,
@@ -1121,8 +1214,24 @@ class RentopCards {
             Row(
               children: [
                 if (entry.car.images.isNotEmpty) ...[
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(entry.car.images.first),
+                  CachedNetworkImage(
+                    placeholder: (context, url) => Center(
+                      child: Image.asset(
+                        Assets.imagePlaceholder,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.error,
+                        color: Colors.red,
+                      ),
+                    ),
+                    imageUrl: entry.car.images.first,
+                    imageBuilder: (context, imageProvider) {
+                      return CircleAvatar(
+                        backgroundImage: imageProvider,
+                      );
+                    },
                   ),
                   const SizedBox(
                     width: 15,
@@ -1332,8 +1441,22 @@ class RentopCards {
               ),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(carPhoto),
+                  CachedNetworkImage(
+                    placeholder: (context, url) => Center(
+                      child: Image.asset(
+                        Assets.imagePlaceholder,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.error,
+                        color: Colors.red,
+                      ),
+                    ),
+                    imageUrl: carPhoto,
+                    imageBuilder: (context, imageProvider) {
+                      return CircleAvatar(backgroundImage: imageProvider);
+                    },
                   ),
                   const SizedBox(
                     width: 15,
