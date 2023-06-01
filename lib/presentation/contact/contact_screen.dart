@@ -83,14 +83,26 @@ class ContactScreen extends StatelessWidget {
                                               ),
                                             ),
                                         hintText: "First Name",
-                                        onVaildator: state.firstName.value.fold(
-                                          (f) => f.maybeMap(
-                                            invalidFirstName: (_) =>
-                                                "Invalid First Name",
-                                            orElse: () => null,
-                                          ),
-                                          (_) => null,
-                                        ),
+                                        validator: (_) {
+                                          return state.firstName.value.fold(
+                                            (f) {
+                                              return f.maybeMap(
+                                                invalidFirstName: (_) =>
+                                                    "Invalid First Name",
+                                                orElse: () => null,
+                                              );
+                                            },
+                                            (_) => null,
+                                          );
+                                        },
+                                        // onVaildator: state.firstName.value.fold(
+                                        //   (f) => f.maybeMap(
+                                        //     invalidFirstName: (_) =>
+                                        //         "Invalid First Name",
+                                        //     orElse: () => null,
+                                        //   ),
+                                        //   (_) => null,
+                                        // ),
                                         suffixIcon: state.firstName.value.fold(
                                           (f) => f.maybeMap(
                                             invalidFirstName: (_) =>
@@ -117,14 +129,26 @@ class ContactScreen extends StatelessWidget {
                                               ),
                                             ),
                                         hintText: "Last Name",
-                                        onVaildator: state.lastName.value.fold(
-                                          (f) => f.maybeMap(
-                                            invalidLastName: (_) =>
-                                                "Invalid Last Name",
-                                            orElse: () => null,
-                                          ),
-                                          (_) => null,
-                                        ),
+                                        validator: (_) {
+                                          return state.lastName.value.fold(
+                                            (f) {
+                                              return f.maybeMap(
+                                                invalidLastName: (_) =>
+                                                    "Invalid Last Name",
+                                                orElse: () => null,
+                                              );
+                                            },
+                                            (_) => null,
+                                          );
+                                        },
+                                        // onVaildator: state.lastName.value.fold(
+                                        //   (f) => f.maybeMap(
+                                        //     invalidLastName: (_) =>
+                                        //         "Invalid Last Name",
+                                        //     orElse: () => null,
+                                        //   ),
+                                        //   (_) => null,
+                                        // ),
                                         suffixIcon: state.lastName.value.fold(
                                           (f) => f.maybeMap(
                                             invalidLastName: (_) =>
@@ -151,14 +175,26 @@ class ContactScreen extends StatelessWidget {
                                             ),
                                           ),
                                   hintText: "Email",
-                                  onVaildator: state.email.value.fold(
-                                    (f) => f.maybeMap(
-                                      invalidEmail: (_) =>
-                                          "Invalid Email Address",
-                                      orElse: () => null,
-                                    ),
-                                    (_) => null,
-                                  ),
+                                  validator: (_) {
+                                    return state.email.value.fold(
+                                      (f) {
+                                        return f.maybeMap(
+                                          invalidEmail: (_) =>
+                                              "Invalid Email Address",
+                                          orElse: () => null,
+                                        );
+                                      },
+                                      (_) => null,
+                                    );
+                                  },
+                                  // onVaildator: state.email.value.fold(
+                                  //   (f) => f.maybeMap(
+                                  //     invalidEmail: (_) =>
+                                  //         "Invalid Email Address",
+                                  //     orElse: () => null,
+                                  //   ),
+                                  //   (_) => null,
+                                  // ),
                                   suffixIcon: state.email.value.fold(
                                     (f) => f.maybeMap(
                                       invalidEmail: (_) =>
@@ -182,14 +218,26 @@ class ContactScreen extends StatelessWidget {
                                             ),
                                           ),
                                   hintText: "Phone Number",
-                                  onVaildator: state.phone.value.fold(
-                                    (f) => f.maybeMap(
-                                      invalidPhoneNumber: (_) =>
-                                          "Invalid Phone Number",
-                                      orElse: () => null,
-                                    ),
-                                    (_) => null,
-                                  ),
+                                  validator: (_) {
+                                    return state.phone.value.fold(
+                                      (f) {
+                                        return f.maybeMap(
+                                          invalidPhoneNumber: (_) =>
+                                              "Invalid Phone Number",
+                                          orElse: () => null,
+                                        );
+                                      },
+                                      (_) => null,
+                                    );
+                                  },
+                                  // onVaildator: state.phone.value.fold(
+                                  //   (f) => f.maybeMap(
+                                  //     invalidPhoneNumber: (_) =>
+                                  //         "Invalid Phone Number",
+                                  //     orElse: () => null,
+                                  //   ),
+                                  //   (_) => null,
+                                  // ),
                                   suffixIcon: state.phone.value.fold(
                                     (f) => f.maybeMap(
                                       invalidPhoneNumber: (_) =>
@@ -210,9 +258,16 @@ class ContactScreen extends StatelessWidget {
                                       .read<ContactUsBloc>()
                                       .add(ContactUsEvent.messageChanged(val)),
                                   hintText: "Message",
-                                  onVaildator: state.message.isEmpty
-                                      ? "Message can't be empty!"
-                                      : null,
+                                  validator: (_) {
+                                    if (state.message.isEmpty) {
+                                      return "Message can't be empty!";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                  // onVaildator: state.message.isEmpty
+                                  //     ? "Message can't be empty!"
+                                  //     : null,
                                   suffixIcon: state.message.isEmpty
                                       ? Image.asset(Assets.errorIcon)
                                       : null,

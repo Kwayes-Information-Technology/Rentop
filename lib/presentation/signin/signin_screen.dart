@@ -29,6 +29,7 @@ class SignInScreen extends StatelessWidget {
                     badRequest: (_) => 'Bad Request',
                     unauthorized: (_) => 'Unauthorized Request',
                   ),
+                  duration: const Duration(seconds: 2),
                 ).show(context);
               },
               (_) {
@@ -48,9 +49,7 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     Image.asset(Assets.carEclipse),
                     SafeArea(
-                      child: RentopButtons.rentopReturnButton(
-                        context: context,
-                      ),
+                      child: RentopButtons.rentopReturnButton(context: context),
                     ),
                   ],
                 ),
@@ -65,9 +64,7 @@ class SignInScreen extends StatelessWidget {
                   height: 24,
                 ),
                 Form(
-                  autovalidateMode: state.showErrorMessages
-                      ? AutovalidateMode.always
-                      : AutovalidateMode.disabled,
+                  autovalidateMode: AutovalidateMode.always,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
@@ -78,18 +75,24 @@ class SignInScreen extends StatelessWidget {
                               .read<SignInBloc>()
                               .add(SignInEvent.emailAddressChanged(val)),
                           hintText: "Username or email",
-                          onVaildator: context
-                              .read<SignInBloc>()
-                              .state
-                              .emailAddress
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidEmail: (_) => 'Wrong Email',
-                                  orElse: () => null,
-                                ),
-                                (_) => null,
-                              ),
+                          validator: (_) {
+                            if (state.emailAddress.isValid()) {
+                              return null;
+                            } else {
+                              return 'Wrong Email';
+                            }
+                          },
+                          // validator: (_) {
+                          //   return state.emailAddress.value.fold(
+                          //     (f) {
+                          //       return f.maybeMap(
+                          //         invalidEmail: (_) => 'Wrong Email',
+                          //         orElse: () => null,
+                          //       );
+                          //     },
+                          //     (_) => null,
+                          //   );
+                          // },
                           obsecureText: false,
                           suffixIcon: context
                               .read<SignInBloc>()
@@ -114,18 +117,24 @@ class SignInScreen extends StatelessWidget {
                           onChanged: (val) => context
                               .read<SignInBloc>()
                               .add(SignInEvent.passwordChanged(val)),
-                          onVaildator: context
-                              .read<SignInBloc>()
-                              .state
-                              .password
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidPassword: (_) => 'Wrong Password',
-                                  orElse: () => null,
-                                ),
-                                (_) => null,
-                              ),
+                          validator: (_) {
+                            if (state.password.isValid()) {
+                              return null;
+                            } else {
+                              return 'Wrong Password';
+                            }
+                          },
+                          // validator: (_) {
+                          //   return state.password.value.fold(
+                          //     (f) {
+                          //       return f.maybeMap(
+                          //         invalidPassword: (_) => 'Wrong Password',
+                          //         orElse: () => null,
+                          //       );
+                          //     },
+                          //     (_) => null,
+                          //   );
+                          // },
                           hintText: "Password",
                           obsecureText: true,
                           suffixIcon: context

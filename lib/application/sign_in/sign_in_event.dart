@@ -6,4 +6,5 @@ class SignInEvent with _$SignInEvent {
       EmailAddressChanged;
   const factory SignInEvent.passwordChanged(String password) = PasswordChanged;
   const factory SignInEvent.btnPressed() = BtnPressed;
+  const factory SignInEvent.resetState() = ResetState;
 }

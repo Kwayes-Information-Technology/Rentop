@@ -104,12 +104,13 @@ class RzAddons {
     required this.price,
   });
 
-  static List<RzAddons> fromData(Map<dynamic, dynamic> data) {
+  static List<RzAddons> fromData(dynamic data) {
     if (data is List) {
       return [];
     } else {
       final List<RzAddons> addons = [];
-      for (final element in data.entries) {
+      final mapOfData = data as Map<String, dynamic>;
+      for (final element in mapOfData.entries) {
         addons.add(
           RzAddons(
             key: element.key,

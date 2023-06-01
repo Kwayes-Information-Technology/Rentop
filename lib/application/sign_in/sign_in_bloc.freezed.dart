@@ -21,6 +21,7 @@ mixin _$SignInEvent {
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$SignInEvent {
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$SignInEvent {
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$SignInEvent {
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$SignInEvent {
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$SignInEvent {
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +154,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return emailAddressChanged(email);
   }
@@ -158,6 +165,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return emailAddressChanged?.call(email);
   }
@@ -168,6 +176,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -182,6 +191,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return emailAddressChanged(this);
   }
@@ -192,6 +202,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return emailAddressChanged?.call(this);
   }
@@ -202,6 +213,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -288,6 +300,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return passwordChanged(password);
   }
@@ -298,6 +311,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return passwordChanged?.call(password);
   }
@@ -308,6 +322,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -322,6 +337,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return passwordChanged(this);
   }
@@ -332,6 +348,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return passwordChanged?.call(this);
   }
@@ -342,6 +359,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -401,6 +419,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function(String email) emailAddressChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return btnPressed();
   }
@@ -411,6 +430,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function(String email)? emailAddressChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return btnPressed?.call();
   }
@@ -421,6 +441,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function(String email)? emailAddressChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -435,6 +456,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return btnPressed(this);
   }
@@ -445,6 +467,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function(EmailAddressChanged value)? emailAddressChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return btnPressed?.call(this);
   }
@@ -455,6 +478,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -466,6 +490,120 @@ class _$BtnPressed implements BtnPressed {
 
 abstract class BtnPressed implements SignInEvent {
   const factory BtnPressed() = _$BtnPressed;
+}
+
+/// @nodoc
+abstract class _$$ResetStateCopyWith<$Res> {
+  factory _$$ResetStateCopyWith(
+          _$ResetState value, $Res Function(_$ResetState) then) =
+      __$$ResetStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetStateCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$ResetState>
+    implements _$$ResetStateCopyWith<$Res> {
+  __$$ResetStateCopyWithImpl(
+      _$ResetState _value, $Res Function(_$ResetState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetState implements ResetState {
+  const _$ResetState();
+
+  @override
+  String toString() {
+    return 'SignInEvent.resetState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailAddressChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() btnPressed,
+    required TResult Function() resetState,
+  }) {
+    return resetState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailAddressChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
+  }) {
+    return resetState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailAddressChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? btnPressed,
+    TResult Function()? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
+  }) {
+    return resetState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
+  }) {
+    return resetState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetState implements SignInEvent {
+  const factory ResetState() = _$ResetState;
 }
 
 /// @nodoc

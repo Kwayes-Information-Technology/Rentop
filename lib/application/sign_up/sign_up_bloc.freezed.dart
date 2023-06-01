@@ -27,6 +27,7 @@ mixin _$SignUpEvent {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +41,7 @@ mixin _$SignUpEvent {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +55,7 @@ mixin _$SignUpEvent {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +72,7 @@ mixin _$SignUpEvent {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +87,7 @@ mixin _$SignUpEvent {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -97,6 +102,7 @@ mixin _$SignUpEvent {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -194,6 +200,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return emailAddressChanged(email);
   }
@@ -210,6 +217,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return emailAddressChanged?.call(email);
   }
@@ -226,6 +234,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -248,6 +257,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return emailAddressChanged(this);
   }
@@ -265,6 +275,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return emailAddressChanged?.call(this);
   }
@@ -282,6 +293,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -374,6 +386,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return passwordChanged(password);
   }
@@ -390,6 +403,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return passwordChanged?.call(password);
   }
@@ -406,6 +420,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -428,6 +443,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return passwordChanged(this);
   }
@@ -445,6 +461,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return passwordChanged?.call(this);
   }
@@ -462,6 +479,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -555,6 +573,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return repeatPasswordChanged(password);
   }
@@ -571,6 +590,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return repeatPasswordChanged?.call(password);
   }
@@ -587,6 +607,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (repeatPasswordChanged != null) {
@@ -609,6 +630,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return repeatPasswordChanged(this);
   }
@@ -626,6 +648,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return repeatPasswordChanged?.call(this);
   }
@@ -643,6 +666,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (repeatPasswordChanged != null) {
@@ -736,6 +760,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return phoneNumberChanged(phone);
   }
@@ -752,6 +777,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return phoneNumberChanged?.call(phone);
   }
@@ -768,6 +794,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (phoneNumberChanged != null) {
@@ -790,6 +817,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return phoneNumberChanged(this);
   }
@@ -807,6 +835,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return phoneNumberChanged?.call(this);
   }
@@ -824,6 +853,7 @@ class _$PhoneNumberChanged implements PhoneNumberChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (phoneNumberChanged != null) {
@@ -916,6 +946,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return firstNameChagned(firstName);
   }
@@ -932,6 +963,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return firstNameChagned?.call(firstName);
   }
@@ -948,6 +980,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (firstNameChagned != null) {
@@ -970,6 +1003,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return firstNameChagned(this);
   }
@@ -987,6 +1021,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return firstNameChagned?.call(this);
   }
@@ -1004,6 +1039,7 @@ class _$FirstNameChanged implements FirstNameChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (firstNameChagned != null) {
@@ -1096,6 +1132,7 @@ class _$LastNameChanged implements LastNameChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return lastNameChanged(lastName);
   }
@@ -1112,6 +1149,7 @@ class _$LastNameChanged implements LastNameChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return lastNameChanged?.call(lastName);
   }
@@ -1128,6 +1166,7 @@ class _$LastNameChanged implements LastNameChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (lastNameChanged != null) {
@@ -1150,6 +1189,7 @@ class _$LastNameChanged implements LastNameChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return lastNameChanged(this);
   }
@@ -1167,6 +1207,7 @@ class _$LastNameChanged implements LastNameChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return lastNameChanged?.call(this);
   }
@@ -1184,6 +1225,7 @@ class _$LastNameChanged implements LastNameChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (lastNameChanged != null) {
@@ -1276,6 +1318,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return usernameChanged(username);
   }
@@ -1292,6 +1335,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return usernameChanged?.call(username);
   }
@@ -1308,6 +1352,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -1330,6 +1375,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return usernameChanged(this);
   }
@@ -1347,6 +1393,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return usernameChanged?.call(this);
   }
@@ -1364,6 +1411,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -1457,6 +1505,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return termsAndConditionsChanged(check);
   }
@@ -1473,6 +1522,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return termsAndConditionsChanged?.call(check);
   }
@@ -1489,6 +1539,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (termsAndConditionsChanged != null) {
@@ -1511,6 +1562,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return termsAndConditionsChanged(this);
   }
@@ -1528,6 +1580,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return termsAndConditionsChanged?.call(this);
   }
@@ -1545,6 +1598,7 @@ class _$TermsAndConditionsChanged implements TermsAndConditionsChanged {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (termsAndConditionsChanged != null) {
@@ -1611,6 +1665,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function(String username) usernameChanged,
     required TResult Function(bool check) termsAndConditionsChanged,
     required TResult Function() btnPressed,
+    required TResult Function() resetState,
   }) {
     return btnPressed();
   }
@@ -1627,6 +1682,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function(String username)? usernameChanged,
     TResult? Function(bool check)? termsAndConditionsChanged,
     TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
   }) {
     return btnPressed?.call();
   }
@@ -1643,6 +1699,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function(String username)? usernameChanged,
     TResult Function(bool check)? termsAndConditionsChanged,
     TResult Function()? btnPressed,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -1665,6 +1722,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function(TermsAndConditionsChanged value)
         termsAndConditionsChanged,
     required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
   }) {
     return btnPressed(this);
   }
@@ -1682,6 +1740,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
   }) {
     return btnPressed?.call(this);
   }
@@ -1699,6 +1758,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function(TermsAndConditionsChanged value)?
         termsAndConditionsChanged,
     TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -1710,6 +1770,160 @@ class _$BtnPressed implements BtnPressed {
 
 abstract class BtnPressed implements SignUpEvent {
   const factory BtnPressed() = _$BtnPressed;
+}
+
+/// @nodoc
+abstract class _$$ResetStateCopyWith<$Res> {
+  factory _$$ResetStateCopyWith(
+          _$ResetState value, $Res Function(_$ResetState) then) =
+      __$$ResetStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetStateCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ResetState>
+    implements _$$ResetStateCopyWith<$Res> {
+  __$$ResetStateCopyWithImpl(
+      _$ResetState _value, $Res Function(_$ResetState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetState implements ResetState {
+  const _$ResetState();
+
+  @override
+  String toString() {
+    return 'SignUpEvent.resetState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailAddressChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) repeatPasswordChanged,
+    required TResult Function(String phone) phoneNumberChanged,
+    required TResult Function(String firstName) firstNameChagned,
+    required TResult Function(String lastName) lastNameChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(bool check) termsAndConditionsChanged,
+    required TResult Function() btnPressed,
+    required TResult Function() resetState,
+  }) {
+    return resetState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailAddressChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? repeatPasswordChanged,
+    TResult? Function(String phone)? phoneNumberChanged,
+    TResult? Function(String firstName)? firstNameChagned,
+    TResult? Function(String lastName)? lastNameChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(bool check)? termsAndConditionsChanged,
+    TResult? Function()? btnPressed,
+    TResult? Function()? resetState,
+  }) {
+    return resetState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailAddressChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? repeatPasswordChanged,
+    TResult Function(String phone)? phoneNumberChanged,
+    TResult Function(String firstName)? firstNameChagned,
+    TResult Function(String lastName)? lastNameChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(bool check)? termsAndConditionsChanged,
+    TResult Function()? btnPressed,
+    TResult Function()? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(PhoneNumberChanged value) phoneNumberChanged,
+    required TResult Function(FirstNameChanged value) firstNameChagned,
+    required TResult Function(LastNameChanged value) lastNameChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(TermsAndConditionsChanged value)
+        termsAndConditionsChanged,
+    required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(ResetState value) resetState,
+  }) {
+    return resetState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult? Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult? Function(FirstNameChanged value)? firstNameChagned,
+    TResult? Function(LastNameChanged value)? lastNameChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(ResetState value)? resetState,
+  }) {
+    return resetState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(FirstNameChanged value)? firstNameChagned,
+    TResult Function(LastNameChanged value)? lastNameChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(TermsAndConditionsChanged value)?
+        termsAndConditionsChanged,
+    TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(ResetState value)? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetState implements SignUpEvent {
+  const factory ResetState() = _$ResetState;
 }
 
 /// @nodoc

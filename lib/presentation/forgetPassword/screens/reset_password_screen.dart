@@ -50,18 +50,29 @@ class ResetPasswordScreen extends StatelessWidget {
                               .read<ResetPasswordBloc>()
                               .add(ResetPasswordEvent.passwordChanged(val)),
                           hintText: "New Password",
-                          onVaildator: context
-                              .read<ResetPasswordBloc>()
-                              .state
-                              .password
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidPassword: (_) => "Invalid Password",
+                          validator: (_) {
+                            return state.password.value.fold(
+                              (f) {
+                                return f.maybeMap(
+                                  invalidPassword: (_) => 'Invalid Password',
                                   orElse: () => null,
-                                ),
-                                (_) => null,
-                              ),
+                                );
+                              },
+                              (_) => null,
+                            );
+                          },
+                          // onVaildator: context
+                          //     .read<ResetPasswordBloc>()
+                          //     .state
+                          //     .password
+                          //     .value
+                          //     .fold(
+                          //       (f) => f.maybeMap(
+                          //         invalidPassword: (_) => "Invalid Password",
+                          //         orElse: () => null,
+                          //       ),
+                          //       (_) => null,
+                          //     ),
                           suffixIcon: context
                               .read<ResetPasswordBloc>()
                               .state

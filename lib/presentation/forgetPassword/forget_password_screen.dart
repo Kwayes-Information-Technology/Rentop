@@ -43,7 +43,16 @@ class ForgetPasswordScreen extends StatelessWidget {
           return SingleChildScrollView(
               child: Column(
             children: [
-              Image.asset(Assets.carEclipse),
+              Stack(
+                children: [
+                  Image.asset(Assets.carEclipse),
+                  SafeArea(
+                    child: RentopButtons.rentopReturnButton(
+                      context: context,
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(
                 height: 40,
               ),
@@ -76,18 +85,29 @@ class ForgetPasswordScreen extends StatelessWidget {
                             .add(ResetPasswordEvent.emailAddressChanged(val)),
                         hintText: "Email",
                         obsecureText: false,
-                        onVaildator: context
-                            .read<ResetPasswordBloc>()
-                            .state
-                            .emailAddress
-                            .value
-                            .fold(
-                              (f) => f.maybeMap(
+                        validator: (_) {
+                          return state.emailAddress.value.fold(
+                            (f) {
+                              return f.maybeMap(
                                 invalidEmail: (_) => 'Invalid Email',
                                 orElse: () => null,
-                              ),
-                              (_) => null,
-                            ),
+                              );
+                            },
+                            (_) => null,
+                          );
+                        },
+                        // onVaildator: context
+                        //     .read<ResetPasswordBloc>()
+                        //     .state
+                        //     .emailAddress
+                        //     .value
+                        //     .fold(
+                        //       (f) => f.maybeMap(
+                        //         invalidEmail: (_) => 'Invalid Email',
+                        //         orElse: () => null,
+                        //       ),
+                        //       (_) => null,
+                        //     ),
                         suffixIcon: context
                             .read<ResetPasswordBloc>()
                             .state

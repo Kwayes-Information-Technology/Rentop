@@ -49,7 +49,7 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  if (input.length > 8) {
+  if (input.length >= 8) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPassword(failedValue: input));

@@ -16,4 +16,5 @@ abstract class SignUpEvent with _$SignUpEvent {
   const factory SignUpEvent.termsAndConditionsChanged(bool check) =
       TermsAndConditionsChanged;
   const factory SignUpEvent.btnPressed() = BtnPressed;
+  const factory SignUpEvent.resetState() = ResetState;
 }

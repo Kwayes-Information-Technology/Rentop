@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentop/application/sign_in/sign_in_bloc.dart';
+import 'package:rentop/application/sign_up/sign_up_bloc.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_logo.dart';
@@ -22,7 +25,12 @@ class WelcomeScreen extends StatelessWidget {
               RentopButtons.rentopGradientButton(
                 text: "Sign in",
                 context: context,
-                onBtnPressed: () => Navigator.pushNamed(context, '/SignIn'),
+                onBtnPressed: () {
+                  context
+                      .read<SignInBloc>()
+                      .add(const SignInEvent.resetState());
+                  Navigator.pushNamed(context, '/SignIn');
+                },
               ),
               const SizedBox(
                 height: 24,
@@ -30,7 +38,12 @@ class WelcomeScreen extends StatelessWidget {
               RentopButtons.rentopOutlineButton(
                 text: "Sign Up",
                 context: context,
-                onBtnPressed: () => Navigator.pushNamed(context, '/SignUp'),
+                onBtnPressed: () {
+                  context
+                      .read<SignUpBloc>()
+                      .add(const SignUpEvent.resetState());
+                  Navigator.pushNamed(context, '/SignUp');
+                },
                 color: mainShadeColor,
               ),
               const SizedBox(

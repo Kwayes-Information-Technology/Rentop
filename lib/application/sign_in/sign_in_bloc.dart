@@ -50,6 +50,19 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           showErrorMessages: true,
           authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
+
+        yield state.copyWith(
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      resetState: (e) async* {
+        yield state.copyWith(
+          emailAddress: EmailAddress(''),
+          password: Password(''),
+          isSubmitting: false,
+          showErrorMessages: false,
+          authFailureOrSuccessOption: none(),
+        );
       },
     );
   }

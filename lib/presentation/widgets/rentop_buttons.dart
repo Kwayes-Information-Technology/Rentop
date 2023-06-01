@@ -515,6 +515,7 @@ class RentopButtons {
 
   static Widget rentopReturnButton({
     required BuildContext context,
+    VoidCallback? backCallback,
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -522,6 +523,9 @@ class RentopButtons {
         children: [
           GestureDetector(
             onTap: () {
+              if (backCallback != null) {
+                backCallback();
+              }
               Navigator.pop(context);
             },
             child: Container(

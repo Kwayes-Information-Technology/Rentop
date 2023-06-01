@@ -94,9 +94,7 @@ class SignUpScreen extends StatelessWidget {
                   height: 24,
                 ),
                 Form(
-                  autovalidateMode: state.showErrorMessages
-                      ? AutovalidateMode.always
-                      : AutovalidateMode.disabled,
+                  autovalidateMode: AutovalidateMode.always,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: Column(
@@ -108,18 +106,29 @@ class SignUpScreen extends StatelessWidget {
                               .add(SignUpEvent.usernameChanged(val)),
                           hintText: "Username",
                           obsecureText: false,
-                          onVaildator: context
-                              .read<SignUpBloc>()
-                              .state
-                              .username
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
+                          validator: (_) {
+                            return state.username.value.fold(
+                              (f) {
+                                return f.maybeMap(
                                   invalidUsername: (_) => 'Invalid Username',
                                   orElse: () => null,
-                                ),
-                                (_) => null,
-                              ),
+                                );
+                              },
+                              (_) => null,
+                            );
+                          },
+                          // onVaildator: context
+                          //     .read<SignUpBloc>()
+                          //     .state
+                          //     .username
+                          //     .value
+                          //     .fold(
+                          //       (f) => f.maybeMap(
+                          //         invalidUsername: (_) => 'Invalid Username',
+                          //         orElse: () => null,
+                          //       ),
+                          //       (_) => null,
+                          //     ),
                           suffixIcon: context
                               .read<SignUpBloc>()
                               .state
@@ -148,18 +157,29 @@ class SignUpScreen extends StatelessWidget {
                                     .add(SignUpEvent.emailAddressChanged(val)),
                                 hintText: "Email",
                                 obsecureText: false,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .emailAddress
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.emailAddress.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidEmail: (_) => 'Invalid Email',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .emailAddress
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidEmail: (_) => 'Invalid Email',
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state
@@ -187,19 +207,31 @@ class SignUpScreen extends StatelessWidget {
                                     .add(SignUpEvent.phoneNumberChanged(val)),
                                 hintText: "Phone Number",
                                 obsecureText: false,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .phoneNumber
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.phoneNumber.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidPhoneNumber: (_) =>
                                             'Invalid Phone Number',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .phoneNumber
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidPhoneNumber: (_) =>
+                                //             'Invalid Phone Number',
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state
@@ -231,19 +263,31 @@ class SignUpScreen extends StatelessWidget {
                                     .add(SignUpEvent.firstNameChagned(val)),
                                 hintText: "First Name",
                                 obsecureText: false,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .firstName
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.firstName.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidFirstName: (_) =>
                                             'Invalid First Name',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .firstName
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidFirstName: (_) =>
+                                //             'Invalid First Name',
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state
@@ -271,19 +315,31 @@ class SignUpScreen extends StatelessWidget {
                                     .add(SignUpEvent.lastNameChanged(val)),
                                 hintText: "Last Name",
                                 obsecureText: false,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .lastName
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.lastName.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidLastName: (_) =>
                                             'Invalid Last Name',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .lastName
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidLastName: (_) =>
+                                //             'Invalid Last Name',
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state
@@ -315,19 +371,31 @@ class SignUpScreen extends StatelessWidget {
                                     .add(SignUpEvent.passwordChanged(val)),
                                 hintText: "Password",
                                 obsecureText: true,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .password
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.password.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidPassword: (_) =>
                                             'Invalid Password',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .password
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidPassword: (_) =>
+                                //             'Invalid Password',
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state
@@ -356,19 +424,31 @@ class SignUpScreen extends StatelessWidget {
                                         SignUpEvent.repeatPasswordChanged(val)),
                                 hintText: "Repeat Password",
                                 obsecureText: true,
-                                onVaildator: context
-                                    .read<SignUpBloc>()
-                                    .state
-                                    .repeatPassword
-                                    .value
-                                    .fold(
-                                      (f) => f.maybeMap(
+                                validator: (_) {
+                                  return state.repeatPassword.value.fold(
+                                    (f) {
+                                      return f.maybeMap(
                                         invalidRepeatPassword: (_) =>
-                                            "Password not matching with repeat password",
+                                            'Password not matching with repeat password',
                                         orElse: () => null,
-                                      ),
-                                      (_) => null,
-                                    ),
+                                      );
+                                    },
+                                    (_) => null,
+                                  );
+                                },
+                                // onVaildator: context
+                                //     .read<SignUpBloc>()
+                                //     .state
+                                //     .repeatPassword
+                                //     .value
+                                //     .fold(
+                                //       (f) => f.maybeMap(
+                                //         invalidRepeatPassword: (_) =>
+                                //             "Password not matching with repeat password",
+                                //         orElse: () => null,
+                                //       ),
+                                //       (_) => null,
+                                //     ),
                                 suffixIcon: context
                                     .read<SignUpBloc>()
                                     .state

@@ -50,18 +50,29 @@ class ValidateResetCodeScreen extends StatelessWidget {
                               .read<ResetPasswordBloc>()
                               .add(ResetPasswordEvent.resetCodeChanged(val)),
                           hintText: "Code",
-                          onVaildator: context
-                              .read<ResetPasswordBloc>()
-                              .state
-                              .code
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidResetCode: (_) => "Invalid Code",
+                          validator: (_) {
+                            return state.code.value.fold(
+                              (f) {
+                                return f.maybeMap(
+                                  invalidResetCode: (_) => 'Invalid Code',
                                   orElse: () => null,
-                                ),
-                                (_) => null,
-                              ),
+                                );
+                              },
+                              (_) => null,
+                            );
+                          },
+                          // onVaildator: context
+                          //     .read<ResetPasswordBloc>()
+                          //     .state
+                          //     .code
+                          //     .value
+                          //     .fold(
+                          //       (f) => f.maybeMap(
+                          //         invalidResetCode: (_) => "Invalid Code",
+                          //         orElse: () => null,
+                          //       ),
+                          //       (_) => null,
+                          //     ),
                           suffixIcon: context
                               .read<ResetPasswordBloc>()
                               .state

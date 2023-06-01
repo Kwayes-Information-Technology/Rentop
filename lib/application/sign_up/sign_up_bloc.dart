@@ -104,6 +104,25 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           showErrorMessages: true,
           authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
+
+        yield state.copyWith(
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      resetState: (e) async* {
+        yield state.copyWith(
+          emailAddress: EmailAddress(''),
+          password: Password(''),
+          phoneNumber: PhoneNumber(''),
+          firstName: FirstName(''),
+          lastName: LastName(''),
+          username: Username(''),
+          repeatPassword: RepeatPassword('', ''),
+          termsAndConditions: false,
+          showErrorMessages: false,
+          isSubmitting: false,
+          authFailureOrSuccessOption: none(),
+        );
       },
     );
   }
