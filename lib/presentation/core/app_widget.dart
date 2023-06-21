@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:rentop/application/navigation/navigation_bloc.dart';
 import 'package:rentop/infrastructure/style/style.dart';
 import 'package:rentop/presentation/carDetails/car_details_screen.dart';
 import 'package:rentop/presentation/contact/contact_screen.dart';
@@ -17,6 +20,7 @@ import 'package:rentop/presentation/profile/screens/accountDetails/account_detai
 import 'package:rentop/presentation/profile/screens/address/address_screen.dart';
 import 'package:rentop/presentation/profile/screens/address/screens/billingAddress/billing_address_screen.dart';
 import 'package:rentop/presentation/profile/screens/address/screens/shippingAddress/shipping_address_screen.dart';
+import 'package:rentop/presentation/profile/screens/deleteAccount/delete_account_screen.dart';
 import 'package:rentop/presentation/profile/screens/orders/orderCheckout/order_checkout_screen.dart';
 import 'package:rentop/presentation/profile/screens/orders/orderDetails/order_details_screen.dart';
 import 'package:rentop/presentation/profile/screens/orders/orderDetails/screens/orderReceipt/order_receipt_screen.dart';
@@ -58,10 +62,38 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   '/PrivacyPolicy': (BuildContext context) => const PrivacyPolicyScreen(),
   '/TermsAndConditions': (BuildContext context) =>
       const TermsAndConditionsScreen(),
+  '/DeleteMyAccount': (BuildContext context) => const DeleteAccountScreen(),
 };
 
-class AppWidget extends StatelessWidget {
+class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
+
+  @override
+  State<AppWidget> createState() => _AppWidgetState();
+}
+
+class _AppWidgetState extends State<AppWidget> {
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    if (!mounted) return;
+
+    OneSignal.shared.setNotificationOpenedHandler(
+      (openedResult) {
+        if (openedResult.notification.additionalData!['type'] ==
+            'NEW_MESSAGE') {
+          context
+              .read<NavigationBloc>()
+              .add(const NavigationEvent.selectedIndexChanged(3));
+        }
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

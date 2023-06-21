@@ -65,6 +65,15 @@ class ProfileScreen extends StatelessWidget {
                           context: context,
                         ),
                         RentopButtons.rentopButtonV2(
+                          icon: Assets.deleteIcon,
+                          btnTxt: "Delete Account",
+                          onBtnPressed: () => Navigator.pushNamed(
+                            context,
+                            '/DeleteMyAccount',
+                          ),
+                          context: context,
+                        ),
+                        RentopButtons.rentopButtonV2(
                           icon: Assets.logoutIcon,
                           btnTxt: "Logout",
                           onBtnPressed: () {

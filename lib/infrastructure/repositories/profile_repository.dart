@@ -229,4 +229,35 @@ class ProfileRepository implements IProfileRepository {
       return optionOf(null);
     }
   }
+
+  @override
+  Future<Either<ApiFailure, Unit>> deleteMyAccount({
+    required String reason,
+  }) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final int? userId = prefs.getInt('userId');
+      if (userId != null) {
+        final data = {
+          "reason": reason,
+        };
+        final Response response = await post(
+          Uri.parse(
+              "${dotenv.env['RENTOP_API_URL']}user/$userId/deleteAccount"),
+          headers: {"Content-Type": "application/json"},
+          body: json.encode(data),
+        );
+        final responseBody = jsonDecode(response.body);
+        if (responseBody['done'] == true) {
+          return right(unit);
+        } else {
+          return left(const ApiFailure.serverError());
+        }
+      } else {
+        return left(const ApiFailure.serverError());
+      }
+    } catch (e) {
+      return left(const ApiFailure.serverError());
+    }
+  }
 }

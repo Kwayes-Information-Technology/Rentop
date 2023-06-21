@@ -385,6 +385,22 @@ class ReservationScreen extends StatelessWidget {
                         const SizedBox(
                           height: 17,
                         ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                          ),
+                          padding: const EdgeInsets.all(23),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 0.5,
+                              color: Colors.black.withOpacity(0.20),
+                            ),
+                            borderRadius: BorderRadius.circular(13),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 17,
+                        ),
                       ],
                     ),
                   ),

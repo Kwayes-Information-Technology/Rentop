@@ -37,4 +37,7 @@ abstract class IProfileRepository {
     required String lastName,
     required String displayName,
   });
+  Future<Either<ApiFailure, Unit>> deleteMyAccount({
+    required String reason,
+  });
 }

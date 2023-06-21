@@ -35,6 +35,7 @@ class Assets {
   static const String warningIcon = "assets/images/icons/warning.png";
   static const String imagePlaceholder =
       "assets/images/placeholders/loading.gif";
+  static const String deleteIcon = "assets/images/icons/delete.png";
 
   static Widget getImageFromString(String metaValue) {
     if (metaValue.contains('icon-auto')) {

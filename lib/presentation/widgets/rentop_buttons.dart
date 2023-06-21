@@ -115,6 +115,7 @@ class RentopButtons {
     required String btnText,
     required BuildContext context,
     required VoidCallback onBtnPressed,
+    Color? textColor,
   }) {
     return InkWell(
       onTap: onBtnPressed,
@@ -132,7 +133,10 @@ class RentopButtons {
         alignment: Alignment.centerLeft,
         child: Text(
           btnText,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 18),
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontSize: 18,
+                color: textColor,
+              ),
         ),
       ),
     );
@@ -357,6 +361,7 @@ class RentopButtons {
               icon,
               width: 24,
               height: 24,
+              color: Colors.white,
             ),
             const SizedBox(
               height: 10,
@@ -367,6 +372,7 @@ class RentopButtons {
                     fontSize: 14,
                     color: Colors.white,
                   ),
+              textAlign: TextAlign.center,
             )
           ],
         ),

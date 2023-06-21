@@ -11,6 +11,7 @@ import 'package:rentop/application/repositories/billingAddress/billing_address_b
 import 'package:rentop/application/repositories/cars/cars_bloc.dart';
 import 'package:rentop/application/repositories/checkout/checkout_bloc.dart';
 import 'package:rentop/application/repositories/contactUs/contact_us_bloc.dart';
+import 'package:rentop/application/repositories/deleteAccount/delete_account_bloc.dart';
 import 'package:rentop/application/repositories/entries/entries_bloc.dart';
 import 'package:rentop/application/repositories/entryCheckout/entry_checkout_bloc.dart';
 import 'package:rentop/application/repositories/favourites/favourites_bloc.dart';
@@ -73,6 +74,7 @@ void main() async {
             create: (_) => getIt<FavouritesBloc>()
               ..add(const FavouritesEvent.fetchFavouritesData())),
         BlocProvider(create: (_) => getIt<ContactUsBloc>()),
+        BlocProvider(create: (_) => getIt<DeleteAccountBloc>())
       ],
       child: const AppWidget(),
     ),

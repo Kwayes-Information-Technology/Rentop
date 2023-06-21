@@ -25,37 +25,73 @@ class MessagesScreen extends StatelessWidget {
             const SizedBox(
               height: 7,
             ),
-            if (context.read<AuthBloc>().state is Authenticated)
-              BlocBuilder<MessagesBloc, MessagesState>(
-                builder: (context, state) {
-                  return Expanded(
-                    child: SmartRefresher(
-                      controller: state.refreshController,
-                      enablePullUp: true,
-                      onRefresh: () => context
-                          .read<MessagesBloc>()
-                          .add(const MessagesEvent.refreshData()),
-                      onLoading: () => context
-                          .read<MessagesBloc>()
-                          .add(const MessagesEvent.fetchMessagesData()),
-                      child: ListView.builder(
-                        itemCount: state.conversations.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return RentopCards.rentopMessageCard(
-                            conversation: state.conversations[index],
-                            context: context,
-                          );
-                        },
-                      ),
-                    ),
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                if (state is Authenticated) {
+                  return BlocBuilder<MessagesBloc, MessagesState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: SmartRefresher(
+                          controller: state.refreshController,
+                          enablePullUp: true,
+                          onRefresh: () => context
+                              .read<MessagesBloc>()
+                              .add(const MessagesEvent.refreshData()),
+                          onLoading: () => context
+                              .read<MessagesBloc>()
+                              .add(const MessagesEvent.fetchMessagesData()),
+                          child: ListView.builder(
+                            itemCount: state.conversations.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return RentopCards.rentopMessageCard(
+                                conversation: state.conversations[index],
+                                context: context,
+                              );
+                            },
+                          ),
+                        ),
+                      );
+                    },
                   );
-                },
-              )
-            else
-              Padding(
-                  padding: const EdgeInsets.only(top: 18),
-                  child: rentopGuestUserWarning(context: context)),
+                } else {
+                  return Padding(
+                      padding: const EdgeInsets.only(top: 18),
+                      child: rentopGuestUserWarning(context: context));
+                }
+              },
+            ),
+            // if (context.read<AuthBloc>().state is Authenticated)
+            //   BlocBuilder<MessagesBloc, MessagesState>(
+            //     builder: (context, state) {
+            //       return Expanded(
+            //         child: SmartRefresher(
+            //           controller: state.refreshController,
+            //           enablePullUp: true,
+            //           onRefresh: () => context
+            //               .read<MessagesBloc>()
+            //               .add(const MessagesEvent.refreshData()),
+            //           onLoading: () => context
+            //               .read<MessagesBloc>()
+            //               .add(const MessagesEvent.fetchMessagesData()),
+            //           child: ListView.builder(
+            //             itemCount: state.conversations.length,
+            //             shrinkWrap: true,
+            //             itemBuilder: (context, index) {
+            //               return RentopCards.rentopMessageCard(
+            //                 conversation: state.conversations[index],
+            //                 context: context,
+            //               );
+            //             },
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   )
+            // else
+            //   Padding(
+            //       padding: const EdgeInsets.only(top: 18),
+            //       child: rentopGuestUserWarning(context: context)),
           ],
         ),
       ),

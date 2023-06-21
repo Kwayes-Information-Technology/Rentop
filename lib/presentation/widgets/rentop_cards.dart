@@ -621,7 +621,7 @@ class RentopCards {
                   ),
                 );
               },
-              options: CarouselOptions(height: 220, viewportFraction: 1),
+              options: CarouselOptions(viewportFraction: 1),
             ),
             const SizedBox(
               height: 20,
@@ -1461,11 +1461,14 @@ class RentopCards {
                   const SizedBox(
                     width: 15,
                   ),
-                  Text(
-                    carName,
-                    style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                          fontSize: 18,
-                        ),
+                  Flexible(
+                    child: Text(
+                      carName,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                            fontSize: 18,
+                          ),
+                    ),
                   ),
                 ],
               ),

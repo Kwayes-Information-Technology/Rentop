@@ -123,9 +123,13 @@ class ExploreScreen extends StatelessWidget {
                       itemCount: state.cars.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount:
-                            (MediaQuery.of(context).size.width >= 600) ? 3 : 1,
+                            (MediaQuery.of(context).size.width >= 900)
+                                ? 3
+                                : (MediaQuery.of(context).size.width >= 600)
+                                    ? 2
+                                    : 1,
                         childAspectRatio:
-                            (MediaQuery.of(context).size.width >= 600)
+                            (MediaQuery.of(context).size.width >= 900)
                                 ? (2.3 / 3)
                                 : (2.8 / 3),
                       ),

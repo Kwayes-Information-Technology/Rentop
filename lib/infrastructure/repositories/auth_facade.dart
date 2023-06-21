@@ -191,7 +191,6 @@ class AuthFacade implements IAuthFacade {
         },
         body: data,
       );
-
       if (response.statusCode == 201) {
         await OneSignal.shared
             .setExternalUserId(jsonDecode(response.body)['id'].toString());

@@ -170,9 +170,13 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
         );
       },
       initial: (e) async* {
-        final listPerPage =
-            // ignore: deprecated_member_use
-            WidgetsBinding.instance.window.physicalSize.width >= 600 ? 9 : 3;
+        // ignore: deprecated_member_use
+        final windowWidth = WidgetsBinding.instance.window.physicalSize.width;
+        final listPerPage = windowWidth >= 900
+            ? 9
+            : windowWidth >= 600
+                ? 4
+                : 3;
         yield state.copyWith(listPerPage: listPerPage);
         add(const FetchTopCarsData());
       },
