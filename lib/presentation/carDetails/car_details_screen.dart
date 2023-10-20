@@ -242,12 +242,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     const SizedBox(
                       height: 29,
                     ),
-                    RentopCards.rentopProfileCardV3(
-                      userPhoto: selectedCar.author.userAvatar ??
-                          selectedCar.author.userAvatarGravatar!,
-                      userName:
-                          "${selectedCar.author.firstName} ${selectedCar.author.lastName}",
-                      context: context,
+                    RentopCards.rentopSendMessageCard(
                       btnPressed: () {
                         final authState = context.read<AuthBloc>().state;
                         if (authState is Authenticated) {
@@ -281,6 +276,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           ).show(context);
                         }
                       },
+                      context: context,
                     ),
                     const SizedBox(
                       height: 24,

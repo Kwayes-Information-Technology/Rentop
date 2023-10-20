@@ -30,6 +30,7 @@ class OrdersRepository implements IOrdersRepository {
     required double totalPrice,
     required double dueNow,
     required Billing? billingInfo,
+    required String? orderNotes,
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();

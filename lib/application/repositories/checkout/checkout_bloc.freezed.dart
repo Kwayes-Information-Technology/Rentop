@@ -25,6 +25,7 @@ mixin _$CheckoutEvent {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +37,7 @@ mixin _$CheckoutEvent {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +49,7 @@ mixin _$CheckoutEvent {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +62,7 @@ mixin _$CheckoutEvent {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +74,7 @@ mixin _$CheckoutEvent {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +86,7 @@ mixin _$CheckoutEvent {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +182,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return selectedCarChanged(car);
   }
@@ -190,6 +197,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return selectedCarChanged?.call(car);
   }
@@ -204,6 +212,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (selectedCarChanged != null) {
@@ -222,6 +231,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return selectedCarChanged(this);
   }
@@ -236,6 +246,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return selectedCarChanged?.call(this);
   }
@@ -250,6 +261,7 @@ class _$SelectedCarChanged implements SelectedCarChanged {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (selectedCarChanged != null) {
@@ -339,6 +351,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return dateRangeChanged(range);
   }
@@ -353,6 +366,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return dateRangeChanged?.call(range);
   }
@@ -367,6 +381,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (dateRangeChanged != null) {
@@ -385,6 +400,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return dateRangeChanged(this);
   }
@@ -399,6 +415,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return dateRangeChanged?.call(this);
   }
@@ -413,6 +430,7 @@ class _$DateRangeChanged implements DateRangeChanged {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (dateRangeChanged != null) {
@@ -477,6 +495,7 @@ class _$ClearDateRange implements ClearDateRange {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return clearDateRange();
   }
@@ -491,6 +510,7 @@ class _$ClearDateRange implements ClearDateRange {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return clearDateRange?.call();
   }
@@ -505,6 +525,7 @@ class _$ClearDateRange implements ClearDateRange {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (clearDateRange != null) {
@@ -523,6 +544,7 @@ class _$ClearDateRange implements ClearDateRange {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return clearDateRange(this);
   }
@@ -537,6 +559,7 @@ class _$ClearDateRange implements ClearDateRange {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return clearDateRange?.call(this);
   }
@@ -551,6 +574,7 @@ class _$ClearDateRange implements ClearDateRange {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (clearDateRange != null) {
@@ -607,6 +631,7 @@ class _$Clear implements Clear {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return clear();
   }
@@ -621,6 +646,7 @@ class _$Clear implements Clear {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return clear?.call();
   }
@@ -635,6 +661,7 @@ class _$Clear implements Clear {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -653,6 +680,7 @@ class _$Clear implements Clear {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return clear(this);
   }
@@ -667,6 +695,7 @@ class _$Clear implements Clear {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return clear?.call(this);
   }
@@ -681,6 +710,7 @@ class _$Clear implements Clear {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -739,6 +769,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return btnPressed();
   }
@@ -753,6 +784,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return btnPressed?.call();
   }
@@ -767,6 +799,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -785,6 +818,7 @@ class _$BtnPressed implements BtnPressed {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return btnPressed(this);
   }
@@ -799,6 +833,7 @@ class _$BtnPressed implements BtnPressed {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return btnPressed?.call(this);
   }
@@ -813,6 +848,7 @@ class _$BtnPressed implements BtnPressed {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (btnPressed != null) {
@@ -897,6 +933,7 @@ class _$UpdateAddons implements UpdateAddons {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return updateAddons(addon);
   }
@@ -911,6 +948,7 @@ class _$UpdateAddons implements UpdateAddons {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return updateAddons?.call(addon);
   }
@@ -925,6 +963,7 @@ class _$UpdateAddons implements UpdateAddons {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (updateAddons != null) {
@@ -943,6 +982,7 @@ class _$UpdateAddons implements UpdateAddons {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return updateAddons(this);
   }
@@ -957,6 +997,7 @@ class _$UpdateAddons implements UpdateAddons {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return updateAddons?.call(this);
   }
@@ -971,6 +1012,7 @@ class _$UpdateAddons implements UpdateAddons {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (updateAddons != null) {
@@ -1061,6 +1103,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     required TResult Function() btnPressed,
     required TResult Function(Addons addon) updateAddons,
     required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
   }) {
     return billingInfoChanged(billing);
   }
@@ -1075,6 +1118,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     TResult? Function()? btnPressed,
     TResult? Function(Addons addon)? updateAddons,
     TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
   }) {
     return billingInfoChanged?.call(billing);
   }
@@ -1089,6 +1133,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     TResult Function()? btnPressed,
     TResult Function(Addons addon)? updateAddons,
     TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (billingInfoChanged != null) {
@@ -1107,6 +1152,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     required TResult Function(BtnPressed value) btnPressed,
     required TResult Function(UpdateAddons value) updateAddons,
     required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
   }) {
     return billingInfoChanged(this);
   }
@@ -1121,6 +1167,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     TResult? Function(BtnPressed value)? btnPressed,
     TResult? Function(UpdateAddons value)? updateAddons,
     TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
   }) {
     return billingInfoChanged?.call(this);
   }
@@ -1135,6 +1182,7 @@ class _$BillingInfoChanged implements BillingInfoChanged {
     TResult Function(BtnPressed value)? btnPressed,
     TResult Function(UpdateAddons value)? updateAddons,
     TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
     required TResult orElse(),
   }) {
     if (billingInfoChanged != null) {
@@ -1155,6 +1203,177 @@ abstract class BillingInfoChanged implements CheckoutEvent {
 }
 
 /// @nodoc
+abstract class _$$OrderNotesChangedCopyWith<$Res> {
+  factory _$$OrderNotesChangedCopyWith(
+          _$OrderNotesChanged value, $Res Function(_$OrderNotesChanged) then) =
+      __$$OrderNotesChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? orderNotes});
+}
+
+/// @nodoc
+class __$$OrderNotesChangedCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$OrderNotesChanged>
+    implements _$$OrderNotesChangedCopyWith<$Res> {
+  __$$OrderNotesChangedCopyWithImpl(
+      _$OrderNotesChanged _value, $Res Function(_$OrderNotesChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderNotes = freezed,
+  }) {
+    return _then(_$OrderNotesChanged(
+      freezed == orderNotes
+          ? _value.orderNotes
+          : orderNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OrderNotesChanged implements OrderNotesChanged {
+  const _$OrderNotesChanged(this.orderNotes);
+
+  @override
+  final String? orderNotes;
+
+  @override
+  String toString() {
+    return 'CheckoutEvent.orderNotesChanged(orderNotes: $orderNotes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OrderNotesChanged &&
+            (identical(other.orderNotes, orderNotes) ||
+                other.orderNotes == orderNotes));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderNotes);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrderNotesChangedCopyWith<_$OrderNotesChanged> get copyWith =>
+      __$$OrderNotesChangedCopyWithImpl<_$OrderNotesChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Car car) selectedCarChanged,
+    required TResult Function(PickerDateRange? range) dateRangeChanged,
+    required TResult Function() clearDateRange,
+    required TResult Function() clear,
+    required TResult Function() btnPressed,
+    required TResult Function(Addons addon) updateAddons,
+    required TResult Function(Billing? billing) billingInfoChanged,
+    required TResult Function(String? orderNotes) orderNotesChanged,
+  }) {
+    return orderNotesChanged(orderNotes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Car car)? selectedCarChanged,
+    TResult? Function(PickerDateRange? range)? dateRangeChanged,
+    TResult? Function()? clearDateRange,
+    TResult? Function()? clear,
+    TResult? Function()? btnPressed,
+    TResult? Function(Addons addon)? updateAddons,
+    TResult? Function(Billing? billing)? billingInfoChanged,
+    TResult? Function(String? orderNotes)? orderNotesChanged,
+  }) {
+    return orderNotesChanged?.call(orderNotes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Car car)? selectedCarChanged,
+    TResult Function(PickerDateRange? range)? dateRangeChanged,
+    TResult Function()? clearDateRange,
+    TResult Function()? clear,
+    TResult Function()? btnPressed,
+    TResult Function(Addons addon)? updateAddons,
+    TResult Function(Billing? billing)? billingInfoChanged,
+    TResult Function(String? orderNotes)? orderNotesChanged,
+    required TResult orElse(),
+  }) {
+    if (orderNotesChanged != null) {
+      return orderNotesChanged(orderNotes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SelectedCarChanged value) selectedCarChanged,
+    required TResult Function(DateRangeChanged value) dateRangeChanged,
+    required TResult Function(ClearDateRange value) clearDateRange,
+    required TResult Function(Clear value) clear,
+    required TResult Function(BtnPressed value) btnPressed,
+    required TResult Function(UpdateAddons value) updateAddons,
+    required TResult Function(BillingInfoChanged value) billingInfoChanged,
+    required TResult Function(OrderNotesChanged value) orderNotesChanged,
+  }) {
+    return orderNotesChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SelectedCarChanged value)? selectedCarChanged,
+    TResult? Function(DateRangeChanged value)? dateRangeChanged,
+    TResult? Function(ClearDateRange value)? clearDateRange,
+    TResult? Function(Clear value)? clear,
+    TResult? Function(BtnPressed value)? btnPressed,
+    TResult? Function(UpdateAddons value)? updateAddons,
+    TResult? Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult? Function(OrderNotesChanged value)? orderNotesChanged,
+  }) {
+    return orderNotesChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SelectedCarChanged value)? selectedCarChanged,
+    TResult Function(DateRangeChanged value)? dateRangeChanged,
+    TResult Function(ClearDateRange value)? clearDateRange,
+    TResult Function(Clear value)? clear,
+    TResult Function(BtnPressed value)? btnPressed,
+    TResult Function(UpdateAddons value)? updateAddons,
+    TResult Function(BillingInfoChanged value)? billingInfoChanged,
+    TResult Function(OrderNotesChanged value)? orderNotesChanged,
+    required TResult orElse(),
+  }) {
+    if (orderNotesChanged != null) {
+      return orderNotesChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OrderNotesChanged implements CheckoutEvent {
+  const factory OrderNotesChanged(final String? orderNotes) =
+      _$OrderNotesChanged;
+
+  String? get orderNotes;
+  @JsonKey(ignore: true)
+  _$$OrderNotesChangedCopyWith<_$OrderNotesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CheckoutState {
   Car? get selectedCar => throw _privateConstructorUsedError;
   PickerDateRange? get dateRange => throw _privateConstructorUsedError;
@@ -1168,6 +1387,7 @@ mixin _$CheckoutState {
   double? get totalPrice => throw _privateConstructorUsedError;
   double? get dueNow => throw _privateConstructorUsedError;
   Billing? get billingInfo => throw _privateConstructorUsedError;
+  String? get orderNotes => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<OrderFailure, Unit>> get orderFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
@@ -1195,6 +1415,7 @@ abstract class $CheckoutStateCopyWith<$Res> {
       double? totalPrice,
       double? dueNow,
       Billing? billingInfo,
+      String? orderNotes,
       bool isSubmitting,
       Option<Either<OrderFailure, Unit>> orderFailureOrSuccessOption});
 }
@@ -1223,6 +1444,7 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
     Object? totalPrice = freezed,
     Object? dueNow = freezed,
     Object? billingInfo = freezed,
+    Object? orderNotes = freezed,
     Object? isSubmitting = null,
     Object? orderFailureOrSuccessOption = null,
   }) {
@@ -1271,6 +1493,10 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
           ? _value.billingInfo
           : billingInfo // ignore: cast_nullable_to_non_nullable
               as Billing?,
+      orderNotes: freezed == orderNotes
+          ? _value.orderNotes
+          : orderNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -1303,6 +1529,7 @@ abstract class _$$_CheckoutStateCopyWith<$Res>
       double? totalPrice,
       double? dueNow,
       Billing? billingInfo,
+      String? orderNotes,
       bool isSubmitting,
       Option<Either<OrderFailure, Unit>> orderFailureOrSuccessOption});
 }
@@ -1329,6 +1556,7 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
     Object? totalPrice = freezed,
     Object? dueNow = freezed,
     Object? billingInfo = freezed,
+    Object? orderNotes = freezed,
     Object? isSubmitting = null,
     Object? orderFailureOrSuccessOption = null,
   }) {
@@ -1377,6 +1605,10 @@ class __$$_CheckoutStateCopyWithImpl<$Res>
           ? _value.billingInfo
           : billingInfo // ignore: cast_nullable_to_non_nullable
               as Billing?,
+      orderNotes: freezed == orderNotes
+          ? _value.orderNotes
+          : orderNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -1404,6 +1636,7 @@ class _$_CheckoutState implements _CheckoutState {
       required this.totalPrice,
       required this.dueNow,
       required this.billingInfo,
+      required this.orderNotes,
       required this.isSubmitting,
       required this.orderFailureOrSuccessOption})
       : _addons = addons;
@@ -1437,13 +1670,15 @@ class _$_CheckoutState implements _CheckoutState {
   @override
   final Billing? billingInfo;
   @override
+  final String? orderNotes;
+  @override
   final bool isSubmitting;
   @override
   final Option<Either<OrderFailure, Unit>> orderFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'CheckoutState(selectedCar: $selectedCar, dateRange: $dateRange, dateRangeController: $dateRangeController, addons: $addons, totalAddons: $totalAddons, basePrice: $basePrice, reservationNights: $reservationNights, longTermDiscount: $longTermDiscount, totalPrice: $totalPrice, dueNow: $dueNow, billingInfo: $billingInfo, isSubmitting: $isSubmitting, orderFailureOrSuccessOption: $orderFailureOrSuccessOption)';
+    return 'CheckoutState(selectedCar: $selectedCar, dateRange: $dateRange, dateRangeController: $dateRangeController, addons: $addons, totalAddons: $totalAddons, basePrice: $basePrice, reservationNights: $reservationNights, longTermDiscount: $longTermDiscount, totalPrice: $totalPrice, dueNow: $dueNow, billingInfo: $billingInfo, orderNotes: $orderNotes, isSubmitting: $isSubmitting, orderFailureOrSuccessOption: $orderFailureOrSuccessOption)';
   }
 
   @override
@@ -1471,6 +1706,8 @@ class _$_CheckoutState implements _CheckoutState {
             (identical(other.dueNow, dueNow) || other.dueNow == dueNow) &&
             (identical(other.billingInfo, billingInfo) ||
                 other.billingInfo == billingInfo) &&
+            (identical(other.orderNotes, orderNotes) ||
+                other.orderNotes == orderNotes) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
             (identical(other.orderFailureOrSuccessOption,
@@ -1493,6 +1730,7 @@ class _$_CheckoutState implements _CheckoutState {
       totalPrice,
       dueNow,
       billingInfo,
+      orderNotes,
       isSubmitting,
       orderFailureOrSuccessOption);
 
@@ -1516,6 +1754,7 @@ abstract class _CheckoutState implements CheckoutState {
       required final double? totalPrice,
       required final double? dueNow,
       required final Billing? billingInfo,
+      required final String? orderNotes,
       required final bool isSubmitting,
       required final Option<Either<OrderFailure, Unit>>
           orderFailureOrSuccessOption}) = _$_CheckoutState;
@@ -1542,6 +1781,8 @@ abstract class _CheckoutState implements CheckoutState {
   double? get dueNow;
   @override
   Billing? get billingInfo;
+  @override
+  String? get orderNotes;
   @override
   bool get isSubmitting;
   @override

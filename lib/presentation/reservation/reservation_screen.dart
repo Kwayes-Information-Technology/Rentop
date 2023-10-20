@@ -6,6 +6,7 @@ import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
+import 'package:rentop/presentation/widgets/rentop_textfields.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class ReservationScreen extends StatelessWidget {
@@ -385,19 +386,44 @@ class ReservationScreen extends StatelessWidget {
                         const SizedBox(
                           height: 17,
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 30,
-                          ),
-                          padding: const EdgeInsets.all(23),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 0.5,
-                              color: Colors.black.withOpacity(0.20),
-                            ),
-                            borderRadius: BorderRadius.circular(13),
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //     horizontal: 30,
+                        //   ),
+                        //   child: RentopTextFields.rentopTextFieldV2(
+                        //       context: context,
+                        //       onChanged: (val) => context
+                        //           .read<CheckoutBloc>()
+                        //           .add(CheckoutEvent.orderNotesChanged(val)),
+                        //       obsecureText: false,
+                        //       minLines: 3,
+                        //       maxLines: 5,
+                        //       hintText:
+                        //           "Notes about your order e.g. special notes for delivery.",
+                        //       labelText: "Order notes (optional)"),
+                        // ),
+                        // Container(
+                        //   margin: const EdgeInsets.symmetric(
+                        //     horizontal: 30,
+                        //   ),
+                        //   padding: const EdgeInsets.all(23),
+                        //   decoration: BoxDecoration(
+                        //     border: Border.all(
+                        //       width: 0.5,
+                        //       color: Colors.black.withOpacity(0.20),
+                        //     ),
+                        //     borderRadius: BorderRadius.circular(13),
+                        //   ),
+                        //   child: RentopTextFields.rentopTextField(
+                        //     context: context,
+                        //     onChanged: (val) {},
+                        //     hintText:
+                        //         "Notes about your order e.g. special notes for delivery.",
+                        //     suffixIcon: null,
+                        //     obsecureText: false,
+                        //     controller: null,
+                        //   ),
+                        // ),
                         const SizedBox(
                           height: 17,
                         ),

@@ -18,6 +18,7 @@ abstract class IOrdersRepository {
     required double totalPrice,
     required double dueNow,
     required Billing? billingInfo,
+    required String? orderNotes,
   });
   Future<Either<OrderFailure, Unit>> entryPayNow({
     required Entry entry,

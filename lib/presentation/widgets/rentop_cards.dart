@@ -1977,4 +1977,44 @@ class RentopCards {
       );
     }
   }
+
+  static Widget rentopSendMessageCard({
+    required VoidCallback btnPressed,
+    required BuildContext context,
+  }) {
+    return Container(
+      height: 79,
+      padding: const EdgeInsets.symmetric(horizontal: 22),
+      margin: const EdgeInsets.symmetric(horizontal: 30),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(13),
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.16),
+            offset: Offset(0, -4),
+            blurRadius: 56,
+          )
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Send Message",
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                  fontSize: 18,
+                ),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.send,
+              color: mainColor,
+            ),
+            onPressed: btnPressed,
+          )
+        ],
+      ),
+    );
+  }
 }

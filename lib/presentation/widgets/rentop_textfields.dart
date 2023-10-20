@@ -55,6 +55,64 @@ class RentopTextFields {
     );
   }
 
+  static Widget rentopTextFieldV2({
+    required BuildContext context,
+    required Function(String)? onChanged,
+    required bool obsecureText,
+    TextEditingController? controller,
+    String? Function(String?)? validator,
+    Widget? suffixIcon,
+    String? hintText,
+    String? labelText,
+    int? minLines,
+    int? maxLines,
+  }) {
+    return TextFormField(
+      controller: controller,
+      onChanged: onChanged,
+      validator: validator,
+      obscureText: obsecureText,
+      minLines: minLines,
+      maxLines: maxLines,
+      decoration: InputDecoration(
+        suffixIcon: suffixIcon,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+          borderSide: BorderSide(
+            width: 0,
+            color: minorShadeColor,
+          ),
+        ),
+        focusColor: mainColor,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+          borderSide: BorderSide(
+            color: mainColor,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(13),
+          borderSide: const BorderSide(
+            color: Color(0xFFFF3131),
+          ),
+        ),
+        errorStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
+              fontSize: 12,
+              color: const Color(0xFFFF3131),
+            ),
+        labelText: labelText,
+        labelStyle:
+            Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 16),
+        hintText: hintText,
+        hintStyle:
+            Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 12),
+      ),
+    );
+  }
+
   static Widget rentopPriceTextField({
     required BuildContext context,
     required Function(String)? onChanged,

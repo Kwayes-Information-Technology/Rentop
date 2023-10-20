@@ -14,6 +14,7 @@ abstract class CheckoutState with _$CheckoutState {
     required double? totalPrice,
     required double? dueNow,
     required Billing? billingInfo,
+    required String? orderNotes,
     required bool isSubmitting,
     required Option<Either<OrderFailure, Unit>> orderFailureOrSuccessOption,
   }) = _CheckoutState;
@@ -30,6 +31,7 @@ abstract class CheckoutState with _$CheckoutState {
         dueNow: null,
         totalAddons: null,
         billingInfo: null,
+        orderNotes: null,
         isSubmitting: false,
         orderFailureOrSuccessOption: none(),
       );

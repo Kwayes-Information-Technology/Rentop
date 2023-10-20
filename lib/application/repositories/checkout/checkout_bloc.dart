@@ -86,6 +86,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
           addons: [],
           totalAddons: null,
           billingInfo: null,
+          orderNotes: null,
           isSubmitting: false,
           orderFailureOrSuccessOption: none(),
         );
@@ -123,6 +124,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
             totalPrice: state.totalPrice!,
             dueNow: state.dueNow!,
             billingInfo: state.billingInfo,
+            orderNotes: state.orderNotes,
           );
         }
 
@@ -133,6 +135,9 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       },
       billingInfoChanged: (e) async* {
         yield state.copyWith(billingInfo: e.billing);
+      },
+      orderNotesChanged: (e) async* {
+        yield state.copyWith(orderNotes: e.orderNotes);
       },
     );
   }

@@ -11,4 +11,6 @@ class CheckoutEvent with _$CheckoutEvent {
   const factory CheckoutEvent.updateAddons(Addons addon) = UpdateAddons;
   const factory CheckoutEvent.billingInfoChanged(Billing? billing) =
       BillingInfoChanged;
+  const factory CheckoutEvent.orderNotesChanged(String? orderNotes) =
+      OrderNotesChanged;
 }
