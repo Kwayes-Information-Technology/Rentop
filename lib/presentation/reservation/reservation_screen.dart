@@ -6,7 +6,6 @@ import 'package:rentop/infrastructure/models/car.dart';
 import 'package:rentop/infrastructure/style/colors.dart';
 import 'package:rentop/presentation/widgets/rentop_buttons.dart';
 import 'package:rentop/presentation/widgets/rentop_cards.dart';
-import 'package:rentop/presentation/widgets/rentop_textfields.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class ReservationScreen extends StatelessWidget {

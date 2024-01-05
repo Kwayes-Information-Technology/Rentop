@@ -123,7 +123,9 @@ class AuthFacade implements IAuthFacade {
           final prefs = await SharedPreferences.getInstance();
           await prefs.setString('token', result.data!.token!);
           await prefs.setInt('userId', result.data!.id!);
-          await OneSignal.shared.setExternalUserId(result.data!.id!.toString());
+          await OneSignal.login(result.data!.id!.toString());
+          // await OneSignal.shared
+          //     .setExternalUserIdString(result.data!.id!.toString());
           return right(unit);
         } else {
           return left(const ApiFailure.serverError());
@@ -141,7 +143,8 @@ class AuthFacade implements IAuthFacade {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('token');
     await prefs.remove('userId');
-    await OneSignal.shared.removeExternalUserId();
+    await OneSignal.logout();
+    // await OneSignal.shared.removeExternalUserId();
   }
 
   @override
@@ -192,8 +195,9 @@ class AuthFacade implements IAuthFacade {
         body: data,
       );
       if (response.statusCode == 201) {
-        await OneSignal.shared
-            .setExternalUserId(jsonDecode(response.body)['id'].toString());
+        await OneSignal.login(jsonDecode(response.body)['id'].toString());
+        // await OneSignal.shared
+        //     .setExternalUserId(jsonDecode(response.body)['id'].toString());
         return right(unit);
       } else {
         return left(const ApiFailure.serverError());

@@ -31,7 +31,7 @@ void main() async {
   configureInjection(Environment.prod);
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_LIVE_KEY']!;
   await Stripe.instance.applySettings();
-  OneSignal.shared.setAppId(dotenv.env['ONESIGNAL_APP_ID']!);
+  OneSignal.initialize(dotenv.env['ONESIGNAL_APP_ID']!);
   runApp(
     MultiBlocProvider(
       providers: [

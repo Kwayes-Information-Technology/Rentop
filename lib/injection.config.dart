@@ -68,8 +68,6 @@ import 'package:rentop/infrastructure/repositories/profile_repository.dart'
 import 'package:rentop/infrastructure/repositories/splash_facade.dart' as _i34;
 import 'package:shared_preferences/shared_preferences.dart' as _i20;
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
 // initializes the registration of main-scope dependencies inside of GetIt
 Future<_i1.GetIt> init(
   _i1.GetIt getIt, {

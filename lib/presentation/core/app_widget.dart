@@ -83,16 +83,24 @@ class _AppWidgetState extends State<AppWidget> {
   Future<void> initPlatformState() async {
     if (!mounted) return;
 
-    OneSignal.shared.setNotificationOpenedHandler(
-      (openedResult) {
-        if (openedResult.notification.additionalData!['type'] ==
-            'NEW_MESSAGE') {
-          context
-              .read<NavigationBloc>()
-              .add(const NavigationEvent.selectedIndexChanged(3));
-        }
-      },
-    );
+    OneSignal.Notifications.addClickListener((event) {
+      if (event.notification.additionalData!['type'] == 'NEW_MESSAGE') {
+        context
+            .read<NavigationBloc>()
+            .add(const NavigationEvent.selectedIndexChanged(3));
+      }
+    });
+
+    // OneSignal.shared.setNotificationOpenedHandler(
+    //   (openedResult) {
+    //     if (openedResult.notification.additionalData!['type'] ==
+    //         'NEW_MESSAGE') {
+    //       context
+    //           .read<NavigationBloc>()
+    //           .add(const NavigationEvent.selectedIndexChanged(3));
+    //     }
+    //   },
+    // );
   }
 
   @override
